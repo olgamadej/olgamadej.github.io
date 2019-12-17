@@ -15,7 +15,7 @@ body {
 }
 
 body#bg-img {
-  background: url("https://user-images.githubusercontent.com/42141921/71016108-f69fd380-20f4-11ea-98af-96e901f5f992.jpg");
+  background: url(https://user-images.githubusercontent.com/42141921/71016108-f69fd380-20f4-11ea-98af-96e901f5f992.jpg);
   background-attachment: fixed;
   background-size: cover;
 }
