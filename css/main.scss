@@ -49,7 +49,7 @@ header {
 
 main {
   padding: 4rem;
-  height: 91.6vh;
+  min-height: 91.6vh;
 
   .icons {
     margin-top: 1rem;
@@ -104,6 +104,10 @@ main {
   background: lighten($primary, 5);
   padding: 0.5rem;
   border-bottom: lighten($primary, 11) 3px solid;
+
+  p {
+    margin-top: 1rem;
+  }
 }
 
 //Work/Projects
