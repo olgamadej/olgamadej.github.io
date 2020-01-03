@@ -173,6 +173,8 @@ main {
   &:hover {
     background: $secondary;
     color: set-text-color($secondary);
+    opacity: 0.9;
+    @include easeOut;
   }
 }
 
