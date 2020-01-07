@@ -94,6 +94,7 @@ body {
 .hero-section {
   height: 100vh;
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  margin-bottom: 3vh;
 }
 .hero-left {
   height: 100vh;
@@ -222,4 +223,19 @@ a:hover {
 }
 footer p {
   text-align: center;
+}
+/*shop page*/
+.whitespaces {
+  height: 100px;
+}
+.collection {
+  padding: 4vh 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+#heading {
+  font-size: 24px;
+  margin-left: 5vh;
+  padding-bottom: 0;
+  position: relative;
+  display: inline-block;
 }

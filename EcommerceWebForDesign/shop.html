@@ -63,7 +63,7 @@
       </div>
 
       <!--Product List-->
-      <p id="heading">Our Collection</p>
+      <p class="" id="heading">Our Collection</p>
       <div class="section prod-list">
         <div class="container-fluid">
           <div class="row some-cards">
@@ -118,7 +118,44 @@
           </div>
         </div>
       </div>
-      <!--Categories Section-->
+      <!--Collection Section-->
+      <div class="collection">
+        <p id="heading">New Arrivals</p>
+        <div class="section prod-list">
+          <div class="container-fluid">
+            <div class="row some-cards">
+              <div class="col-lg-3 prod">
+                <a href="product.html">
+                  <p id="price">€20</p>
+                  <img class="img-s" src="img/prod4.jpg" alt="" />
+                  <p class="prod-desc">Woolen Necklace in Turquoise & Blue</p>
+                </a>
+              </div>
+              <div class="col-lg-3 prod">
+                <a href="product.html">
+                  <p id="price">€20</p>
+                  <img class="img-s" src="img/prod5.jpg" alt="" />
+                  <p class="prod-desc">Woolen Necklace in Violet & Yellow</p>
+                </a>
+              </div>
+              <div class="col-lg-3 prod">
+                <a href="product.html">
+                  <p id="price">€20</p>
+                  <img class="img-s" src="img/prod6.jpg" alt="" />
+                  <p class="prod-desc">Woolen Necklace in Blue & Yellow</p>
+                </a>
+              </div>
+              <div class="col-lg-3 prod">
+                <a href="product.html">
+                  <p id="price">€20</p>
+                  <img src="img/prod7.jpg" alt="" />
+                  <p class="prod-desc">Woolen Necklace in Turquoise & Black</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="container-fluid">
         <div class="row section shop">
           <div class="col-lg-8">
@@ -154,6 +191,7 @@
           </div>
         </div>
       </div>
+      <div class="whitespaces"></div>
       <!--Footer-->
       <div class="container-fluid footer">
         <div class="section container">
@@ -200,31 +238,31 @@
           </footer>
         </div>
       </div>
-      <!---->
-    </div>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
-    <script type="text/javascript">
-      $(function() {
-        $(document).scroll(function() {
-          var $nav = $(".nav");
-          $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+
+      <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
+      <script type="text/javascript">
+        $(function() {
+          $(document).scroll(function() {
+            var $nav = $(".nav");
+            $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+          });
         });
-      });
 
-      var t1 = new TimelineMax({ paused: true });
-      t1.to(".menu", 0.5, {
-        left: "0%",
-        ease: Power2.easeInOut
-      });
+        var t1 = new TimelineMax({ paused: true });
+        t1.to(".menu", 0.5, {
+          left: "0%",
+          ease: Power2.easeInOut
+        });
 
-      t1.reverse();
-      $(document).on("click", ".menu-open", function() {
-        t1.reversed(!t1.reversed());
-      });
-      t1.reverse();
-      $(document).on("click", ".menu-close", function() {
-        t1.reversed(!t1.reversed());
-      });
-    </script>
+        t1.reverse();
+        $(document).on("click", ".menu-open", function() {
+          t1.reversed(!t1.reversed());
+        });
+        t1.reverse();
+        $(document).on("click", ".menu-close", function() {
+          t1.reversed(!t1.reversed());
+        });
+      </script>
+    </div>
   </body>
 </html>
