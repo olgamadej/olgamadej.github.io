@@ -56,7 +56,7 @@ main {
   text-align: center;
   color: rgba(250, 171, 107);
   background-color: transparent;
-  border-radius: 20%;
+  border-radius: 0.5em;
   box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.4);
 }
 
