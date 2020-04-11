@@ -9,7 +9,8 @@
 
 body {
   background-color: #333;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Long Cang", cursive;
+  font-size: 1.5em;
 }
 body * + * {
   margin-top: 1.5em;
@@ -40,6 +41,10 @@ main {
   color: #eee;
 }
 .sidebar {
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 1.5em;
+
+  letter-spacing: 3px;
   width: 30%;
   margin-left: 1.5em;
   margin-top: 0;
@@ -50,11 +55,11 @@ main {
 }
 
 .button-link {
+  color: #ff6736;
   display: block;
   padding: 0.5em;
   text-decoration: none;
   text-align: center;
-  color: rgba(250, 171, 107);
   background-color: transparent;
   border-radius: 0.5em;
   box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.4);
@@ -64,8 +69,19 @@ main {
   margin-top: 1.5em;
 }
 .sponsor-link {
+  color: #ff6736;
   display: block;
-  color: rgba(250, 171, 107, 0.7);
   font-weight: 500;
   text-decoration: none;
+}
+
+h1 {
+  font-family: "Rock Salt", cursive;
+  font-size: 3em;
+  color: #fffb00;
+  letter-spacing: 4px;
+}
+
+h2 {
+  font-family: "Fredericka the Great", cursive;
 }
