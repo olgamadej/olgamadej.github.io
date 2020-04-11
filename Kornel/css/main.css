@@ -36,8 +36,7 @@ main {
 .main {
   width: 70%;
   padding: 1em 1.5em;
-
-  background-image: url("/img/photo1.jpg");
+  background-image: url("../img/photo1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.4);
