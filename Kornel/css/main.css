@@ -16,6 +16,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  padding: 0 7em;
 }
 body * + * {
   margin-top: 0.5em;
@@ -91,8 +92,4 @@ h1 {
   font-size: 2em;
   color: #fffb00;
   letter-spacing: 4px;
-}
-
-h4 {
-  font-family: "Fredericka the Great", cursive;
 }
