@@ -9,6 +9,7 @@
 
 body {
   background-color: #333;
+
   font-family: "Gloria Hallelujah", cursive;
   font-size: 1em;
 }
@@ -38,7 +39,7 @@ main {
   background-color: rgba(51, 51, 51);
   box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.4);
   border-radius: 0.5em;
-  color: #eee;
+  color: #fdfb77;
 }
 .sidebar {
   font-family: "Nanum Pen Script", cursive;
