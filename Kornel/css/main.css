@@ -8,25 +8,31 @@
 }
 
 body {
-  background-color: #333;
-
-  font-family: "Gloria Hallelujah", cursive;
+  background-color: rgba(51, 51, 51);
+  text-align: center;
+  font-family: "Reenie Beanie", cursive;
   font-size: 1em;
+  background-image: url("../img/photo1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 0 7em;
 }
 body * + * {
-  margin-top: 1.5em;
+  margin-top: 0.5em;
 }
 
 header {
   color: #eee;
-  padding: 1em 1.5em;
-  background-color: rgba(51, 51, 51);
+  padding: 0.2em 1.5em;
+  background-color: rgba(51, 51, 51, 0.8);
   box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.4);
   border-radius: 0.5em;
 }
 
 .container {
   display: flex;
+  border-radius: 0.5em;
 }
 
 main {
@@ -34,26 +40,24 @@ main {
 }
 
 .main {
-  width: 70%;
+  width: 85%;
   padding: 1em 1.5em;
-  background-color: rgba(51, 51, 51);
-  background-image: url("/img/photo1.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
   box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.4);
+  background-color: rgba(51, 51, 51, 0.3);
   border-radius: 0.5em;
   color: #fcfff9;
+  font-size: 1.9em;
+  text-align: center;
 }
 .sidebar {
   font-family: "Nanum Pen Script", cursive;
   font-size: 1.5em;
-
   letter-spacing: 3px;
-  width: 30%;
+  width: 15%;
   margin-left: 1.5em;
   margin-top: 0;
   padding: 1.5em;
-  background-color: rgba(51, 51, 51);
+  background-color: rgba(51, 51, 51, 0.8);
   box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.4);
   border-radius: 0.5em;
 }
@@ -72,6 +76,10 @@ main {
 .button-link + .button-link {
   margin-top: 1.5em;
 }
+
+.tekst {
+  color: #fcfff9;
+}
 .sponsor-link {
   color: #ff6736;
   display: block;
@@ -81,11 +89,7 @@ main {
 
 h1 {
   font-family: "Rock Salt", cursive;
-  font-size: 3em;
+  font-size: 2em;
   color: #fffb00;
   letter-spacing: 4px;
-}
-
-h2 {
-  font-family: "Fredericka the Great", cursive;
 }
