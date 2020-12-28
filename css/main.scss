@@ -44,7 +44,7 @@ h3 {
     background-image: linear-gradient(
       to bottom right,
       rgba(lighten($primary, 9), 0.5),
-      rgba(darken($secondary, 2), 0.5)
+      rgba(darken($secondary, 2), 0.2)
     );
   }
 }
@@ -62,6 +62,7 @@ header {
 
 .text-secondary {
   color: $secondary;
+  @include easeOut;
   &:hover {
     color: #fff;
   }

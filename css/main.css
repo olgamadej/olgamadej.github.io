@@ -277,8 +277,8 @@ h2.sm-heading,
 h3.sm-heading {
   margin-bottom: 2rem;
   padding: 0.2rem 1rem;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(65, 72, 99, 0.5)), to(rgba(250, 84, 72, 0.5)));
-  background-image: linear-gradient(to bottom right, rgba(65, 72, 99, 0.5), rgba(250, 84, 72, 0.5));
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(65, 72, 99, 0.5)), to(rgba(250, 84, 72, 0.2)));
+  background-image: linear-gradient(to bottom right, rgba(65, 72, 99, 0.5), rgba(250, 84, 72, 0.2));
 }
 
 a {
@@ -294,6 +294,8 @@ header {
 
 .text-secondary {
   color: #fa5d52;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 .text-secondary:hover {
