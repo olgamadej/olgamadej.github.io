@@ -177,13 +177,13 @@ body {
 
 body#bg-img {
   position: relative;
-  background: url(../img/home.jpg);
+  background: url(../img/back.jpg);
   background-size: cover;
   height: 100vh;
   background-position: 0 0;
   background-repeat: repeat-x;
-  -webkit-animation: animate 30s linear infinite;
-          animation: animate 30s linear infinite;
+  -webkit-animation: animate 160s linear infinite;
+          animation: animate 160s linear infinite;
 }
 
 body#bg-img:after {

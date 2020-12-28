@@ -1,7 +1,7 @@
 $primary: rgb(47, 52, 71);
 $secondary: #fa5d52;
 $show-home-image: true;
-$home-image: url(../img/home.jpg);
+$home-image: url(../img/back.jpg);
 $background-opacity: 0.2;
 
 @mixin easeOut {
@@ -18,7 +18,7 @@ $background-opacity: 0.2;
       height: 100vh;
       background-position: 0 0;
       background-repeat: repeat-x;
-      animation: animate 30s linear infinite;
+      animation: animate 160s linear infinite;
 
       &:after {
         content: "";
