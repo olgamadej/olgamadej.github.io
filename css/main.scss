@@ -22,13 +22,30 @@ h3 {
   font-weight: 400;
 
   &.lg-heading {
+    display: flex;
     font-size: 6rem;
+
+    div:hover {
+      transform: scale(1.1);
+      @include easeOut;
+      &.text-white {
+        color: $secondary;
+      }
+    }
+    div {
+      backface-visibility: hidden;
+      @include easeOut;
+    }
   }
 
   &.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background: rgba(lighten($primary, 2), 0.5);
+    background-image: linear-gradient(
+      to bottom right,
+      rgba(lighten($primary, 9), 0.5),
+      rgba(darken($secondary, 2), 0.5)
+    );
   }
 }
 
@@ -45,6 +62,9 @@ header {
 
 .text-secondary {
   color: $secondary;
+  &:hover {
+    color: #fff;
+  }
 }
 
 main {
@@ -56,10 +76,17 @@ main {
 
     a {
       padding: 0.4rem;
+      backface-visibility: hidden;
 
       &:hover {
         color: $secondary;
-        @include easeOut(); /* includes here the mixin transition */
+        @include easeOut();
+      }
+      i:hover {
+        &:hover {
+          transform: scale(1.2);
+          @include easeOut();
+        }
       }
     }
   }
