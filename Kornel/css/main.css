@@ -33,6 +33,7 @@ header {
 .container {
   display: flex;
   border-radius: 0.5em;
+  position: relative;
 }
 
 main {
@@ -49,6 +50,7 @@ main {
   font-size: 1.9em;
   text-align: center;
 }
+
 .sidebar {
   font-family: "Nanum Pen Script", cursive;
   font-size: 1.5em;
@@ -92,4 +94,14 @@ h1 {
   font-size: 2em;
   color: #fffb00;
   letter-spacing: 4px;
+}
+/* Lyrix*/
+.button-tekst {
+  color: #eee;
+  padding: 0.6em 1.5em;
+  background-color: rgba(51, 51, 51, 0.2);
+  box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.4);
+  border-radius: 0.5em;
+  border: none;
+  outline: none;
 }
