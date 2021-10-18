@@ -79,6 +79,7 @@
 //Smartphones
 @include mediaSm {
   main {
+    overflow: hidden;
     padding: 2rem;
 
     .lg-heading {
