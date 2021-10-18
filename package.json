@@ -1,12 +1,20 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "",
+  "description": "portfolio_website",
   "main": "index.js",
   "scripts": {
     "sass": "node-sass -w scss/ -o css/ --recursive"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Olga Madej",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olgamadej/olgamadej.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/olgamadej/olgamadej.github.io/issues"
+  },
+  "homepage": "https://github.com/olgamadej/olgamadej.github.io#readme"
 }

@@ -80,13 +80,13 @@
 @include mediaSm {
   main {
     padding: 2rem;
+
+    .lg-heading > .letter {
+      font-size: 3rem;
+    }
   }
   main#home h1 {
     margin-top: 10vh;
-    font-size: 2rem;
-  }
-  .lg-heading {
-    font-size: 2rem;
   }
 
   .projects {
