@@ -574,7 +574,7 @@ main#home h1 {
   main {
     padding: 2rem;
   }
-  main .lg-heading > .letter {
+  main .lg-heading {
     font-size: 2.5rem;
   }
   main#home h1 {

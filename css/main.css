@@ -478,7 +478,7 @@ main#home h1 {
 @media screen and (max-width: 500px) {
   main {
     padding: 2rem; }
-  main .lg-heading > .letter {
+  main .lg-heading {
     font-size: 2.5rem; }
   main#home h1 {
     margin-top: 10vh; }
