@@ -40,12 +40,14 @@ h3 {
 
   &.sm-heading {
     margin-bottom: 2rem;
-    padding: 0.2rem 1rem;
+    padding: 0.4rem 1rem;
     background-image: linear-gradient(
       to bottom right,
-      rgba(lighten($primary, 9), 0.5),
-      rgba(darken($secondary, 2), 0.2)
+      rgba(lighten($primary, 9), 0.1),
+      rgba(darken(white, 1), 0.2)
     );
+    border-radius: 3px;
+    backdrop-filter: blur(0.4rem);
   }
 }
 

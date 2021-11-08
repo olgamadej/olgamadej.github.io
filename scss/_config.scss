@@ -1,5 +1,5 @@
 $primary: rgb(47, 52, 71);
-$secondary: #fa5d52;
+$secondary: #4b80cf;
 $show-home-image: true;
 $home-image: url(../img/back.jpg);
 $background-opacity: 0.9;
@@ -13,7 +13,7 @@ $background-opacity: 0.9;
     &#bg-img {
       position: relative;
       background: $home-image;
-      //  background-attachment: fixed;
+      background-attachment: fixed;
       background-size: cover;
       height: 100vh;
       background-position: 0 0;
@@ -22,7 +22,7 @@ $background-opacity: 0.9;
 
       &:after {
         content: "";
-        position: absolute;
+        position: fixed;
         top: 0;
         right: 0;
         width: 100%;
