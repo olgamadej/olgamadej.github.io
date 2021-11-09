@@ -197,7 +197,7 @@ header {
     border-radius: 2px;
     transition: 0.7s all ease-in-out; }
     .btn-front-container .btn-front:hover {
-      transform: scale(1.2); }
+      transform: scale(1.1); }
 
 main {
   padding: 4rem;
@@ -259,7 +259,7 @@ main {
   .projects .project {
     opacity: 0;
     transform: translateY(20px);
-    transform: scale(1.3);
+    transform: scale(1.2);
     transition: 0.7s all ease-in-out; }
   .projects .appearing-project {
     opacity: 1;
