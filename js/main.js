@@ -30,3 +30,23 @@ function toggleMenu() {
     showMenu = false;
   }
 }
+
+//Appearing Projects
+function AppearOnScroll(){
+  var projects = document.querySelectorAll('.project');
+  var screenPosition = window.innerHeight/2;
+
+  projects.forEach(project => {
+    var projectPosition = project.getBoundingClientRect().top;
+    
+
+    if(projectPosition < screenPosition){
+      project.classList.add('appearing-project');
+    }
+  });
+
+  
+}
+
+//window.addEventListener('scroll', AppearOnScroll);
+window.addEventListener('scroll', AppearOnScroll);
