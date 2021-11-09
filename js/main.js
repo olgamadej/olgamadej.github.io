@@ -32,7 +32,7 @@ function toggleMenu() {
 }
 
 //Appearing Projects
-function AppearOnScroll(){
+function Appear(){
   var projects = document.querySelectorAll('.project');
   var screenPosition = window.innerHeight/2;
 
@@ -49,4 +49,5 @@ function AppearOnScroll(){
 }
 
 //window.addEventListener('scroll', AppearOnScroll);
-window.addEventListener('scroll', AppearOnScroll);
+window.addEventListener('load', Appear);
+window.addEventListener('scroll', Appear);
