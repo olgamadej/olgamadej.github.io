@@ -39,8 +39,11 @@ h3 {
   }
 
   &.sm-heading {
-    margin-bottom: 2rem;
-    padding: 0.4rem 1rem;
+    margin: 0.4rem;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+
     background-image: linear-gradient(
       to bottom right,
       rgba(lighten($primary, 9), 0.1),
@@ -70,15 +73,33 @@ header {
   }
 }
 
+.btn-front-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .btn-front {
+    margin: 2rem;
+    padding: 1rem 2rem;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    background-color: rgba(lighten($secondary, 1), 0.4);
+    border-radius: 2px;
+    transition: 0.7s all ease-in-out;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
 main {
   padding: 4rem;
   min-height: 91.6vh;
 
   .icons {
-    margin-top: 1rem;
+    margin: 0rem 0.5rem;
 
     a {
-      padding: 0.4rem;
+      padding: 0rem 0.5rem;
       backface-visibility: hidden;
 
       &:hover {
