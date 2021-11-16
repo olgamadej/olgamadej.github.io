@@ -1,0 +1,23 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+.wrapper-main {
+  display: float;
+}
+
+.wrapper-main img {
+  height: 50px;
+  width: auto;
+}
+
+.wrapper-main ul {
+  float: right;
+}
+.wrapper-main ul li {
+  display: inline-flex;
+  list-style: none;
+}

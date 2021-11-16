@@ -1,0 +1,33 @@
+/*General*/
+body {
+  padding-top: 100px;
+  font-family: Lucida Fax, serif;
+  color: #3B2626;
+}
+
+p {
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+/* Header */
+
+.btn {
+  padding: 10px 16px;
+  line-height: 24px;
+  border-radius: 6px;
+  color: white;
+  background-color: #C9A89B;
+  display: inline-block;
+}
+
+
+/*Features*/
+
+a:hover{
+  background-color: #BFA7A4;
+  }
+
+#footer {
+    padding: 30px 10px;
+}

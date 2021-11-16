@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Business Page</title>
+    <meta
+      name="description"
+      content="Simple, clean, responsive website built with html5, CSS3, JavaScript, jQuery and Bootstrap."
+    />
+    <!--SEO-->
+    <meta
+      name="keywords"
+      content="web, design, html, css, html5, css3, javascript, jquery, bootstrap, webiste"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather|Slabo+27px"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="img/icon.png" />
+    <!-- tu dodać ikonę - sie znaczy favikone-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body id="bootstrap-overrides">
+    <header class="header" id="home">
+      <!--Navigation-->
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display-->
+          <div class="navbar-header">
+            <button
+              type="button"
+              class="navbar-toggle collapsed"
+              data-toggle="collapse"
+              data-target="#li-navbar-collapse-1"
+              aria-expanded="false"
+            >
+              <span ="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" class="nav-item">
+              <!--small size logo -->
+              <img src="img/logo-black-s.png" alt="Something is wrong..." />
+            </a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling-->
+          <div class="collapse navbar-collapse" id="li-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a href="#home" class="nav-item"
+                  >Home <span class="sr-only">(current)</span></a
+                >
+              </li>
+              <li><a href="#about" class="nav-item">About Us</a></li>
+              <li><a href="#features" class="nav-item">Features</a></li>
+              <li class="dropdown">
+                <a
+                  href="#"
+                  class="dropdown-toggle"
+                  data-toggle="dropdown"
+                  role="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  >More<span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="#screens" class="nav-item">Screens</a></li>
+                  <li><a href="#download" class="nav-item">Download</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#" class="nav-item">Team | Areas</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#" class="nav-item">Languages</a></li>
+                </ul>
+              </li>
+              <li><a href="#contact" class="nav-item">Contact Us</a></li>
+            </ul>
+            <!-- Search field
+            <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>-->
+
+            <!--Right navigation
+            <ul class="nav navbar-nav navbar-right">
+              <li> <a href="#">Link</a> </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span> </a>
+                <ul class="dropdown-menu">
+                  <li> <a href="#">Action</a> </li>
+                  <li> <a href="#">Another action</a> </li>
+                  <li> <a href="#">Something else here</a> </li>
+                  <li role="separator" class="divider"></li>
+                  <li> <a href="#">Separated link</a> </li>
+                </ul>
+              </li>
+            </ul>-->
+          </div>
+        </div>
+      </nav>
+
+      <div class="header-overlay">
+        <!-- Overlays the header, obviously. -->
+        <div class="container header-container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="logo text-center">
+                <!-- text-center to kl asa bootstrapa ukladajaca tekst po srodku kolumny -->
+                <img src="img/logo-white.png" alt="tutaj powinno być logo ;(" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8">
+              <div class="header-text">
+                <h1>Investigations</h1>
+                <p>Get help with Clarus</p>
+              </div>
+              <div class="header-btns">
+                <a class="btn btn-download wow fadeInLeft" href="#">Download</a>
+                <a class="btn btn-tour wow fadeInRight" href="#"
+                  >Take a Tour
+                  <i class="fa fa-angle-down"></i>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-3 col-md-offset-1">
+              <div class="header-img">
+                <!-- Na wideo klasa sie nazywa header-iphone. -->
+                <img
+                  src="img/header-img.png"
+                  alt="tutaj zdjątko dodać jakieś bez tła dla balansu, nie."
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- About Us -->
+    <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <div class="section-title">
+              <h2>About Us</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="choose-us-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <!-- About service -->
+              <div
+                class="about-service wow fadeInLeft"
+                data-wow-duration="1.5s"
+                data-wow-delay=".5s"
+              >
+                <img src="img/header-img.png" alt="About service" />
+              </div>
+            </div>
+            <div
+              class="col-md-6 wow fadeInRight"
+              data-wow-duration="1.5s"
+              data-wow-delay=".5s"
+            >
+              <!-- Why choose us title -->
+              <div class="choose-us-title">
+                <h2>Why Choose Us?</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+              <!-- Why choose us description -->
+              <div class="choose-us-des">
+                <div
+                  class="choose-us-item wow fadeInUp"
+                  data-wow-duration=".5s"
+                  data-wow-delay="1s"
+                >
+                  <div>
+                    <i class="fa fa-bolt"></i>
+                    <h3>Quisque Lacus Dui</h3>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="choose-us-item wow fadeInUp"
+                  data-wow-duration=".5s"
+                  data-wow-delay="1s"
+                >
+                  <div>
+                    <i class="fa fa-bullhorn"></i>
+                    <h3>Quisque Lacus Dui</h3>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="choose-us-item wow fadeInUp"
+                  data-wow-duration=".5s"
+                  data-wow-delay="1s"
+                >
+                  <div>
+                    <i class="fa fa-flag-o"></i>
+                    <h3>Quisque Lacus Dui</h3>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Duis aute irure dolor in reprehenderit in voluptate velit
+                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                      sint occaecat cupidatat non proident, sunt in culpa qui
+                      officia deserunt mollit anim id est laborum.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Testimonials-->
+    <section class="testimonial">
+      <div class="testimonial-overlay">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 wow bounceInDown">
+              <div
+                id="carousel-testimonial"
+                class="carousel slide"
+                data-ride="carousel"
+              >
+                <ol class="carousel-indicators">
+                  <li
+                    data-target="carousel-testimonial"
+                    data-slide-to="0"
+                    class="active"
+                  ></li>
+                  <li data-target="carousel-testimonial" data-slide-to="1"></li>
+                  <li data-target="carousel-testimonial" data-slide-to="0"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="item active text-center">
+                    <img
+                      src="img/client-01.jpg"
+                      alt="Something's wrong."
+                      class="center-block"
+                    />
+                    <div class="testimonial-caption">
+                      <h2>Daniel</h2>
+                      <h4><span> Software Engineer, </span> Lorem ipsum</h4>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit, sed do eiusmod tempor incididunt ut labore et
+                        dolore magna aliqua. Ut enim ad minim veniam, quis
+                        nostrud exercitation ullamco laboris nisi ut aliquip ex
+                        ea commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu
+                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit
+                        anim id est laborum.Lorem ipsum dolor sit amet,
+                        consectetur adipisicing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad
+                        minim veniam, quis nostrud exercitation ullamco laboris
+                        nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                        dolor in reprehenderit in voluptate velit esse cillum
+                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                        cupidatat non proident, sunt in culpa qui officia
+                        deserunt mollit anim id est laborum.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="item text-center">
+                    <img
+                      src="img/client-02.jpg"
+                      alt="Something's wrong."
+                      class="center-block"
+                    />
+                    <div class="testimonial-caption">
+                      <h2>Daniela</h2>
+                      <h4><span> Software Engineeria, </span> Lorem ipsum</h4>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit, sed do eiusmod tempor incididunt ut labore et
+                        dolore magna aliqua. Ut enim ad minim veniam, quis
+                        nostrud exercitation ullamco laboris nisi ut aliquip ex
+                        ea commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu
+                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit
+                        anim id est laborum.Lorem ipsum dolor sit amet,
+                        consectetur adipisicing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad
+                        minim veniam, quis nostrud exercitation ullamco laboris
+                        nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                        dolor in reprehenderit in voluptate velit esse cillum
+                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                        cupidatat non proident, sunt in culpa qui officia
+                        deserunt mollit anim id est laborum.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="item text-center">
+                    <img
+                      src="img/client-03.jpg"
+                      alt="Something's wrong."
+                      class="center-block"
+                    />
+                    <div class="testimonial-caption">
+                      <h2>Pucyn Tomaszewski</h2>
+                      <h4><span> Software Engineer tez, </span> Lorem ipsum</h4>
+                      <p>
+                        Lorem consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut
+                        enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis
+                        aute irure dolor in reprehenderit in voluptate velit
+                        esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                        sint occaecat cupidatat non proident, sunt in culpa qui
+                        officia deserunt mollit anim id est laborum.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Features -->
+    <section class="features" id="features">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <div class="section-title wow fadeIn" data-wow-duration="2s">
+              <h2>Features</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="features-inner-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 wow fadeInLeft" data-wow-duration="1.5s">
+              <div class="left-feature-item">
+                <div class="left-feature-item-icon">
+                  <i class="fa fa-desktop"></i>
+                </div>
+                <h3>Lorem ipsum</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                  cupidatat non proident, sunt in culpa qui officia deserunt
+                  mollit anim id est laborum.
+                </p>
+              </div>
+              <div class="left-feature-item">
+                <div class="left-feature-item-icon">
+                  <i class="fa fa-mobile"></i>
+                </div>
+                <h3>Lorem ipsum</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                  cupidatat non proident, sunt in culpa qui officia deserunt
+                  mollit anim id est laborum.
+                </p>
+              </div>
+              <div class="left-feature-item">
+                <div class="left-feature-item-icon">
+                  <i class="fa fa-eye"></i>
+                </div>
+                <h3>Lorem ipsum</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                  cupidatat non proident, sunt in culpa qui officia deserunt
+                  mollit anim id est laborum.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="feature-img">
+                <img
+                  class="wow bounceIn"
+                  data-wow-duration="2s"
+                  src="img/header-img.png"
+                  alt="Something is wrong..."
+                />
+              </div>
+            </div>
+            <div class="col-md-4 wow fadeInRight" data-wow-duration="1s">
+              <div class="right-feature-item">
+                <div class="right-feature-item-icon">
+                  <i class="fa fa-certificate"></i>
+                </div>
+                <h3>Certificate Solution</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                  cupidatat non proident, sunt in culpa qui officia deserunt
+                  mollit anim id est laborum.
+                </p>
+              </div>
+              <div class="right-feature-item">
+                <div class="right-feature-item-icon">
+                  <i class="fa fa-rss">rss</i>
+                </div>
+                <h3>Certificate Solution</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                  cupidatat non proident, sunt in culpa qui officia deserunt
+                  mollit anim id est laborum.
+                </p>
+              </div>
+              <div class="right-feature-item">
+                <div class="right-feature-item-icon">
+                  <i class="fa fa-database"></i>
+                </div>
+                <h3>Certificate Solution</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                  cupidatat non proident, sunt in culpa qui officia deserunt
+                  mollit anim id est laborum.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Purchase Now-->
+    <section class="purchase-now">
+      <div class="container">
+        <div class="row wow fadeInLeftBig" data-wow-duration="1.5s">
+          <div class="col-md-9">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+          <div class="col-md-3">
+            <a href=""
+              ><button type="button" class="btn btn-purchase-now">
+                Get Now
+              </button></a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screens -->
+
+    <section class="screens" id="screens">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <div class="section-title">
+              <h2>Screens</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Counters-->
+    <section class="counter">
+      <div class="counter-overlay">
+        <div class="container wow bounceInLeft" data-wow-duration="1s">
+          <div class="row text-center">
+            <div class="col-md-3">
+              <div class="counter-item">
+                <div><i class="fa fa-cloud-download"></i></div>
+                <h2><span class="counter-num">1900</span><span>+</span></h2>
+                <p>Downloads</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="counter-item">
+                <div><i class="fa fa-gift"></i></div>
+                <h2><span class="counter-num">0</span><span>+</span></h2>
+                <p>Awards</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="counter-item">
+                <div><i class="fa fa-heart-o"></i></div>
+                <h2><span class="counter-num">0</span><span>+</span></h2>
+                <p>Likes</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="counter-item">
+                <div><i class="fa fa-check"></i></div>
+                <h2><span class="counter-num">0</span><span>+</span></h2>
+                <p>Recommended</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Download Now-->
+    <section class="download-now" id="download">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <div class="section-title">
+              <h2>Download Now</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-md-8 col-md-offset-2 wow fadeInUp"
+            data-wow-duration="1s"
+          >
+            <img src="img/header-img.png" alt="Something has gone wrong..." />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Available On -->
+    <section class="available-on">
+      <div class="container wow bounceInRight" data-wow-duration="1s">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="available-title">
+              <h2>Available Now</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="row">
+              <a href="#">
+                <div class="col-md-4 no-padding">
+                  <div class="available-on-item">
+                    <i class="fa fa-apple"></i>
+                    <div class="available-on-inner">
+                      <h2>iOS</h2>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a href="#">
+                <div class="col-md-4 no-padding">
+                  <div class="available-on-item">
+                    <i class="fa fa-android"></i>
+                    <div class="available-on-inner">
+                      <h2>ANDROID</h2>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a href="#">
+                <div class="col-md-4 no-padding">
+                  <div class="available-on-item">
+                    <i class="fa fa-windows"></i>
+                    <div class="available-on-inner">
+                      <h2>WINDOWS</h2>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Contact Us -->
+    <section class="contact-us" id="contact">
+      <div class="container wow bounceIn">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <div class="section-title">
+              <h2>Contact Us</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-us-form wow bounceIn">
+        <form role="form">
+          <div class="row">
+            <div class="col-md-4">
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                placeholder="Name"
+              />
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="Email"
+              />
+              <input
+                type="text"
+                class="form-control"
+                id="subject"
+                placeholder="Subject"
+              />
+            </div>
+            <div class="col-md-8">
+              <textarea
+                class="form-control"
+                id="message"
+                rows="15"
+                cols="8"
+                placeholder="Message Text..."
+              ></textarea>
+              <button
+                type="button"
+                class="btn btn-default submit-btn form_submit"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 wow bounceInLeft">
+            <div class="social-icons">
+              <ul>
+                <li>
+                  <a href="#"> <i class="fa fa-facebook"></i> </a>
+                </li>
+                <li>
+                  <a href="#"> <i class="fa fa-twitter"></i> </a>
+                </li>
+                <li>
+                  <a href="#"> <i class="fa fa-youtube-play"></i> </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div id="copyright">
+              <p>
+                Copyright &copy; 2019 <a href="#">- Liquet Investigations</a>
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="scroll-top">
+              <a href="#home" class="scroll-to-top">
+                <i class="fa fa-angle-up"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/jquery-3.3.1.js" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js" charset="utf-8"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/custom.js"></script>
+  </body>
+</html>

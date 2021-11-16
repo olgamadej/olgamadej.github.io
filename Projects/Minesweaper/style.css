@@ -1,0 +1,41 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: rgb(120, 154, 155);
+}
+.grid {
+  height: 30rem;
+  width: 30rem;
+  display: flex;
+  flex-wrap: wrap;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(120, 120, 120, 0.2),
+    rgba(202, 201, 201, 0.4)
+  );
+  backdrop-filter: blur(20px);
+}
+
+.grid div {
+  height: 3rem;
+  width: 3rem;
+}
+
+.mine {
+  background-color: black;
+  border-radius: 50%;
+  box-shadow: 0 0 15px 15px orange;
+}
+
+.checked {
+  background-image: linear-gradient(
+    to right top,
+    rgba(70, 103, 141, 0.6),
+    rgba(255, 255, 255, 0.6)
+  );
+  font-size: 1.8rem;
+  color: white;
+  text-align: center;
+}

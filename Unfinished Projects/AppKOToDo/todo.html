@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html" />
+    <title>To Do List</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="js/knockout-3.5.0.js"></script>
+    <script type="text/javascript" src="js/todo.js"></script>
+    <script src="js/storage.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <h1>My To Do List</h1>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <input type="text" placeholder="Task" data-bind="value: ToDoList.task.name"/>
+          <input type="text" placeholder="Description" data-bind="value: ToDoList.task.description"/>
+          Priority <select data-bind="value: ToDoList.task.priority">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+          <button class="btn btn-primary" data-bind="click: ToDoList.addTask">Add</button>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            Sort by
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-default"
+              data-bind="click: ToDoList.sortByPriority">priority</button>
+              <button type="button" class="btn btn-default"
+              data-bind="click: ToDoList.sortByName">name</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Description</th>
+            <th>Priority</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody data-bind="foreach: ToDoList.tasks">
+          <tr data-bind="css: {success: status() == 'complete'}">
+            <td data-bind="text: name"></td>
+            <td data-bind="text: description"></td>
+            <td data-bind="text: priority"></td>
+            <td>
+              <button class="btn btn-success" data-bind="visible: status() != 'complete', click: ToDoList.completeTask">Complete</button>
+              <button class="btn btn-light" data-bind="click: ToDoList.deleteTask">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
