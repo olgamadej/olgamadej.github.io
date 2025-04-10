@@ -19,7 +19,6 @@ body {
     padding: 0 2rem;
   }
 }
-
 h1,
 h2,
 h3 {
@@ -90,7 +89,6 @@ nav a {
   text-decoration: none;
   text-align: center;
   padding: 20px 0;
-  -webkit-transition: 1s;
   transition: 1s;
 }
 
@@ -126,8 +124,7 @@ nav a#toggle-btn {
   }
   nav a#toggle-btn:after {
     content: "|||";
-    -webkit-transform: rotate(-90deg);
-            transform: rotate(-90deg);
+    transform: rotate(-90deg);
     width: 40px;
     height: 40px;
     display: inline-block;
@@ -154,7 +151,6 @@ nav a#toggle-btn {
     zoom: 1;
   }
 }
-
 .section-1 {
   width: 100%;
   height: 100vh;
@@ -174,5 +170,4 @@ nav a#toggle-btn {
   .section-1 p {
     display: none;
   }
-}
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

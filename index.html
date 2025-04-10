@@ -10,11 +10,11 @@
       integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="scss/main.css" />
     <title>Welcome to my Portfolio</title>
   </head>
 
-  <body id="bg-img">
+  <body id="#bg-img">
     <header>
       <div class="menu-btn">
         <div class="btn-line"></div>
@@ -39,7 +39,29 @@
         </ul>
       </nav>
     </header>
-    <main id="home">
+    <main id="home" >
+      <!--Bubbles-->
+      <div class="gradient-bg">
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+            <feBlend in="SourceGraphic" in2="goo" />
+          </filter>
+        </defs>
+      </svg>
+      <div class="gradients-container">
+        <div class="g1"></div>
+        <div class="g2"></div>
+        <div class="g3"></div>
+        <div class="g4"></div>
+        <div class="g5"></div>
+        <div class="interactive"></div>
+      </div>
+      <!--Bubbles End-->
+    </div>
+    <div class="heading">
       <h1 class="lg-heading">
         <div class="letter text-white">O</div>
         <div class="letter text-white">l</div>
@@ -52,31 +74,36 @@
         <div class="letter text-secondary">n</div>
       </h1>
       <h2 class="sm-heading">
-        Web & App Developer | Designer
-        <div class="icons">
-          <a href="https://codepen.io/o1g" target="blank">
-            <i class="fab fa-codepen"></i>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/olga-khan-b118a4222/"
-            target="blank"
-          >
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://github.com/olgamadej" target="blank">
-            <i class="fab fa-github"></i>
-          </a>
-        </div>
+        <span class="sm-heading-wrapper">
+          Web & App Developer | Designer
+          <div class="icons">
+            <a href="https://codepen.io/o1g" target="blank">
+              <i class="fab fa-codepen"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/olga-khan-b118a4222/"
+              target="blank"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/olgamadej" target="blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </span>
       </h2>
 
       <div class="btn-front-container">
-        <a
-          href="https://olgamadej.github.io/work.html"
-          class="btn-dark btn-front"
-        >
-          <i class="fab fa-eye"></i>Projects
-        </a>
+        <div class="btn-front-wrapper">
+          <a
+            href="https://olgamadej.github.io/work.html"
+            class="btn-dark btn-front"
+          >
+            <i class="fab fa-eye"></i>Projects
+          </a>
+        </div>
       </div>
+    </div>
       <!--
       <div class="tile">
         <p>

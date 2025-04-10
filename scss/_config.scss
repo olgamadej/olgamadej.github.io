@@ -1,54 +1,20 @@
 $primary: rgb(47, 52, 71);
-$secondary: #4b80cf;
-$show-home-image: true;
-$home-image: url(../img/back.jpg);
+$secondary: rgb(75, 128, 207);
 $background-opacity: 0.9;
+$color-bg1: rgb(53, 50, 54);
+$color-bg2: rgb(18, 28, 70);
+$color1: rgb(104, 128, 162);
+$color2: rgb(128, 86, 138);
+$color3: rgb(3, 97, 126);
+$color4: rgb(200, 50, 50);
+$color5: rgb(171, 171, 130);
+$color-interactive: rgb(140, 100, 255);
+
+$circle-size: 80%;
+$blending: hard-light;
 
 @mixin easeOut {
   transition: all 0.5s ease-out;
-}
-
-@mixin background {
-  @if $show-home-image {
-    &#bg-img {
-      position: relative;
-      background: $home-image;
-      background-attachment: fixed;
-      background-size: cover;
-      height: 100vh;
-      background-position: 0 0;
-      background-repeat: repeat-x;
-      animation: animate 160s linear infinite;
-
-      &:after {
-        content: "";
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        background: rgba($primary, $background-opacity);
-      }
-    }
-  }
-  @keyframes animate {
-    0% {
-      background-position: 0 0;
-    }
-    25% {
-      background-position: 50% 0;
-    }
-    50% {
-      background-position: 100% 0;
-    }
-    75% {
-      background-position: 50% 0;
-    }
-    100% {
-      background-position: 0 0;
-    }
-  }
 }
 
 //Set Text Color
