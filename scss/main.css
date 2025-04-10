@@ -9,10 +9,9 @@
 }
 .menu-btn .btn-line {
   width: 28px;
-  height: 3px;
+  height: 1px;
   margin: 0 0 5px 0;
   background: #fff;
-  border-radius: 20%;
   transition: all 0.5s ease-out;
 }
 .menu-btn.close {
@@ -497,7 +496,8 @@ main#home h1 {
   }
   main .lg-heading {
     line-height: 1;
-    margin-bottom: 1rem;
+    font-size: 4rem;
+    margin-bottom: 1.4rem;
   }
   ul.menu-nav,
   div.menu-branding {

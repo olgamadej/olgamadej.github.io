@@ -8,10 +8,9 @@
 
   .btn-line {
     width: 28px;
-    height: 3px;
+    height: 1px;
     margin: 0 0 5px 0;
-    background: set-text-color($primary);
-    border-radius: 20%;
+    background: set-text-color(rgba($primary, 0.4));
     @include easeOut;
   }
 
