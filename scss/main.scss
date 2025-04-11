@@ -20,12 +20,13 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  position: absolute;
+  position: fixed;
   overflow: hidden;
   background: linear-gradient(40deg, $color-bg1, $color-bg2);
   top: 0;
   left: 0;
   z-index: -1;
+  pointer-events: none; // avoid clicking on the bubbles
 
   svg {
     position: fixed;
@@ -87,9 +88,7 @@ body {
     animation: moveInCircle 70s linear infinite;
 
     opacity: 1;
-  }
-
-  
+  }  
 }
 
 .heading {
@@ -186,6 +185,9 @@ header {
     letter-spacing: 3px;
     background-color: rgba(lighten($secondary, 1), 0.4);
     border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: 0.3s all ease-in-out;
 
     &:hover {
@@ -195,6 +197,10 @@ header {
       rgba(lighten($primary, 9), 0.1),
       rgba(darken(white, 1), 0.2)
       );
+    }
+
+    i {
+      vertical-align: middle;
     }
   }
 }
@@ -233,6 +239,14 @@ main {
     }
   }
 }
+
+main {
+  &#about {
+    position: relative;
+    z-index: 0;
+  }
+}
+
 .about-info {
   display: grid;
   grid-gap: 30px;

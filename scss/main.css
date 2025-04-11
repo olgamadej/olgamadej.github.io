@@ -8,9 +8,9 @@
   transition: all 0.5s ease-out;
 }
 .menu-btn .btn-line {
-  width: 28px;
-  height: 1px;
-  margin: 0 0 5px 0;
+  width: 3px;
+  height: 3px;
+  margin: 0 14px 5px 14px;
   background: #fff;
   transition: all 0.5s ease-out;
 }
@@ -18,13 +18,15 @@
   transform: rotate(180deg);
 }
 .menu-btn.close .btn-line:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  width: 27px;
+  transform: rotate(45deg) translate(4px, 9px);
 }
 .menu-btn.close .btn-line:nth-child(2) {
   opacity: 0;
 }
 .menu-btn.close .btn-line:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -6px);
+  width: 27px;
+  transform: rotate(-45deg) translate(1px, -7px);
 }
 
 .menu {
@@ -133,12 +135,13 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  position: absolute;
+  position: fixed;
   overflow: hidden;
   background: linear-gradient(40deg, rgb(53, 50, 54), rgb(18, 28, 70));
   top: 0;
   left: 0;
   z-index: -1;
+  pointer-events: none;
 }
 .gradient-bg svg {
   position: fixed;
@@ -286,11 +289,17 @@ header {
   letter-spacing: 3px;
   background-color: rgba(79, 131, 208, 0.4);
   border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: 0.3s all ease-in-out;
 }
 .btn-front-container .btn-front:hover {
   transform: scaleX(1.02) scaleY(1.08);
   background-image: linear-gradient(to bottom right, rgba(65, 72, 99, 0.1), rgba(252, 252, 252, 0.2));
+}
+.btn-front-container .btn-front i {
+  vertical-align: middle;
 }
 
 main {
@@ -321,6 +330,11 @@ main#home {
 }
 main#home h1 {
   margin-top: 20vh;
+}
+
+main#about {
+  position: relative;
+  z-index: 0;
 }
 
 .about-info {

@@ -7,9 +7,9 @@
   @include easeOut;
 
   .btn-line {
-    width: 28px;
-    height: 1px;
-    margin: 0 0 5px 0;
+    width: 3px;
+    height: 3px;
+    margin: 0 14px 5px 14px;
     background: set-text-color(rgba($primary, 0.4));
     @include easeOut;
   }
@@ -21,7 +21,8 @@
     .btn-line {
       // Line 1 - Rotate
       &:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
+        width: 27px;
+        transform: rotate(45deg) translate(4px, 9px);
       }
       // Line 2 - Hide
       &:nth-child(2) {
@@ -31,7 +32,8 @@
       // Line 3 - Rotate
 
       &:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
+        width: 27px;
+        transform: rotate(-45deg) translate(1px, -7px);
       }
     }
   }
