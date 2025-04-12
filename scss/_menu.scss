@@ -21,8 +21,8 @@
     .btn-line {
       // Line 1 - Rotate
       &:nth-child(1) {
-        width: 27px;
-        transform: rotate(45deg) translate(4px, 9px);
+        width: 24px;
+        transform: rotate(45deg) translate(6px, 6px);
       }
       // Line 2 - Hide
       &:nth-child(2) {
@@ -32,8 +32,8 @@
       // Line 3 - Rotate
 
       &:nth-child(3) {
-        width: 27px;
-        transform: rotate(-45deg) translate(1px, -7px);
+        width: 24px;
+        transform: rotate(-45deg) translate(5px, -5px);
       }
     }
   }
@@ -80,6 +80,7 @@
 
   &-branding {
     background: $primary;
+    padding: 1rem;
     transform: translate(0, 100%);
     @include easeOut;
 
@@ -89,8 +90,8 @@
     }
 
     .portrait {
-      width: 250px;
-      height: 250px;
+      width: 150px;
+      height: 150px;
       background: url("../img/portret.jpg");
       background-size: cover;
       border-radius: 50%;

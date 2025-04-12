@@ -12,13 +12,51 @@
 //Tablets & Small Laptops
 @include mediaMd {
   main {
-    align-items: center;
-    text-align: center;
+    &#about {
+      align-items: center;
+      text-align: center;
 
-    .lg-heading {
-      line-height: 1;
-      font-size: 4rem;
-      margin-bottom: 1.4rem;
+      .content-container {
+
+        .lg-heading {
+          line-height: 1;
+          font-size: 4rem;
+          margin-bottom: 1.4rem;
+        }
+
+        .about-info {
+          grid-template-areas:
+            "bioimage"
+            "bio"
+            "job1"
+            "job2"
+            "job3";
+      
+          grid-template-columns: 1fr;
+          gap: 0rem;
+
+          .bio-image {
+            margin-top: 2rem;
+            grid-area: bioimage;
+          }
+          .bio {
+            grid-area: bio;
+          }
+          .job-1 {
+            grid-area: job1;
+          }
+          .job-2 {
+            grid-area: job2;
+          }
+          .job-3 {
+            grid-area: job3;
+          }
+        }
+        
+        
+      }
+
+    
     }
   }
 
@@ -42,35 +80,11 @@
     transform: translate(100%, 0);
 
     .portrait {
-      width: 150px;
-      height: 150px;
+      width: 100px;
+      height: 100px;
     }
   }
-  .about-info {
-    grid-template-areas:
-      "bioimage"
-      "bio"
-      "job1"
-      "job2"
-      "job3";
-
-    grid-template-columns: 1fr;
-  }
-  .bio-image {
-    grid-area: bioimage;
-  }
-  .bio {
-    grid-area: bio;
-  }
-  .job-1 {
-    grid-area: job1;
-  }
-  .job-2 {
-    grid-area: job2;
-  }
-  .job-3 {
-    grid-area: job3;
-  }
+  
 
   .projects {
     grid-template-columns: repeat(2, 1fr);
@@ -84,9 +98,22 @@
     padding: 2rem;
 
     .lg-heading {
-      font-size: 2.5rem;
+      font-size: 3.3rem;
+      margin-bottom: 3rem;
+    }
+    .sm-heading {
+      font-size: 1.2rem;
+      i {
+        width: 32px;
+      }
     }
   }
+
+  .portrait {
+    width: 60px;
+    height: 60px;
+  }
+
   main#home h1 {
     margin-top: 10vh;
   }

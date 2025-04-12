@@ -1,5 +1,5 @@
 $primary: rgb(47, 52, 71);
-$secondary: rgb(75, 128, 207);
+$secondary: rgb(71, 140, 244);
 $background-opacity: 0.9;
 $color-bg1: rgb(53, 50, 54);
 $color-bg2: rgb(18, 28, 70);
@@ -33,12 +33,12 @@ $blending: hard-light;
   }
 }
 @mixin mediaMd {
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 898px) {
     @content;
   }
 }
 @mixin mediaLg {
-  @media screen and (min-width: 769px) and (max-width: 1170px) {
+  @media screen and (min-width: 899px) and (max-width: 1170px) {
     @content;
   }
 }
