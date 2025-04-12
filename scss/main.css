@@ -591,10 +591,10 @@ main#about .content-container .about-info .job-3 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   main {
     overflow: hidden;
-    padding: 2rem;
+    padding: 0rem;
   }
   main .lg-heading {
     font-size: 3.3rem;
@@ -605,6 +605,17 @@ main#about .content-container .about-info .job-3 {
   }
   main .sm-heading i {
     width: 32px;
+  }
+  main#about {
+    padding: 0;
+  }
+  main#about .content-container {
+    padding: 1rem 1.5rem;
+  }
+  main#about .content-container .lg-heading {
+    font-size: 2.3rem;
+    letter-spacing: 11px;
+    margin-top: 0.5rem;
   }
   .portrait {
     width: 60px;

@@ -95,7 +95,7 @@
 @include mediaSm {
   main {
     overflow: hidden;
-    padding: 2rem;
+    padding: 0rem;
 
     .lg-heading {
       font-size: 3.3rem;
@@ -105,6 +105,20 @@
       font-size: 1.2rem;
       i {
         width: 32px;
+      }
+    }
+  }
+
+  main {
+    &#about {
+      padding: 0;
+      .content-container{
+        padding: 1rem 1.5rem;
+        .lg-heading{
+          font-size: 2.3rem;
+          letter-spacing: 11px;
+          margin-top: 0.5rem;
+        }
       }
     }
   }
