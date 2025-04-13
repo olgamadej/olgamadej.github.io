@@ -331,6 +331,12 @@ main {
 
 
 //Work/Projects
+
+main {
+  &#work {
+    padding: 1rem 3rem;
+
+    
 .projects {
   display: grid;
   grid-gap: 0.7rem;
@@ -341,6 +347,7 @@ main {
     transform: translateY(20px);
     transform: scale(1.2);
     transition: 0.7s all ease-in-out;
+    padding-bottom: 0.9rem;
   }
 
   .appearing-project {
@@ -369,7 +376,10 @@ main {
   }
 }
 
-//Contact Page
+  }
+}
+
+// Contact Page
 .boxes {
   display: flex;
   flex-wrap: wrap;
