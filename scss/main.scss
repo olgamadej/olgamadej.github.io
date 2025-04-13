@@ -1,5 +1,6 @@
 @import "config"; /* imports the _config.scss file*/
 @import "menu";
+@import url('https://fonts.googleapis.com/css?family=Dosis:200,400');
 
 * {
   box-sizing: border-box;
@@ -334,9 +335,32 @@ main {
   &#work {
     padding: 1rem 3rem;
 
+    .lg-heading {
+      font-family: 'Dosis', Calibri, sans-serif;
+    }
+
+    .neon-heading.first {
+      font-weight: 200;
+      text-shadow: 0px 0px 3px #dbd402,
+                0px 0px 5px #0033ff,
+                0px 0px 8px #c2bc003f,
+                0px 0px 10px #eeeca0ef,
+                0px 0px 13px #9D00FF,
+                0px 0px 10px rgba(0, 0, 255, 0.733);
+      
+      span.flickering-1 {
+        animation: flickering-1 6s infinite;
+      }
+
+      span.flickering-3 {
+        animation: flickering-3 5s infinite;
+      }
+    }
+
     .sm-heading {
-      padding-left: 1rem;
-      padding-right: 1rem;
+      font-family: 'Dosis', Calibri, sans-serif;
+      letter-spacing: 2px;
+      font-weight: 200;
       margin-bottom: 1.5rem;
     }
     .projects {
@@ -487,7 +511,25 @@ main {
   }
 }
 
+@keyframes flickering-1 {
+  0% {opacity: 1;}
+  52% {opacity: 1;}
+  55% {opacity: 0;}
+  56% {opacity: 1;}
+  100% {opacity: 1;}
+}
 
+@keyframes flickering-3 {
+  0% {opacity: 1;}
+  82% {opacity: 1;}
+  84% {opacity: 0;}
+  85% {opacity: 1;}
+  87% {opacity: 0;}
+  88% {opacity: 1;}
+  90% {opacity: 0;}
+  91% {opacity: 1;}
+  100% {opacity: 1;}
+}
 
 
 @import "mobile";
