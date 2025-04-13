@@ -85,10 +85,15 @@
     }
   }
   
-
-  .projects {
-    grid-template-columns: repeat(2, 1fr);
+  main {
+    &#work {
+      .projects {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
   }
+
+  
 }
 
 //Smartphones
@@ -117,7 +122,7 @@
         .lg-heading{
           font-size: 2.3rem;
           letter-spacing: 11px;
-          margin-top: 0.5rem;
+          margin-top: 0.8srem;
         }
       }
     }
@@ -132,7 +137,11 @@
     margin-top: 10vh;
   }
 
-  .projects {
-    grid-template-columns: 1fr;
+  main {
+    &#work {
+      .projects {
+        grid-template-columns: 1fr;
+      }
+    }
   }
 }

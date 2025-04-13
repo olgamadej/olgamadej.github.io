@@ -348,12 +348,14 @@ main {
     transform: scale(1.2);
     transition: 0.7s all ease-in-out;
     padding-bottom: 0.9rem;
+    z-index: -10;
   }
 
   .appearing-project {
     opacity: 1;
     transform: translateY(0px);
     transform: scale(1);
+    z-index: 100;
   }
 
   img {
@@ -477,6 +479,7 @@ main {
     transform: translateX(-50%) translateY(-10%);
   }
 }
+
 
 
 
