@@ -34,7 +34,7 @@ function toggleMenu() {
 //Appearing Projects
 function Appear(){
   var projects = document.querySelectorAll('.project');
-  var screenPosition = window.innerHeight/2;
+  var screenPosition = window.innerHeight/1.2;
 
   projects.forEach(project => {
     var projectPosition = project.getBoundingClientRect().top;
