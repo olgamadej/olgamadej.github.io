@@ -413,14 +413,19 @@ main#work {
 main#work .lg-heading {
   font-family: "Dosis", Calibri, sans-serif;
 }
-main#work .neon-heading.first {
+main#work .neon-heading {
   font-weight: 200;
+}
+main#work .neon-heading.first {
   text-shadow: 0px 0px 3px #dbd402, 0px 0px 5px #0033ff, 0px 0px 8px rgba(194, 188, 0, 0.2470588235), 0px 0px 10px rgba(238, 236, 160, 0.937254902), 0px 0px 13px #9D00FF, 0px 0px 10px rgba(0, 0, 255, 0.733);
 }
-main#work .neon-heading.first span.flickering-1 {
+main#work .neon-heading.second {
+  text-shadow: 0px 0px 3px #dbd402, 0px 0px 5px rgba(255, 157, 0, 0.7529411765), 0px 0px 8px rgba(194, 188, 0, 0.2470588235), 0px 0px 10px rgba(225, 153, 115, 0.937254902), 0px 0px 13px rgba(0, 200, 255, 0.6980392157), 0px 0px 10px rgba(0, 0, 255, 0.733);
+}
+main#work .neon-heading span.flickering-1 {
   animation: flickering-1 6s infinite;
 }
-main#work .neon-heading.first span.flickering-3 {
+main#work .neon-heading span.flickering-3 {
   animation: flickering-3 5s infinite;
 }
 main#work .sm-heading {
