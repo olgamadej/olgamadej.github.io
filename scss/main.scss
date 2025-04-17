@@ -13,7 +13,7 @@ html, body {
 }
 
 body {
-  color: set-text-color($dark);
+  color: set-text-color($color-bg1);
   position: relative;
   height: 100%;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -108,7 +108,10 @@ h3 {
 
   &.lg-heading {
     display: flex;
-    font-size: 6rem;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 4rem;
+    font-weight: 300;
     z-index: 100;
 
     div:hover {
@@ -158,6 +161,7 @@ header {
 
 .text-secondary {
   color: $secondary;
+  text-shadow: 0px 0px 2px $dark;
   @include easeOut;
   &:hover {
     color: #111;
@@ -174,7 +178,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba($secondary, 0.4);
+    border: 1px solid rgba(white, 0.4);
     padding: 0.2rem;
     transition: 0.3s all ease-in-out;
 
@@ -263,7 +267,8 @@ main {
       padding: 2rem 5rem;
 
       .lg-heading {
-        font-size: 3.5rem;
+        font-size: 1rem;
+        font-weight: 200;
         letter-spacing: 15px;
         padding-left: 0.7rem;
       }
@@ -339,7 +344,7 @@ main {
       font-family: 'Dosis', Calibri, sans-serif;
       
       .letter {
-        text-shadow: 1px 1px $primary;
+        text-shadow: 0px 0px 2px $primary;
       }
     }
 
@@ -438,9 +443,9 @@ main {
 
 .btn-dark {
   @extend .btn;
-  background: rgba(darken($primary, 12), 0.6);
+  background: rgba(darken($secondary, 8), 0.8);
   margin: 0 3rem;
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   letter-spacing: 2px;
   transform: translateY(-0.8rem);
 }
