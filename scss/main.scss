@@ -13,7 +13,7 @@ html, body {
 }
 
 body {
-  color: set-text-color($primary);
+  color: set-text-color($dark);
   position: relative;
   height: 100%;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -59,9 +59,9 @@ body {
     left: calc(50% - $circle-size / 2);
 
     transform-origin: center center;
-    animation: moveVertical 20s ease infinite;
+    animation: moveVertical 40s ease infinite;
 
-    opacity: 1;
+    opacity: 0.5;
   }
 
   .g2 {
@@ -75,9 +75,9 @@ body {
     left: calc(50% - $circle-size / 2);
 
     transform-origin: calc(50% - 400px);
-    animation: moveInCircle 35s reverse infinite;
+    animation: moveInCircle 70s reverse infinite;
 
-    opacity: 1;
+    opacity: 0.5;
   }
 
   .g3 {
@@ -91,9 +91,9 @@ body {
     left: calc(50% - $circle-size / 2 - 500px);
 
     transform-origin: calc(50% + 400px);
-    animation: moveInCircle 70s linear infinite;
+    animation: moveInCircle 90s linear infinite;
 
-    opacity: 1;
+    opacity: 0.5;
   }  
 }
 
@@ -146,7 +146,7 @@ h3 {
 }
 
 a {
-  color: #fff;
+  color: #111;
   text-decoration: none;
 }
 
@@ -160,7 +160,7 @@ header {
   color: $secondary;
   @include easeOut;
   &:hover {
-    color: #fff;
+    color: #111;
   }
 }
 
@@ -337,39 +337,13 @@ main {
 
     .lg-heading {
       font-family: 'Dosis', Calibri, sans-serif;
-    }
-
-    .neon-heading {
-      font-weight: 200;
-
-      &.first {
-      text-shadow: 0px 0px 3px #dbd402,
-                0px 0px 5px #0033ff,
-                0px 0px 8px #c2bc003f,
-                0px 0px 10px #eeeca0ef,
-                0px 0px 13px #9D00FF,
-                0px 0px 10px rgba(0, 0, 255, 0.733);
-      }
-
-      &.second {
-          text-shadow: 0px 0px 3px #dbd402,
-                    0px 0px 5px #ff9d00c0,
-                    0px 0px 8px #c2bc003f,
-                    0px 0px 10px #e19973ef,
-                    0px 0px 13px #00c8ffb2,
-                    0px 0px 10px rgba(0, 0, 255, 0.733);
-          
-      }
       
-      span.flickering-1 {
-        animation: flickering-1 6s infinite;
-      }
-
-      span.flickering-3 {
-        animation: flickering-3 5s infinite;
+      .letter {
+        text-shadow: 1px 1px $primary;
       }
     }
 
+    
     .sm-heading {
       font-family: 'Dosis', Calibri, sans-serif;
       letter-spacing: 2px;
@@ -523,26 +497,5 @@ main {
     transform: translateX(-50%) translateY(-10%);
   }
 }
-
-@keyframes flickering-1 {
-  0% {opacity: 1;}
-  52% {opacity: 1;}
-  55% {opacity: 0;}
-  56% {opacity: 1;}
-  100% {opacity: 1;}
-}
-
-@keyframes flickering-3 {
-  0% {opacity: 1;}
-  82% {opacity: 1;}
-  84% {opacity: 0;}
-  85% {opacity: 1;}
-  87% {opacity: 0;}
-  88% {opacity: 1;}
-  90% {opacity: 0;}
-  91% {opacity: 1;}
-  100% {opacity: 1;}
-}
-
 
 @import "mobile";
