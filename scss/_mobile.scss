@@ -180,7 +180,19 @@
     }
   }
 
-  
+  .page-wrapper {
+    main {
+      &#contact {
+        padding: 4rem;
+        .boxes {
+          div {
+            font-size: 1.6rem;
+            padding: 1rem 2.5rem;
+          }
+        }
+      }
+    }
+  }  
 }
 
 //Smartphones
@@ -252,4 +264,19 @@
       }
     }
   }
+
+  .page-wrapper {
+    main {
+      &#contact {
+        padding: 1rem;
+        .boxes {
+          div {
+            font-size: 1rem;
+            padding: 1rem 1.5rem;
+          }
+        }
+      }
+    }
+  }
+  
 }

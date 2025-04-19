@@ -450,36 +450,40 @@ main {
         width: 100%;
         padding: 1rem;
       }
+      .boxes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 3rem;
+      
+        div {
+          font-size: 2rem;
+          background: lighten($secondary, 9);
+          border: 3px darken($secondary, 18) solid;
+          padding: 1.5rem 2.5rem;
+          margin-bottom: 3rem;
+          @include easeOut;
+      
+          &:hover {
+            padding: 2rem 3rem;
+            background: darken($primary, 7);
+            color: set-text-color($primary);
+            span {
+              color: set-text-color($primary);
+            }
+          }
+          .text-secondary {
+            color: $dark;
+          }
+        }
+      }
+      
     }
     
   }
 }
 
-.boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 3rem;
-
-  div {
-    font-size: 2rem;
-    background: lighten($primary, 9);
-    border: 3px lighten($primary, 18) solid;
-    padding: 1.5rem 2.5rem;
-    margin-bottom: 3rem;
-    @include easeOut;
-
-    &:hover {
-      padding: 2rem 3rem;
-      background: darken($primary, 7);
-      color: set-text-color($primary);
-      span {
-        color: set-text-color($primary);
-      }
-    }
-  }
-}
 
 //Button Styles
 .btn {
