@@ -3,10 +3,44 @@
   .projects {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  main {
+    &#about {
+      .content-container {
+        .about-info {
+          grid-template-areas: 
+            "bio bio bio bio job3 job3"
+            "bio bio bio bio job3 job3"
+            "job1 job1 job1 job2 job2 job2"
+
+            ;
+          grid-template-columns: repeat(6, 1fr);
+
+          .job-3 {
+            margin-top: 2rem;
+            padding: 3rem;
+          }
+        }
+      }
+    }
+  }
 }
 
 //Desktops & Laptops
 @include mediaLg {
+  main {
+    &#about {
+      .content-container {
+        .about-info {
+          grid-template-areas: 
+            "bio bio"
+            "job3 job3"
+            "job1 job2";
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    }
+  }
 }
 
 //Small Laptops & Tablets
@@ -23,6 +57,22 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+    }
+  }
+  main {
+    &#about {
+      align-items: center;
+      text-align: center;
+      .content-container {
+        .about-info {
+          grid-template-areas: 
+            "bio bio"
+            "job3 job3"
+            "job1 job2";
+          grid-template-columns: repeat(2, 1fr);
+
+        }
+      }
     }
   }
 }
@@ -181,6 +231,7 @@
           letter-spacing: 11px;
           margin-top: 0.8srem;
         }
+        
       }
     }
   }

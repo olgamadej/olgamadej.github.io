@@ -166,16 +166,20 @@ h3 {
   &.sm-heading {
     margin: 0.4rem;
     padding: 0.2rem;
-    width: 50%;
+    width: 60%;
     background-color: rgba(lighten($color-bg2, 9), 1);
     border-radius: 3px;
     backdrop-filter: blur(0.4rem);
+    z-index: 1;
 
     .sm-heading-wrapper {
+      height: 100%;
       display: flex;
       flex-direction: column;
+      align-items: center;
       padding: 0.4rem 0.8rem;
       border: 1px solid rgba(255, 255, 255, 0.229);
+      z-index: 1;
     }
   }
 }
@@ -199,7 +203,7 @@ a {
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  width: 50%;
+  width: 40%;
 
   .btn-front-wrapper {
     display: flex;
@@ -305,23 +309,30 @@ main {
         font-optical-sizing: auto;
         font-weight: 300;
         font-size: 1rem;
+        width: 100%;
+        .sm-heading-wrapper {
+          align-items:flex-start;
+        }
       }
 
       .about-info {
         display: grid;
         grid-gap: 50px;
         grid-template-areas:
-          "bioimage bio bio"
+          "bio bio bio"
           "job1 job2 job3";
         grid-template-columns: repeat(3, 1fr);
 
         .bio {
           grid-area: bio;
-          font-size: 0.9rem;
-          letter-spacing: 1.5px;
-          line-height: 1.5rem;
+          font-size: 1.2rem;
+          letter-spacing: 2px;
+          line-height: 1.9rem;
           padding-top: 2rem;
           margin-bottom: 2rem;
+          .bio-title {
+            font-size: 1.5rem;
+          }
           }
 
         .job {

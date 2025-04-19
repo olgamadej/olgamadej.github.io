@@ -1,6 +1,6 @@
 .menu-btn {
   position: absolute;
-  z-index: 3;
+  z-index: 300;
   right: 35px;
   top: 35px;
   cursor: pointer;
@@ -47,9 +47,11 @@
   width: 100%;
   opacity: 0.94;
   visibility: hidden;
+  z-index: 200;
 
   &.show {
     visibility: visible;
+    z-index: 200;
   }
 
   &-branding,
@@ -101,11 +103,14 @@
 
   .nav-item {
     transform: translate(600px, 0);
+    background: lighten($primary, 19);
+    opacity: 1;
     @include easeOut;
 
     &.show {
       //Slide in from right
       transform: translate(0, 0);
+      opacity: 1;
     }
 
     &.current > a {
