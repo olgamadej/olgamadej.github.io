@@ -391,6 +391,10 @@ main {
       letter-spacing: 2px;
       font-weight: 200;
       margin-bottom: 1.5rem;
+      width: 100%;
+      .sm-heading-wrapper {
+        align-items: flex-start;
+      }
     }
     .projects {
       display: grid;
@@ -438,6 +442,19 @@ main {
 }
 
 // Contact Page
+.page-wrapper {
+  main {
+    &#contact {
+      padding: 5rem;
+      .sm-heading {
+        width: 100%;
+        padding: 1rem;
+      }
+    }
+    
+  }
+}
+
 .boxes {
   display: flex;
   flex-wrap: wrap;

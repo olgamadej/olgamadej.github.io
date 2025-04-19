@@ -474,6 +474,10 @@ main#work .sm-heading {
   letter-spacing: 2px;
   font-weight: 200;
   margin-bottom: 1.5rem;
+  width: 100%;
+}
+main#work .sm-heading .sm-heading-wrapper {
+  align-items: flex-start;
 }
 main#work .projects {
   display: grid;
@@ -510,6 +514,14 @@ main#work .projects embed {
 }
 main#work .projects a {
   text-align: center;
+}
+
+.page-wrapper main#contact {
+  padding: 5rem;
+}
+.page-wrapper main#contact .sm-heading {
+  width: 100%;
+  padding: 1rem;
 }
 
 .boxes {
