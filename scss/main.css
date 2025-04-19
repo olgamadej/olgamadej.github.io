@@ -532,8 +532,8 @@ main#work .projects a {
 }
 .page-wrapper main#contact .boxes div {
   font-size: 2rem;
-  background: #d6dde6;
-  border: 3px #8195b1 solid;
+  background: #dbdbdb;
+  border: 3px #969696 solid;
   padding: 1.5rem 2.5rem;
   margin-bottom: 3rem;
   transition: all 0.5s ease-out;

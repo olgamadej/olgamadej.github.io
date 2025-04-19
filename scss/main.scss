@@ -459,8 +459,9 @@ main {
       
         div {
           font-size: 2rem;
-          background: lighten($secondary, 9);
-          border: 3px darken($secondary, 18) solid;
+
+          background: lighten($color-bg2, 9);
+          border: 3px darken($color-bg2, 18) solid;
           padding: 1.5rem 2.5rem;
           margin-bottom: 3rem;
           @include easeOut;
