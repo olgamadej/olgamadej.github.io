@@ -62,7 +62,7 @@
   transform: translate(0, 0);
 }
 .menu-branding {
-  background: #e4e2de;
+  background: #e0e0e0;
   padding: 1rem;
   transform: translate(0, 100%);
   transition: all 0.5s ease-out;
@@ -144,7 +144,7 @@ body {
   padding: 0;
   position: fixed;
   overflow: hidden;
-  background: linear-gradient(40deg, rgb(217, 214, 208), rgb(196, 196, 196));
+  background: linear-gradient(40deg, rgb(211, 211, 211), rgb(196, 196, 196));
   top: 0;
   left: 0;
   z-index: -1;
@@ -164,7 +164,7 @@ body {
 }
 .gradient-bg .g1 {
   position: absolute;
-  background: radial-gradient(circle at center, rgba(104, 128, 162, 0.8) 0, rgba(104, 128, 162, 0) 50%) no-repeat;
+  background: radial-gradient(circle at center, rgba(172, 208, 255, 0.8) 0, rgba(172, 208, 255, 0) 50%) no-repeat;
   mix-blend-mode: hard-light;
   width: 80%;
   height: 80%;
@@ -188,7 +188,7 @@ body {
 }
 .gradient-bg .g3 {
   position: absolute;
-  background: radial-gradient(circle at center, rgba(192, 138, 120, 0.8) 0, rgba(192, 138, 120, 0) 50%) no-repeat;
+  background: radial-gradient(circle at center, rgba(211, 169, 154, 0.8) 0, rgba(211, 169, 154, 0) 50%) no-repeat;
   mix-blend-mode: hard-light;
   width: calc(80% + 100px);
   height: 80%;
@@ -199,8 +199,18 @@ body {
   opacity: 0.5;
 }
 
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
 .heading {
-  padding: 4rem;
+  padding: 0rem 4rem;
+}
+.heading .sm-heading-container {
+  display: flex;
+  flex-direction: row;
 }
 
 h1,
@@ -236,12 +246,41 @@ h3.lg-heading div {
   backface-visibility: hidden;
   transition: all 0.5s ease-out;
 }
+h1.lg-heading-subtitle,
+h2.lg-heading-subtitle,
+h3.lg-heading-subtitle {
+  font-size: 2.5rem;
+  padding: 2rem;
+  letter-spacing: 5px;
+  cursor: default;
+}
+h1.lg-heading-subtitle span,
+h2.lg-heading-subtitle span,
+h3.lg-heading-subtitle span {
+  white-space: nowrap;
+}
+h1.lg-heading-subtitle .inline-letter-white,
+h2.lg-heading-subtitle .inline-letter-white,
+h3.lg-heading-subtitle .inline-letter-white {
+  display: inline-block;
+  letter-spacing: 12px;
+  transition: all 0.5s ease-out;
+}
+h1.lg-heading-subtitle .inline-letter-white.inline-letter-white:hover,
+h2.lg-heading-subtitle .inline-letter-white.inline-letter-white:hover,
+h3.lg-heading-subtitle .inline-letter-white.inline-letter-white:hover {
+  letter-spacing: 15px;
+  font-weight: 400;
+  color: #565f81;
+  transition: all 0.5s ease-out;
+}
 h1.sm-heading,
 h2.sm-heading,
 h3.sm-heading {
   margin: 0.4rem;
   padding: 0.2rem;
-  background-image: linear-gradient(to bottom right, rgba(65, 72, 99, 0.1), rgba(252, 252, 252, 0.2));
+  width: 50%;
+  background-color: #dbdbdb;
   border-radius: 3px;
   -webkit-backdrop-filter: blur(0.4rem);
           backdrop-filter: blur(0.4rem);
@@ -250,7 +289,7 @@ h1.sm-heading .sm-heading-wrapper,
 h2.sm-heading .sm-heading-wrapper,
 h3.sm-heading .sm-heading-wrapper {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   padding: 0.4rem 0.8rem;
   border: 1px solid rgba(255, 255, 255, 0.229);
 }
@@ -258,12 +297,6 @@ h3.sm-heading .sm-heading-wrapper {
 a {
   color: #111;
   text-decoration: none;
-}
-
-header {
-  position: fixed;
-  z-index: 2;
-  width: 100%;
 }
 
 .text-secondary {
@@ -279,7 +312,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3rem;
+  padding: 2rem;
+  width: 50%;
 }
 .btn-front-container .btn-front-wrapper {
   display: flex;
@@ -341,7 +375,7 @@ main#home {
   padding: 0;
 }
 main#home h1 {
-  margin-top: 20vh;
+  margin-top: 8vh;
 }
 
 .page-wrapper {
@@ -360,24 +394,22 @@ main#about .content-container {
   padding: 2rem 5rem;
 }
 main#about .content-container .lg-heading {
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: 200;
   letter-spacing: 15px;
   padding-left: 0.7rem;
+}
+main#about .content-container .sm-heading {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-size: 1rem;
 }
 main#about .content-container .about-info {
   display: grid;
   grid-gap: 50px;
   grid-template-areas: "bioimage bio bio" "job1 job2 job3";
   grid-template-columns: repeat(3, 1fr);
-}
-main#about .content-container .about-info .bio-image {
-  grid-area: bioimage;
-  margin: auto;
-  border-radius: 50%;
-  border: #565f81 3px solid;
-  width: 250px;
-  height: 250px;
 }
 main#about .content-container .about-info .bio {
   grid-area: bio;
@@ -562,7 +594,38 @@ main#work .projects a {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-@media screen and (max-width: 898px) {
+@media screen and (max-width: 998px) {
+  main .lg-heading {
+    font-size: 2.5rem;
+  }
+  main .lg-heading-subtitle {
+    font-size: 2rem;
+  }
+  main .sm-heading-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 798px) {
+  main {
+    overflow: hidden;
+    padding: 0rem;
+  }
+  main .lg-heading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  main .lg-heading-subtitle {
+    font-size: 1.5rem;
+  }
+  main .sm-heading {
+    font-size: 1.2rem;
+  }
+  main .sm-heading i {
+    width: 32px;
+  }
   main#about {
     align-items: center;
     text-align: center;
@@ -625,15 +688,33 @@ main#work .projects a {
     overflow: hidden;
     padding: 0rem;
   }
-  main .lg-heading {
-    font-size: 3.3rem;
-    margin-bottom: 3rem;
+  main .heading {
+    margin: 0;
+    padding: 0 1rem;
   }
-  main .sm-heading {
-    font-size: 1.2rem;
+  main .heading .lg-heading {
+    font-size: 2rem;
   }
-  main .sm-heading i {
+  main .heading .lg-heading-subtitle {
+    font-size: 1rem;
+    padding-top: 0rem;
+    padding: 0.5rem;
+  }
+  main .heading .sm-heading-container {
+    display: flex;
+    flex-direction: column;
+  }
+  main .heading .sm-heading-container .sm-heading {
+    margin: auto;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    width: 80%;
+  }
+  main .heading .sm-heading-container .sm-heading i {
     width: 32px;
+  }
+  main .heading .sm-heading-container .btn-front-container {
+    width: 100%;
   }
   main#about {
     padding: 0;

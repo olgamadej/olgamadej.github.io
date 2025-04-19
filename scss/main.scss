@@ -97,9 +97,21 @@ body {
   }  
 }
 
-.heading {
-  padding: 4rem;
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
 }
+
+.heading {
+  padding: 0rem 4rem;
+
+  .sm-heading-container {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
 h1,
 h2,
 h3 {
@@ -127,21 +139,41 @@ h3 {
     }
   }
 
+  &.lg-heading-subtitle {
+    font-size: 2.5rem;
+    padding: 2rem;  
+    letter-spacing: 5px;
+    cursor: default;
+     span {
+      white-space: nowrap;
+     }
+
+    .inline-letter-white {
+      display: inline-block;
+      letter-spacing: 12px;
+      @include easeOut;
+
+      &.inline-letter-white:hover {
+        letter-spacing: 15px;
+        font-weight: 400;
+        color: lighten($primary, 19);
+        @include easeOut;
+      }
+    }
+    
+  }
+
   &.sm-heading {
     margin: 0.4rem;
     padding: 0.2rem;
-
-    background-image: linear-gradient(
-      to bottom right,
-      rgba(lighten($primary, 9), 0.1),
-      rgba(darken(white, 1), 0.2)
-    );
+    width: 50%;
+    background-color: rgba(lighten($color-bg2, 9), 1);
     border-radius: 3px;
     backdrop-filter: blur(0.4rem);
 
     .sm-heading-wrapper {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       padding: 0.4rem 0.8rem;
       border: 1px solid rgba(255, 255, 255, 0.229);
     }
@@ -151,12 +183,6 @@ h3 {
 a {
   color: #111;
   text-decoration: none;
-}
-
-header {
-  position: fixed;
-  z-index: 2;
-  width: 100%;
 }
 
 .text-secondary {
@@ -172,7 +198,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3rem;
+  padding: 2rem;
+  width: 50%;
 
   .btn-front-wrapper {
     display: flex;
@@ -246,7 +273,7 @@ main {
     margin: 0;
     padding: 0;
     h1 {
-      margin-top: 20vh;
+      margin-top: 8vh;
     }
   }
 }
@@ -267,10 +294,17 @@ main {
       padding: 2rem 5rem;
 
       .lg-heading {
-        font-size: 1rem;
+        font-size: 2rem;
         font-weight: 200;
         letter-spacing: 15px;
         padding-left: 0.7rem;
+      }
+
+      .sm-heading {
+        font-family: "Raleway", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 300;
+        font-size: 1rem;
       }
 
       .about-info {
@@ -281,14 +315,6 @@ main {
           "job1 job2 job3";
         grid-template-columns: repeat(3, 1fr);
 
-        .bio-image {
-          grid-area: bioimage;
-          margin: auto;
-          border-radius: 50%;
-          border: lighten($primary, 19) 3px solid;
-          width: 250px;
-          height: 250px;
-        }
         .bio {
           grid-area: bio;
           font-size: 0.9rem;
@@ -296,7 +322,7 @@ main {
           line-height: 1.5rem;
           padding-top: 2rem;
           margin-bottom: 2rem;
-        }
+          }
 
         .job {
           padding: 1rem 1.5rem;

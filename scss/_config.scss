@@ -2,11 +2,11 @@ $primary: rgb(47, 52, 71);
 $secondary: rgb(186, 197, 212);
 $dark: rgb(10, 10, 10);
 $background-opacity: 0.9;
-$color-bg1: rgb(217, 214, 208);
+$color-bg1: rgb(211, 211, 211);
 $color-bg2: rgb(196, 196, 196);
-$color1: rgb(104, 128, 162);
+$color1: rgb(172, 208, 255);
 $color2: rgba(176, 155, 115, 0.727);
-$color3: #c08a78;
+$color3: #d3a99a;
 $color4: rgb(200, 50, 50);
 $color5: rgb(171, 171, 130);
 $color-interactive: rgb(140, 100, 255);
@@ -34,12 +34,17 @@ $blending: hard-light;
   }
 }
 @mixin mediaMd {
-  @media screen and (max-width: 898px) {
+  @media screen and (max-width: 798px) {
+    @content;
+  }
+}
+@mixin mediaLM {
+  @media screen and (max-width: 998px) {
     @content;
   }
 }
 @mixin mediaLg {
-  @media screen and (min-width: 899px) and (max-width: 1170px) {
+  @media screen and (min-width: 998px) and (max-width: 1170px) {
     @content;
   }
 }

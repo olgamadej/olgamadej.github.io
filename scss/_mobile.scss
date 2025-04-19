@@ -9,8 +9,45 @@
 @include mediaLg {
 }
 
-//Tablets & Small Laptops
+//Small Laptops & Tablets
+@include mediaLM {
+  main {
+    .lg-heading {
+      font-size: 2.5rem;;
+    }
+    .lg-heading-subtitle {
+      font-size: 2rem;
+    }
+    .sm-heading-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
+
+//Small Tablets 
 @include mediaMd {
+  main {
+    overflow: hidden;
+    padding: 0rem;
+
+    .lg-heading {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .lg-heading-subtitle {
+      font-size: 1.5rem;
+    }
+    .sm-heading {
+      font-size: 1.2rem;
+      i {
+        width: 32px;
+      }
+    }
+  }
+
   main {
     &#about {
       align-items: center;
@@ -102,16 +139,36 @@
     overflow: hidden;
     padding: 0rem;
 
-    .lg-heading {
-      font-size: 3.3rem;
-      margin-bottom: 3rem;
-    }
-    .sm-heading {
-      font-size: 1.2rem;
-      i {
-        width: 32px;
+    .heading {
+      margin: 0;
+      padding: 0 1rem;
+      .lg-heading {
+        font-size: 2rem;
+      }
+      .lg-heading-subtitle {
+        font-size: 1rem;
+        padding-top: 0rem;
+        padding: 0.5rem;
+      }
+      .sm-heading-container {
+        display: flex;
+        flex-direction: column;
+        .sm-heading {
+          margin: auto;
+          margin-top: 1.5rem;
+          font-size: 1rem;
+          width: 80%;
+          i {
+            width: 32px;
+          }
+        }
+        .btn-front-container {
+          width: 100%;
+        }
       }
     }
+    
+    
   }
 
   main {
