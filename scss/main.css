@@ -206,7 +206,7 @@ body {
 
 header {
   position: fixed;
-  z-index: 2;
+  z-index: 200;
   width: 100%;
 }
 
@@ -282,6 +282,7 @@ h3.lg-heading-subtitle .inline-letter-white.inline-letter-white:hover {
 h1.sm-heading,
 h2.sm-heading,
 h3.sm-heading {
+  position: relative;
   margin: 0.4rem;
   padding: 0.2rem;
   width: 60%;
@@ -356,6 +357,67 @@ a {
   vertical-align: middle;
 }
 
+#chatbot-toggle {
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  background: #6f79a0;
+  z-index: 3;
+  transition: all 0.5s ease-out;
+}
+#chatbot-toggle.close-toggle {
+  background: rgb(47, 52, 71);
+  visibility: visible;
+}
+
+#chatbot-container {
+  max-width: 400px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: white;
+  transform: translate(95%, 0);
+  z-index: 2;
+  opacity: 0;
+  transition: all 0.5s ease-out;
+}
+#chatbot-container.show-container {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+#chatbot-container #chatbot {
+  padding: 20px;
+}
+#chatbot-container #chatbot .chat-message {
+  margin-bottom: 10px;
+  padding: 10px 14px;
+  border-radius: 3px;
+  max-width: 90%;
+}
+#chatbot-container #chatbot .bot {
+  background: #f0f0f0;
+}
+#chatbot-container #chatbot .user {
+  background: #586184;
+  align-self: flex-end;
+}
+#chatbot-container #chatbot .chat-options button {
+  margin: 4px 5px 0 0;
+  padding: 8px 12px;
+  border: none;
+  background: rgb(47, 52, 71);
+  color: white;
+}
+#chatbot-container #chatbot .chat-options button:hover {
+  background: #586184;
+}
+
 main {
   min-height: 91.6vh;
   flex: 1;
@@ -414,6 +476,7 @@ main#about .content-container .sm-heading {
   font-weight: 300;
   font-size: 1rem;
   width: 100%;
+  z-index: 1;
 }
 main#about .content-container .sm-heading .sm-heading-wrapper {
   align-items: flex-start;
