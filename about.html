@@ -115,10 +115,24 @@
         </div>
       </div>
     </div>
+    <div id="chatbot-toggle"></div>
+      <div id="chatbot-container">
+        <div id="chatbot">
+          <div class="chat-message bot">Hi! I'm Olga's assistant. Want to start a project or ask something?</div>
+          <div class="chat-options">
+            <button onClick="handleChoice('project')">Start a Project</button>
+            <button onClick="handleChoice('availability')">Ask about Availability</button>
+            <button onClick="handleChoice('faq')">Browse FAQs</button>
+            <button onClick="handleChoice('call')">Book a Call</button>
+          </div>
+        </div>
+      </div>
     </main>
     
     <footer id="main-footer">Copyright &copy; 2019</footer>
   </div>
     <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+
   </body>
 </html>
