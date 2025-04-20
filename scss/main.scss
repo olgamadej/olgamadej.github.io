@@ -251,29 +251,30 @@ a {
   cursor: pointer;
   position: fixed;
   bottom: 20px;
-  right: 20px;
-  width: 20px;
-  height: 20px;
-  background: lighten($primary, 30);
-  z-index: 3;
+  right: 30px;
+  width: 56px;
+  height: 56px;
+  background: url("../img/chatbot.png");
+  background-size: cover;
+  z-index: 200;
   @include easeOut;
   &.close-toggle {
-    background: $primary;
     visibility: visible;
    }
 }
 
 #chatbot-container {
   max-width: 400px;
+  max-height: 90vh;
   position: fixed;
   bottom: 20px;
   right: 20px;
   border-radius: 3px;
-  overflow: hidden;
+  overflow-y:scroll ;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   background: white;
   transform: translate(95%, 0);
-  z-index: 2;
+  z-index: 200;
   opacity: 0;
   @include easeOut;
 
@@ -320,6 +321,7 @@ a {
 main {
   min-height: 91.6vh;
   flex: 1;
+  padding-bottom: 80px;
 
   .icons {
     margin: 0rem 0.5rem;
@@ -357,12 +359,11 @@ main {
 .page-wrapper {
   position: relative;
   min-height: 100vh;
-  padding-bottom: 60px;
+  padding-bottom: 80px;
 }
 main {
   &#about {
     position: relative;
-    z-index: 0;
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
 
@@ -596,7 +597,7 @@ main {
   background: darken($primary, 10);
   color: set-text-color($primary);
   bottom: 0;
-  z-index: 101;
+  z-index: 3;
 }
 
 @keyframes moveInCircle {

@@ -75,7 +75,7 @@
 .menu-branding .portrait {
   width: 150px;
   height: 150px;
-  background: url("../img/iconXS.png");
+  background: url("../img/logoFala.png");
   background-size: cover;
   border-radius: 50%;
   border: solid 3px rgb(186, 197, 212);
@@ -361,29 +361,30 @@ a {
   cursor: pointer;
   position: fixed;
   bottom: 20px;
-  right: 20px;
-  width: 20px;
-  height: 20px;
-  background: #6f79a0;
-  z-index: 3;
+  right: 30px;
+  width: 56px;
+  height: 56px;
+  background: url("../img/chatbot.png");
+  background-size: cover;
+  z-index: 200;
   transition: all 0.5s ease-out;
 }
 #chatbot-toggle.close-toggle {
-  background: rgb(47, 52, 71);
   visibility: visible;
 }
 
 #chatbot-container {
   max-width: 400px;
+  max-height: 90vh;
   position: fixed;
   bottom: 20px;
   right: 20px;
   border-radius: 3px;
-  overflow: hidden;
+  overflow-y: scroll;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   background: white;
   transform: translate(95%, 0);
-  z-index: 2;
+  z-index: 200;
   opacity: 0;
   transition: all 0.5s ease-out;
 }
@@ -421,6 +422,7 @@ a {
 main {
   min-height: 91.6vh;
   flex: 1;
+  padding-bottom: 80px;
 }
 main .icons {
   margin: 0rem 0.5rem;
@@ -452,12 +454,11 @@ main#home h1 {
 .page-wrapper {
   position: relative;
   min-height: 100vh;
-  padding-bottom: 60px;
+  padding-bottom: 80px;
 }
 
 main#about {
   position: relative;
-  z-index: 0;
   font-family: "Raleway", sans-serif;
   font-optical-sizing: auto;
 }
@@ -646,7 +647,7 @@ main#work .projects a {
   background: #1b1e28;
   color: #fff;
   bottom: 0;
-  z-index: 101;
+  z-index: 3;
 }
 
 @keyframes moveInCircle {
