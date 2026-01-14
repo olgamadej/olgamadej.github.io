@@ -3,15 +3,15 @@ $secondary: rgb(186, 197, 212);
 $dark: rgb(10, 10, 10);
 $background-opacity: 0.9;
 $color-bg1: rgb(211, 211, 211);
-$color-bg2: rgb(196, 196, 196);
-$color1: rgb(172, 208, 255);
-$color2: rgba(176, 155, 115, 0.727);
-$color3: #d3a99a;
+$color-bg2: rgb(153, 151, 151);
+$color1: rgb(138, 150, 163);
+$color2: rgba(239, 239, 237, 0.727);
+$color3: #847e7c;
 $color4: rgb(200, 50, 50);
 $color5: rgb(171, 171, 130);
 $color-interactive: rgb(140, 100, 255);
 
-$circle-size: 80%;
+$circle-size: 100%;
 $blending: hard-light;
 
 @mixin easeOut {

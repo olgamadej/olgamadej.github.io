@@ -25,7 +25,7 @@ h3 {
   font-weight: 300;
   margin-top: 0px;
   margin-bottom: 8px;
-  color: #a0437f;
+  color: rgb(159.808, 67.192, 127.12);
 }
 
 h1 {
@@ -52,7 +52,7 @@ button {
   border: none;
   margin: 18px 0;
   padding: 20px 40px;
-  background: #a0437f;
+  background: rgb(159.808, 67.192, 127.12);
   letter-spacing: 2px;
   font-weight: 800;
   text-transform: uppercase;
@@ -93,7 +93,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #d0353c;
+  color: rgb(208.3125, 52.6875, 60.46875);
 }
 
 nav a#toggle-btn {

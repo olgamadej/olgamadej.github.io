@@ -16,6 +16,7 @@ body {
   color: set-text-color($color-bg1);
   position: relative;
   height: 100%;
+  margin: 0;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   line-height: 1.5;
@@ -23,14 +24,15 @@ body {
 
 .gradient-bg {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   margin: 0;
   padding: 0;
-  position: fixed;
   overflow: hidden;
-  background: linear-gradient(40deg, $color-bg1, $color-bg2);
-  top: 0;
-  left: 0;
+  background-image: url("../img/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right bottom !important;
+  //background: linear-gradient(40deg, $color-bg1, $color-bg2);
   z-index: -1;
   pointer-events: none; // avoid clicking on the bubbles
 
@@ -50,7 +52,7 @@ body {
 
   .g1 {
     position: absolute;
-    background: radial-gradient(circle at center, rgba($color1, 0.8) 0, rgba($color1, 0) 50%) no-repeat;
+    background: radial-gradient(circle at center, rgba($color1, 0.5) 0, rgba($color1, 0) 50%) no-repeat;
     mix-blend-mode: $blending;
 
     width: $circle-size;
@@ -104,7 +106,7 @@ header {
 }
 
 .heading {
-  padding: 0rem 4rem;
+  padding: 1rem 4rem;
 
   .sm-heading-container {
     display: flex;
@@ -120,9 +122,11 @@ h3 {
 
   &.lg-heading {
     display: flex;
-    font-family: "Raleway", sans-serif;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;//"Raleway", sans-serif;
     font-optical-sizing: auto;
+    color: $primary;
     font-size: 4rem;
+    letter-spacing: 0px;
     font-weight: 300;
     z-index: 100;
 
@@ -130,7 +134,7 @@ h3 {
       transform: scale(1.1);
       @include easeOut;
       &.text-white {
-        color: $secondary;
+        color: $primary;
       }
     }
     div {
@@ -142,7 +146,7 @@ h3 {
   &.lg-heading-subtitle {
     font-size: 2.5rem;
     padding: 2rem;  
-    letter-spacing: 5px;
+    letter-spacing: 2px;
     cursor: default;
      span {
       white-space: nowrap;
@@ -150,7 +154,7 @@ h3 {
 
     .inline-letter-white {
       display: inline-block;
-      letter-spacing: 12px;
+      letter-spacing: 4px;
       @include easeOut;
 
       &.inline-letter-white:hover {
@@ -168,9 +172,11 @@ h3 {
     margin: 0.4rem;
     padding: 0.2rem;
     width: 60%;
-    background-color: rgba(lighten($color-bg2, 9), 1);
     border-radius: 3px;
-    backdrop-filter: blur(0.4rem);
+    color: lighten($color: $color1, $amount: 27);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(darken($color-bg2, 25), 1);
     z-index: 1;
 
     .sm-heading-wrapper {
@@ -178,6 +184,7 @@ h3 {
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       padding: 0.4rem 0.8rem;
       border: 1px solid rgba(255, 255, 255, 0.229);
       z-index: 1;
@@ -191,8 +198,8 @@ a {
 }
 
 .text-secondary {
-  color: $secondary;
-  text-shadow: 0px 0px 2px $dark;
+  color: $primary;
+  font-weight: 400;
   @include easeOut;
   &:hover {
     color: #111;
@@ -203,7 +210,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 0.7rem;
   width: 40%;
 
   .btn-front-wrapper {
@@ -211,7 +218,7 @@ a {
     align-items: center;
     justify-content: center;
     border: 1px solid rgba(white, 0.4);
-    padding: 0.2rem;
+    padding: 0.1rem;
     transition: 0.3s all ease-in-out;
 
     &:hover {
@@ -221,11 +228,13 @@ a {
   }
 
   .btn-front {
-    padding: 0.7rem 1.4rem;
+    padding: 0.4rem 0.9rem;
     font-size: 20px;
+    color: #f0f0f0;
     font-weight: 400;
     letter-spacing: 3px;
-    background-color: rgba(lighten($secondary, 1), 0.4);
+    background-color: rgba(darken($primary, 13), 0.9);
+    border: 2px solid $secondary;
     border-radius: 2px;
     display: flex;
     align-items: center;
@@ -246,7 +255,16 @@ a {
     }
   }
 }
-
+.chatbot-bg {
+  background-color: rgba(240, 240, 240, 0.9);
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  width: 56px;
+  height: 56px;
+  z-index: 199;
+}
 #chatbot-toggle {
   cursor: pointer;
   position: fixed;
@@ -254,7 +272,7 @@ a {
   right: 30px;
   width: 56px;
   height: 56px;
-  background: url("../img/chatbot.png");
+  background: url("../img/chatbotBW.png");
   background-size: cover;
   z-index: 200;
   @include easeOut;
@@ -372,7 +390,8 @@ main {
 
       .lg-heading {
         font-size: 2rem;
-        font-weight: 200;
+        font-weight: 400;
+        color: var($primary);
         letter-spacing: 15px;
         padding-left: 0.7rem;
       }

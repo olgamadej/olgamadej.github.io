@@ -4,6 +4,114 @@ const chatbotToggle = document.querySelector("#chatbot-toggle");
 const container = document.querySelector("#chatbot-container");
 const chatbot  = document.querySelector("#chatbot");
 
+// Chatbot Data
+const faqData = [
+  {
+    id: "process",
+    category: "Workflow",
+    priority: 1,
+    questions: [
+      "What is your process?", "How do you usually work?"
+    ],
+    answer: `
+I usually work in clear phases: 
+ * Discovery and requirements
+ * Design and architecture
+ * Development
+ * Feedback and iteration
+ * Delivery
+
+You are involved at every step so there are no surprises.`,
+    followUps: ["tools", "timeline"]
+  },
+  {
+    id: "stack",
+    category: "Technical",
+    priority: 2,
+    questions: [
+      "What tech stack do you use?", "What tech stack do you work with?"
+    ],
+    answer: `    
+The stack depends on the problem being solved.
+
+However, I most commonly use:
+ * Python (AI pipelines, automation, data processing)
+ * Django / FastAPI (APIs, AI services)
+ * JavaScript (frontend logic, integrations)
+ * REST APIs and background workers.`,
+  followUps: ["ai_use_cases", "integration"]
+  },
+  {
+    id: "timeline",
+    category: "Planning",
+    priority: 1,
+    questions: [
+
+    ]
+  },
+  {
+    id: "ai_use_cases",
+    category: "AI Solutions",
+    priority: 1,
+    questions: [
+      "What kind of AI solutions do you build?", "How do you use AI in projects?"
+    ],
+    answer: `
+Typical AI-related work includes:
+ * Chatbots and assistants
+ * Automation of internal workflows
+ * AI-powered search or summarization
+ * Data enrichment and analysis
+ * Integrating LLMs into existing systems
+
+My goal is always to solve a concrete business problem, not to add AI for its own sake.`,
+    followUps: ["integration", "data"]
+  },
+  {
+    id: "integration",
+    category: "Architecture",
+    priority: 1,
+    questions: [
+      "How do you integrate AI into existing systems?",
+      "Can you add AI to an existing product?"
+    ],
+    answer: `
+Yes - most projects involve integration rather than greenfield builds.
+
+My typical approach:
+ 1st: Analyze the existing architecture.
+ 2nd: Identify where AI adds value.
+ 3rd: Expose AI logic via APIs.
+ 4th: Integrate with front end or backend services.
+ 5th: Ensure reliability and monitoring.
+
+My goal is minimal disruption with maximum impact.
+`,
+followUps: ["data", "security"]
+  },
+  {
+    id: "data",
+    category: "AI Constraints",
+    priority: 2,
+    questions: [
+      "What data do you need?",
+      "Do I need a lot of data?"
+    ],
+    answer: "It depends on the use case. Some solutions work with existing structured data, others use third-party models and APIs. Moreover, not every project requires large datasets. Part of the work is determining what's feasible with the data you already have.",
+    followUps: ["security", "timeline"]
+  },
+  {
+    id: "security",
+    category: "AI Constraints",
+    priority: 2,
+    questions: [
+      "Is my data secure?", "How do you handle privacy?"
+    ],
+    answer: "Security and privacy are considered from the start of every project. I aim to minimize data retention, ensure secure communication between services and APIs, and keep a clear separation of concerns within the system architecture. When required, compliance and regulatory constraints are taken into account as part of the design. The exact measures always depend on the project context, the data involved, and the applicable regulations.",
+    followUps: ["integration", "budget"]
+  }
+]
+
 //Set Initial State of ChatBot to be Hidden
 let showChatbot = false;
 
@@ -30,7 +138,7 @@ function toggleChatbot() {
 
 // Chatbot logic
 document.addEventListener("DOMContentLoaded", function() {  
-    const chatbot = document.getElementById('chatbot');
+    //const chatbot = document.getElementById('chatbot');
     let state = null;
     let projectData = {};
 
@@ -146,7 +254,7 @@ document.addEventListener("DOMContentLoaded", function() {
         setTimeout(() => addMessage("How complex is your project?"), 800);
         //Some logic to manage the questions and logic to see availability
       } else if (choice === "faq") {
-        botTyping("Here's what people usually ask:");
+        botTyping("Here are some common questions about how I work with AI and systems:");
         setTimeout(() => {
           addMessage("• What's your process?\n• What tools do you use?\n• How long do projects take?");
         }, 600);

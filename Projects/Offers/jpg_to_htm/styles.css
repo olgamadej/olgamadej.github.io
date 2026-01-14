@@ -1,0 +1,134 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+main {
+    background: url("banner.jpg");
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+.content-container {
+    background-color: rgba(106, 150, 244, 0.27);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+section {
+    padding: 2rem 0rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1 {
+    font-size: 3rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 15px;
+    padding: 0rem 2rem 1rem 2rem;
+    color: rgb(97, 102, 103);
+    text-shadow: 0px 0px 5px white;
+    border-radius: 25px;
+    border: 1px solid rgb(97, 102, 103);
+    box-shadow: 2px 2px 15px rgb(97, 102, 103);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.big-letter {
+    font-size: 3.5rem;
+}
+
+.points {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 1rem 2rem 1rem 2rem;
+    color: rgb(97, 102, 103);
+    border-radius: 25px;
+    border: 1px solid rgb(97, 102, 103);
+    box-shadow: 0px 0px 15px rgb(97, 102, 103);
+    margin-bottom: 1rem;
+    margin-right: 2rem;
+    line-height: 2.5rem;
+    width: 70%;
+}
+.points h2 {
+    font-size: 2rem;
+    padding-bottom: 1.5rem;
+}
+.enhanced-text {
+    font-weight: 800;
+    color: rgb(72, 76, 77);
+}
+
+.left {
+    padding-left: 4rem;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.right {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.chatbot-portrait {
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 35vw;
+    height: 35vw;
+    margin: 0 1rem;
+    border-radius: 12px;
+    border: 1px solid rgb(97, 102, 103);
+    box-shadow: 0px 0px 15px rgb(97, 102, 103);
+    display: grid;
+    grid-template-areas: 
+    "first second third fourth"
+    "fifth fifth fifth sixth"
+    "seventh eigth ninth ninth";
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    padding: 10px;
+}
+.element {
+    background: rgba(127, 157, 179, 0.325);
+    color: rgb(97, 102, 103);
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+}
+
+.first {
+    grid-area: first;
+}
+.second {
+    grid-area: second;
+}
+.third {
+    grid-area: third;
+}
+.fourth {
+    grid-area: fourth;
+}
+.fifth {
+    grid-area: fifth;
+}
+.sixth {
+    grid-area: sixth;
+}
+.seventh {
+    grid-area: seventh;
+}
+.eigth {
+    grid-area: eigth;
+}
+.ninth{
+    grid-area: ninth;
+}
