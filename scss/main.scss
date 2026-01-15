@@ -24,16 +24,23 @@ body {
 
 .gradient-bg {
   width: 100%;
-  height: 100vh;
+  min-height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  background-image: url("../img/background.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: right bottom !important;
+  position: fixed;
+  overflow-x: hidden;
   z-index: -1;
   pointer-events: none; // avoid clicking on the bubbles
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../img/background.png");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: cover;
+  }
 
   svg {
     position: fixed;
