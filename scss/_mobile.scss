@@ -80,8 +80,26 @@
 //Small Tablets 
 @include mediaMd {
   main {
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     padding: 0rem;
+
+    .snap-section {
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      min-height: 100vh;
+      width: 100%;
+    }
+
+    #home {
+      scroll-snap-type: y mandatory;
+      overflow-y: auto;
+      overflow-x: hidden;
+
+      /*Faster & snappier feel */
+      scroll-behavior: smooth;
+      scroll-padding-top: 0px;
+    }
 
     .lg-heading {
       font-size: 2rem;
@@ -198,8 +216,28 @@
 //Smartphones
 @include mediaSm {
   main {
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     padding: 0rem;
+
+    .snap-section {
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      min-height: 100vh;
+      width: 100%;
+    }
+
+    #home {
+      scroll-snap-type: y mandatory;
+      overflow-y: auto;
+      overflow-x: hidden;
+
+      /*Faster & snappier feel */
+      scroll-behavior: smooth;
+      scroll-padding-top: 0px;
+    }
+
+    
 
     .heading {
       margin: 0;
