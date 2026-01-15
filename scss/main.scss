@@ -15,6 +15,7 @@ html, body {
 body {
   color: set-text-color($color-bg1);
   position: relative;
+  overflow-x: hidden;
   height: 100%;
   margin: 0;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -370,7 +371,7 @@ main {
   &#home {
     overflow: hidden;
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     margin: 0;
     padding: 0;
