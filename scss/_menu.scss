@@ -1,3 +1,39 @@
+.lg-heading {
+  position: absolute;
+  top: 30px;
+  left: 35px;
+  display: flex;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;//"Raleway", sans-serif;
+  font-optical-sizing: auto;
+  color: $primary;
+  font-size: 1rem;
+  letter-spacing: 0px;
+  font-weight: 300;
+  z-index: 100;
+
+    div:hover {
+      @include easeOut;
+      &.text-white {
+        color: $primary;
+      }
+    }
+    div {
+      backface-visibility: hidden;
+      @include easeOut;
+    }
+  }
+
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 35px;
+  width: 60px;
+  height: 60px;
+  background-image: url("../img/logoS.png");
+  background-size: contain;
+}
+
 .menu-btn {
   position: absolute;
   z-index: 300;
