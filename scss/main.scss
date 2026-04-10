@@ -133,7 +133,7 @@ header {
     justify-content: space-around;
   }
   .tag-lines {
-    padding: 1rem 0rem;
+    padding: 2.5rem 0rem 1rem 0rem;
     
   }
 }
@@ -142,11 +142,15 @@ header {
   padding: 2rem 5rem;
 
   &.services-content-container {
+    margin-top: 2rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
   }
 }
+
+
 
 h1,
 h2,
@@ -156,7 +160,8 @@ h3 {
 
   &.services-lg-heading {
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;//"Raleway", sans-serif;
-    font-size: 3rem;
+    font-size: 1.6rem;
+    font-weight: 500;
     font-optical-sizing: auto;
     color: $primary;
   }
@@ -202,6 +207,12 @@ h3 {
       margin: 0 auto;
       background-color: rgba(lighten($color-bg2, 75), 0.3);
       color: $primary;
+
+      .services-span-wrapper {
+        padding: 0;
+        font-size: 1.3rem;
+        line-height: 1.3rem;
+      }
     }
 
     .sm-heading-wrapper {
@@ -213,6 +224,10 @@ h3 {
       padding: 0rem 2rem;
       border: 1px solid rgba(255, 255, 255, 0.229);
       z-index: 1;
+
+      &.services-span-wrapper {
+        padding: 0 1rem;
+      }
     }
   }
 }
@@ -281,7 +296,6 @@ a {
   }
 }
 .chatbot-bg {
-  background-color: rgba(240, 240, 240, 0.9);
   border-radius: 50%;
   position: fixed;
   bottom: 20px;
@@ -297,7 +311,7 @@ a {
   right: 30px;
   width: 56px;
   height: 56px;
-  background: url("../img/chatbotBW.png");
+  background: url("../img/chatbotNew.png");
   background-size: cover;
   z-index: 200;
   @include easeOut;

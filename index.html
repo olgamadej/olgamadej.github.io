@@ -14,13 +14,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    
     <link rel="stylesheet" href="scss/main.css" />
-    <link rel="icon" href="img/logoSAFavicon.png" type="image/png" />
+    <link rel="icon" href="img/SlogoFaviconMinimalistic.png" type="image/png" />
     <title>Suenarte</title>
   </head>
 
   <body id="bg-img">
-    <header>
-      <h1 class="lg-heading">
+    <header id ="main-header">
+      <h1  id="brand-name" class="lg-heading">
             <div class="letter text-white">S</div>
             <div class="letter text-white">u</div>
             <div class="letter text-white">e</div>
@@ -30,14 +30,14 @@
             <div class="letter text-secondary">t</div>
             <div class="letter text-secondary">e</div>
           </h1>
-      <div class="logo"></div>
+      <div id="brand-logo" class="logo"></div>
       <div class="menu-btn">
         <div class="btn-line"></div>
         <div class="btn-line"></div>
         <div class="btn-line"></div>
       </div>
       <nav class="menu">
-        <div class="menu-branding"><div class="portrait"></div></div>
+        <div class="menu-branding"><div class="brand-logo-hide"></div></div>
         <ul class="menu-nav">
           <li class="nav-item current">
             <a href="index.html" class="nav-link"> Home </a>
@@ -140,10 +140,68 @@
         <div class="content-container services-content-container">
           <h1 class="services-lg-heading">Services</h1>
           <h2 class="sm-heading services-sm-heading">
-            <span class="sm-heading-wrapper">
+            <span class="sm-heading-wrapper services-span-wrapper">
               Here are a few things I can do for you.
             </span>
           </h2>
+          <div class="services-list">
+            <div class="service-category">
+              <div class="title">AI-Powered Marketing Systems - more qualified leads without increasing ad spend.</div>
+              <div class="service">
+                 AI-driven content engine (blogs, SEO, LinkedIn, email)
+              </div>
+              <div class="service">
+                 Automated lead magnets + funnels
+              </div>
+              <div class="service">
+                 AI chatbots for lead capture and qualification
+              </div>
+              <div class="service">
+                 Predictive ad optimization (Meta/Google)
+              </div>
+              <div class="service">
+                 Website personalization (dynamic copy per visitor)
+              </div>
+            </div>
+            <div class="service-category">
+              <div class="title">Sales Automation - sales team focuses only on high-intent buyers.</div>
+              <div class="service">
+                 AI SDR systems (automated outbound prospecting)
+              </div>
+              <div class="service">
+                 Smart email personalization at scale
+              </div>
+              <div class="service">
+                 CRM automation workflows
+              </div>
+              <div class="service">
+                 AI lead scoring</div>
+              <div class="service">
+                 Proposal automation systems</div>
+              <div class="service">
+                 24/7 AI sales chatbot trained on company data
+              </div>
+            </div>
+            <div class="service-category">
+              <div class="title">Operations and Workflow Automation - replace repetitive admin work with automation.</div>
+              <div class="service">
+                 Process mapping + automation (Zapier/Make/custom)
+              </div>
+              <div class="service">
+                 AI internal assistants (trained on SOPs)
+              </div>
+              <div class="service">
+                 Customer support AI agents
+              </div>
+              <div class="service">
+                 Automated onboarding systems
+              </div>
+              <div class="service">
+                 Smart reporting dashboards
+              </div>
+            </div>
+          </div>
+
           
         </div>
        
@@ -166,6 +224,7 @@
     <footer id="main-footer">Copyright &copy; 2019</footer>
 
     <script src="js/main.js"></script>
+    <script src ="js/brand_hide.js"></script>
     <script src="js/chatbot.js"></script>
   </body>
 </html>

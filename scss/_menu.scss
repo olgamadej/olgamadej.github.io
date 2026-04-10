@@ -5,8 +5,8 @@
   display: flex;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;//"Raleway", sans-serif;
   font-optical-sizing: auto;
-  color: $primary;
-  font-size: 1rem;
+  color: lighten($primary, 20);
+  font-size: 1.5rem;
   letter-spacing: 0px;
   font-weight: 300;
   z-index: 100;
@@ -23,14 +23,48 @@
     }
   }
 
+#brand-name, #brand-logo {
+  position: fixed;
+  transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+  will-change: transform;
+}
+
+#brand-name {
+  transition: transform 0.5s ease-in;
+
+  &.brand-hidden {
+    transform: translateY(-170%);
+    transition: transform 0.5s ease-in;
+  }
+
+  &.brand-visible {
+    transform: translateY(0);
+    transition: transform 0.5s ease-out;
+  }
+}
+
+#brand-logo {
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.25, 1) 0.2s;
+
+  &.brand-hidden {
+    transform: translateY(-150%);
+    transition: transform 0.8s ease-in 0.2s;
+  }
+
+  &.brand-visible {
+    transform: translateY(0);
+    transition: transform 0.8s ease-out 0.2s;
+  }
+}
+
 .logo {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   top: 35px;
-  width: 60px;
-  height: 60px;
-  background-image: url("../img/logoS.png");
+  width: 100px;
+  height: 100px;
+  background-image: url("../img/Slogo.png");
   background-size: contain;
 }
 
@@ -118,7 +152,6 @@
 
   &-branding {
     background: lighten($color-bg1, 5);
-    padding: 1rem;
     transform: translate(0, 100%);
     @include easeOut;
 
@@ -127,13 +160,12 @@
       transform: translate(0, 0);
     }
 
-    .portrait {
-      width: 150px;
-      height: 150px;
-      background: url("../img/logoFala.png");
+    .brand-logo-hide {
+      width: 250px;
+      height: 250px;
+      background: url("../img/logoSuenarteName.png");
       background-size: cover;
       border-radius: 50%;
-      border: solid 3px $secondary;
     }
   }
 
