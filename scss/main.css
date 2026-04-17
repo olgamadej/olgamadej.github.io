@@ -313,6 +313,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: rgba(16, 16, 23, 0.7);
 }
 .content-container.services-content-container .services-heading {
   width: 100%;
@@ -320,20 +321,38 @@ header {
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 2rem;
+  background-color: rgba(240, 240, 240, 0.37);
 }
 .content-container.services-content-container .services-heading .services-lg-heading {
   font-size: 2.4rem;
+  padding-left: 1rem;
 }
 .content-container.services-content-container .services-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  padding: 2rem;
+
 }
 
 .services-content-container .services-list .service-category {
   width: calc(90%/3);
   margin: 0 auto;
+  color: #f0f0f0;
 }
+
+.services-content-container .services-list .service-category .title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.services-content-container .services-list .service-category .service {
+  padding-bottom: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 
 h1,
 h2,
