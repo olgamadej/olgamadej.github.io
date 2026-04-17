@@ -293,7 +293,7 @@ header {
   width: 100%;
 }
 
-.heading {
+.heading { 
   padding: 9rem 4rem 1rem 4rem;
 }
 .heading .sm-heading-container {
@@ -311,9 +311,28 @@ header {
 .content-container.services-content-container {
   margin-top: 2rem;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.content-container.services-content-container .services-heading {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.content-container.services-content-container .services-heading .services-lg-heading {
+  font-size: 2.4rem;
+}
+.content-container.services-content-container .services-list {
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+}
+
+.services-content-container .services-list .service-category {
+  width: calc(90%/3);
+  margin: 0 auto;
 }
 
 h1,
@@ -377,7 +396,7 @@ h1.sm-heading.services-sm-heading,
 h2.sm-heading.services-sm-heading,
 h3.sm-heading.services-sm-heading {
   display: inline-block;
-  margin: 0 auto;
+  margin: 0;
   background-color: rgba(255, 255, 255, 0.3);
   color: rgb(47, 52, 71);
 }
