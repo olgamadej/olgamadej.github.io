@@ -1,4 +1,4 @@
-/* imports the _config.scss file*/
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Dosis:200,400");
 .lg-heading {
   position: absolute;
@@ -44,25 +44,28 @@
 
 #brand-logo {
   transition: transform 0.8s cubic-bezier(0.25, 1, 0.25, 1) 0.2s;
+  position: fixed;
+  left: 50%;
+  top: 35px;
+  transform: translateX(-50%);
+  z-index: 200;
 }
 #brand-logo.brand-hidden {
   transform: translateY(-150%);
   transition: transform 0.8s ease-in 0.2s;
 }
 #brand-logo.brand-visible {
-  transform: translateY(0);
+  transform: translateX(-50%) translateY(0);
   transition: transform 0.8s ease-out 0.2s;
 }
 
 .logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   top: 35px;
   width: 100px;
   height: 100px;
   background-image: url("../img/Slogo.png");
   background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .menu-btn {
@@ -293,7 +296,7 @@ header {
   width: 100%;
 }
 
-.heading { 
+.heading {
   padding: 9rem 4rem 1rem 4rem;
 }
 .heading .sm-heading-container {
@@ -310,49 +313,62 @@ header {
 }
 .content-container.services-content-container {
   margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: rgba(16, 16, 23, 0.7);
-}
-.content-container.services-content-container .services-heading {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-  background-color: rgba(240, 240, 240, 0.37);
-}
-.content-container.services-content-container .services-heading .services-lg-heading {
-  font-size: 2.4rem;
-  padding-left: 1rem;
 }
 .content-container.services-content-container .services-list {
+  margin-top: 2rem;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  padding: 2rem;
-
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
 }
-
-.services-content-container .services-list .service-category {
-  width: calc(90%/3);
-  margin: 0 auto;
-  color: #f0f0f0;
+.content-container.services-content-container .service-category {
+  font-family: "Raleway", sans-serif;
+  flex: 1 1 280px;
+  max-width: 360px;
+  padding: 0rem 0rem 2rem 0rem;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: transform 0.3s ease, background 0.3s ease;
 }
-
-.services-content-container .services-list .service-category .title {
-  font-size: 1.5rem;
+.content-container.services-content-container .service-category:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.18);
+}
+.content-container.services-content-container .service-category .title {
+  color: hsl(211.2, 11.961722488%, 136.0196078431%);
+  font-size: 1.1rem;
+  padding: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 2px;
   margin-bottom: 1.5rem;
+  padding-bottom: 0.8rem;
+  background: rgba(0, 20, 45, 0.82);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+.content-container.services-content-container .service-category .service {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  padding: 0rem 1.5rem 0 2rem;
+  position: relative;
+}
+.content-container.services-content-container .service-category .service::before {
+  content: "•";
+  margin-right: 0.7rem;
+  color: rgb(47, 52, 71);
 }
 
-.services-content-container .services-list .service-category .service {
-  padding-bottom: 1.5rem;
+.services-header {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  width: 80%;
 }
-
 
 h1,
 h2,
@@ -373,7 +389,7 @@ h1.lg-heading-subtitle,
 h2.lg-heading-subtitle,
 h3.lg-heading-subtitle {
   font-size: 2.5rem;
-  padding: 2rem 0rem 2rem 0rem;
+  padding: 0.2rem 0rem 2rem 0rem;
   letter-spacing: 0px;
   cursor: default;
 }
@@ -394,7 +410,7 @@ h2.lg-heading-subtitle .inline-letter-white.inline-letter-white:hover,
 h3.lg-heading-subtitle .inline-letter-white.inline-letter-white:hover {
   letter-spacing: 15px;
   font-weight: 400;
-  color: rgb(85.5957627119, 94.7016949153, 129.3042372881);
+  color: rgb(87.6271186441, 96.9491525424, 132.3728813559);
   transition: all 0.5s ease-out;
 }
 h1.sm-heading,
@@ -415,8 +431,8 @@ h1.sm-heading.services-sm-heading,
 h2.sm-heading.services-sm-heading,
 h3.sm-heading.services-sm-heading {
   display: inline-block;
-  margin: 0;
-  background-color: rgba(255, 255, 255, 0.3);
+  margin: 0 auto;
+  background-color: hsla(0, 0.9708737864%, 134.6078431373%, 0.3);
   color: rgb(47, 52, 71);
 }
 h1.sm-heading.services-sm-heading .services-span-wrapper,
@@ -619,7 +635,7 @@ main#about {
 main#about .lg-heading {
   font-size: 2rem;
   font-weight: 400;
-  color: var(rgb(47, 52, 71));
+  color: rgb(47, 52, 71);
   letter-spacing: 15px;
   padding-left: 0.7rem;
 }
@@ -835,249 +851,305 @@ main#work .projects a {
     transform: translateX(-50%) translateY(-10%);
   }
 }
-@media screen and (min-width: 1171px) {
-  .projects {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  main#about .content-container .about-info {
-    grid-template-areas: "bio bio bio bio job3 job3" "bio bio bio bio job3 job3" "job1 job1 job1 job2 job2 job2";
-    grid-template-columns: repeat(6, 1fr);
-  }
-  main#about .content-container .about-info .job-3 {
-    margin-top: 2rem;
-    padding: 3rem;
-  }
-}
-@media screen and (min-width: 998px) and (max-width: 1170px) {
-  main#about .content-container .about-info {
-    grid-template-areas: "bio bio" "job3 job3" "job1 job2";
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 @media screen and (max-width: 998px) {
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
   main .lg-heading {
     font-size: 2.5rem;
   }
   main .lg-heading-subtitle {
-    padding-top: 2rem;
     font-size: 2rem;
+    line-height: 1.3;
   }
   main .sm-heading-wrapper {
-    display: flex;
+    text-align: center;
     justify-content: center;
+  }
+  main .content-container {
+    padding: 2rem;
+  }
+  main .services-content-container {
+    flex-direction: column;
     align-items: center;
+  }
+  main .services-lg-heading {
+    width: 100%;
     text-align: center;
   }
-  main#about {
-    align-items: center;
+  main .services-sm-heading {
+    width: auto;
+    max-width: 90%;
     text-align: center;
   }
-  main#about .content-container .about-info {
-    grid-template-areas: "bio bio" "job3 job3" "job1 job2";
-    grid-template-columns: repeat(2, 1fr);
+  .menu .nav-link {
+    font-size: 26px;
+  }
+  .menu .brand-logo-hide {
+    width: 180px;
+    height: 180px;
   }
 }
 @media screen and (max-width: 798px) {
-  main {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
     overflow-x: hidden;
-    overflow-y: auto;
-    padding: 0rem;
+    -webkit-overflow-scrolling: touch;
+  }
+  main {
+    padding: 0;
+    overflow-x: hidden;
   }
   main .snap-section {
     scroll-snap-align: start;
-    scroll-snap-stop: always;
-    min-height: 100vh;
-    width: 100%;
+    scroll-snap-stop: normal;
+    min-height: 100svh;
   }
-  main #home {
-    scroll-snap-type: y mandatory;
+  main#home {
+    scroll-snap-type: y proximity;
     overflow-y: auto;
     overflow-x: hidden;
-    /*Faster & snappier feel */
-    scroll-behavior: smooth;
-    scroll-padding-top: 0px;
   }
-  main .lg-heading {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+  main .heading {
+    min-height: 100svh;
+    padding: 7rem 2rem 2rem 2rem;
   }
   main .lg-heading-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    line-height: 1.35;
+    letter-spacing: 0;
+  }
+  main .lg-heading-subtitle span {
+    white-space: normal;
+  }
+  main .lg-heading-subtitle .inline-letter-white {
+    letter-spacing: 2px;
   }
   main .sm-heading {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
-  main .sm-heading i {
-    width: 32px;
-  }
-  main#about {
+  main .services-content-container {
+    margin-top: 0;
+    padding: 4rem 1.5rem;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+  }
+  main .services-lg-heading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
     text-align: center;
   }
-  main#about .content-container .lg-heading {
-    line-height: 1;
-    font-size: 4rem;
-    margin-bottom: 1.4rem;
+  main .services-sm-heading {
+    max-width: 100%;
+    margin-bottom: 2rem;
   }
-  main#about .content-container .about-info {
-    grid-template-areas: "bioimage" "bio" "job1" "job2" "job3";
-    grid-template-columns: 1fr;
-    gap: 0rem;
+  main .services-sm-heading .services-span-wrapper {
+    font-size: 1rem;
+    line-height: 1.4;
+    text-align: center;
+    white-space: normal;
   }
-  main#about .content-container .about-info .bio-image {
-    margin-top: 2rem;
-    grid-area: bioimage;
-  }
-  main#about .content-container .about-info .bio {
-    grid-area: bio;
-  }
-  main#about .content-container .about-info .job-1 {
-    grid-area: job1;
-  }
-  main#about .content-container .about-info .job-2 {
-    grid-area: job2;
-  }
-  main#about .content-container .about-info .job-3 {
-    grid-area: job3;
-  }
-  ul.menu-nav,
-  div.menu-branding {
-    float: none;
+  main .services-list {
     width: 100%;
-    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
   }
-  ul.menu-nav.show,
-  div.menu-branding.show {
-    transform: translate(0, 0);
+  main .service-category {
+    width: 100%;
+    padding: 1.2rem;
+    border-radius: 4px;
+    overflow: hidden;
   }
-  .menu-nav {
-    height: 75vh;
-    transform: translate(-100%, 0);
-    font-size: 24px;
+  main .service-category .title {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
   }
-  .menu-branding {
-    height: 25vh;
-    transform: translate(100%, 0);
+  main .service-category .service {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
   }
-  .menu-branding .portrait {
-    width: 100px;
-    height: 100px;
+  #main-header {
+    height: auto;
+  }
+  #brand-name {
+    left: 20px;
+    top: 20px;
+    transform: scale(0.9);
+    transform-origin: left top;
+  }
+  #brand-logo {
+    top: 25px;
+  }
+  .logo {
+    width: 70px;
+    height: 70px;
+  }
+  .menu-btn {
+    top: 25px;
+    right: 20px;
+  }
+  main#about .content-container {
+    padding: 2rem 1.5rem;
+  }
+  main#about .lg-heading {
+    font-size: 3rem;
+    letter-spacing: 8px;
+  }
+  main#about .about-info {
+    grid-template-columns: 1fr;
+    grid-template-areas: "bio" "job1" "job2" "job3";
+    gap: 1rem;
+  }
+  main#work {
+    padding: 2rem 1.5rem;
   }
   main#work .projects {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
   }
-  .page-wrapper main#contact {
-    padding: 4rem;
+  main#contact {
+    padding: 2rem 1rem;
   }
-  .page-wrapper main#contact .boxes div {
-    font-size: 1.6rem;
-    padding: 1rem 2.5rem;
+  main#contact .boxes {
+    flex-direction: column;
+  }
+  main#contact .boxes div {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 1rem;
+    text-align: center;
   }
 }
 @media screen and (max-width: 600px) {
-  main {
-    overflow-x: hidden;
-    overflow-y: auto;
-    padding: 0rem;
-  }
-  main .tag-lines {
-    padding: 1.1rem 0.5rem;
-    font-size: 0.9rem;
-  }
-  main .social-links .social-title {
-    font-size: 0.8rem;
-    padding: 1.5rem 0.5rem 0.5rem 0.5rem;
-  }
-  main .icons i {
-    width: 32px;
-  }
-  main .btn-front-container {
-    width: auto;
-  }
-  main .btn-front-container .btn-front-wrapper .btn-front {
-    padding: 0.2rem 0.8rem;
-    font-size: 1rem;
+  body {
+    font-size: 16px;
   }
   main .snap-section {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    min-height: 100vh;
-    width: 100%;
+    min-height: auto;
   }
-  main #home {
-    scroll-snap-type: y mandatory;
-    overflow-y: auto;
-    overflow-x: hidden;
-    /*Faster & snappier feel */
-    scroll-behavior: smooth;
-    scroll-padding-top: 0px;
+  main#home {
+    scroll-snap-type: y proximity;
   }
   main .heading {
-    margin: 0;
-    padding: 1rem 1.8rem;
+    padding: 6rem 1rem 2rem 1rem;
+    min-height: 100svh;
   }
-  main .heading .lg-heading {
-    font-size: 2rem;
-    padding: 0.5rem 0.5rem 0 0.5rem;
-    margin-bottom: 0rem;
+  main .lg-heading-subtitle {
+    font-size: 1.25rem;
+    line-height: 1.5;
   }
-  main .heading .lg-heading-subtitle {
-    font-size: 1.1rem;
-    padding-top: 0rem;
-    padding: 0.5rem;
-    letter-spacing: -0.4px;
+  main .lg-heading-subtitle .inline-letter-white {
+    letter-spacing: 1px;
   }
-  main .heading .lg-heading-subtitle .inline-letter-white {
-    letter-spacing: 1.5px;
+  main .sm-heading-container {
+    justify-content: center;
   }
-  main .heading .sm-heading-container {
-    display: flex;
-    justify-content: left;
+  main .sm-heading {
+    width: auto;
+    max-width: 95%;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
   }
-  main .heading .sm-heading-container .sm-heading {
-    margin-top: 0.7rem;
-    font-size: 0.7rem;
-    letter-spacing: 1PX;
-    width: 72%;
+  main .sm-heading .sm-heading-wrapper {
+    padding: 0.3rem 0.5rem;
+    text-align: center;
   }
-  main .heading .sm-heading-container .sm-heading .sm-heading-wrapper {
-    padding: 0.1rem 0.5rem;
+  main .tag-lines {
+    padding: 1.5rem 0.5rem 1rem 0.5rem;
+    font-size: 0.85rem;
+    line-height: 1.8;
   }
-  main .heading .tag-lines {
-    padding-left: 0.7rem;
-    font-size: 0.8rem;
-    font-family: "Lucida Sans";
+  main .social-links .social-title {
+    font-size: 0.75rem;
+    padding: 1rem 0.5rem;
+    text-align: center;
   }
-  main .heading .btn-front-container {
+  main .icons i {
+    font-size: 1.4rem;
+  }
+  main .btn-front-container {
     width: 100%;
-    padding: 2rem;
+    padding: 1.5rem 0.5rem;
   }
-  main#about {
-    padding: 0;
+  main .btn-front-container .btn-front {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    padding: 0.5rem 0.8rem;
   }
-  main#about .content-container {
-    padding: 1rem 1.5rem;
+  main .services-content-container {
+    padding: 3rem 1rem;
   }
-  main#about .content-container .lg-heading {
-    font-size: 2.3rem;
-    letter-spacing: 11px;
-    margin-top: 0.8srem;
+  main .services-lg-heading {
+    font-size: 1.8rem;
   }
-  .portrait {
-    width: 60px;
-    height: 60px;
+  main .services-list {
+    gap: 1rem;
   }
-  main#home h1 {
-    margin-top: 10vh;
-  }
-  main#work .projects {
-    grid-template-columns: 1fr;
-  }
-  .page-wrapper main#contact {
+  main .service-category {
     padding: 1rem;
   }
-  .page-wrapper main#contact .boxes div {
-    font-size: 1rem;
-    padding: 1rem 1.5rem;
+  main .service-category .title {
+    font-size: 0.95rem;
+    line-height: 1.45;
   }
-}/*# sourceMappingURL=main.css.map */
+  main .service-category .service {
+    font-size: 0.85rem;
+  }
+  #brand-name {
+    top: 15px;
+    left: 15px;
+    transform: scale(0.75);
+  }
+  .logo {
+    width: 55px;
+    height: 55px;
+  }
+  .menu-btn {
+    right: 10px;
+    top: 20px;
+  }
+  #chatbot-container {
+    max-width: calc(100vw - 30px);
+    right: 15px;
+    bottom: 15px;
+  }
+  #chatbot-toggle {
+    right: 15px;
+    bottom: 15px;
+  }
+  main#about .content-container {
+    padding: 1rem;
+  }
+  main#about .lg-heading {
+    font-size: 2rem;
+    letter-spacing: 6px;
+  }
+  #main-footer {
+    height: auto;
+    min-height: 60px;
+    font-size: 0.8rem;
+  }
+  .menu {
+    display: flex;
+    flex-direction: column;
+  }
+  .menu-branding, .menu-nav {
+    float: none;
+    width: 100%;
+  }
+  .menu-branding {
+    height: 35vh;
+  }
+  .menu-nav {
+    height: 65vh;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
