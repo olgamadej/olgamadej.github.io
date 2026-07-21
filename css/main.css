@@ -309,7 +309,7 @@ header {
 }
 
 .content-container {
-  padding: 2rem 5rem;
+  padding: 3rem 5rem 2rem 5rem;
 }
 .content-container.services-content-container {
   margin-top: 2rem;
@@ -633,13 +633,14 @@ main#about {
   font-optical-sizing: auto;
 }
 main#about .lg-heading {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 400;
   color: rgb(47, 52, 71);
   letter-spacing: 15px;
   padding-left: 0.7rem;
 }
 main#about .sm-heading {
+  margin-top: 5rem;
   font-family: "Raleway", sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
@@ -649,6 +650,17 @@ main#about .sm-heading {
 }
 main#about .sm-heading .sm-heading-wrapper {
   align-items: flex-start;
+}
+#about h2.sm-heading {
+  color: rgb(15.085645933, 19.1794258373, 23.614354067);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: transparent;
+  background: linear-gradient(
+  to right,
+  rgba(198, 198, 218, 0.5) 0%,
+  rgba(228, 228, 228, 0.2) 100%
+  ); 
 }
 main#about .about-info {
   display: grid;
@@ -666,6 +678,7 @@ main#about .about-info .bio {
 }
 main#about .about-info .bio .bio-title {
   font-size: 1.5rem;
+  padding-bottom: 0.5rem;
 }
 main#about .about-info .job {
   padding: 2rem 1.5rem 0rem 1.5rem;
@@ -853,7 +866,7 @@ main#work .projects a {
     transform: translateX(-50%) translateY(-10%);
   }
 }
-@media screen and (max-width: 998px) {
+@media screen and (max-width: 1100px) {
   html,
   body {
     overflow-x: hidden;
@@ -870,8 +883,21 @@ main#work .projects a {
     text-align: center;
     justify-content: center;
   }
-  main .content-container {
-    padding: 2rem;
+  .content-container {
+    padding: 4.5rem 3rem 2rem 3rem;
+  }
+  main#about .about-info .bio {
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+    line-height: 1.7rem;
+    padding-top: 1.5rem;
+  }
+  main#about .about-info .job-3 {
+    padding-bottom: 2.5rem;
+  }
+  main#about .about-info {
+  grid-template-areas: "bio bio" "job1 job2" "job3 job3";
+  grid-template-columns: repeat(2, 1fr);
   }
   main .services-content-container {
     flex-direction: column;
@@ -998,17 +1024,29 @@ main#work .projects a {
     top: 25px;
     right: 20px;
   }
-  main#about .content-container {
-    padding: 2rem 1.5rem;
+  .content-container {
+    padding: 3.5rem 4rem 4rem 2rem;
   }
   main#about .lg-heading {
-    font-size: 3rem;
+    font-size: 2rem;
     letter-spacing: 8px;
+  }
+  main#about .sm-heading {
+    margin-top: 1.7rem;
   }
   main#about .about-info {
     grid-template-columns: 1fr;
     grid-template-areas: "bio" "job1" "job2" "job3";
     gap: 1rem;
+  }
+  main#about .about-info .bio {
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+  line-height: 1.6rem;
+  padding-top: 1.7rem;
+  }
+  main#about .about-info .job-1, main#about .about-info .job-3 {
+    padding-bottom: 1.5rem;
   }
   main#work {
     padding: 2rem 1.5rem;
@@ -1126,12 +1164,15 @@ main#work .projects a {
     right: 15px;
     bottom: 15px;
   }
-  main#about .content-container {
-    padding: 1rem;
+  .content-container {
+    padding: 2.5rem 2rem 2rem 2rem;
   }
   main#about .lg-heading {
-    font-size: 2rem;
+    font-size: 1.4rem;
     letter-spacing: 6px;
+  }
+  main#about .sm-heading {
+    margin-top: 3rem;
   }
   #main-footer {
     height: auto;
