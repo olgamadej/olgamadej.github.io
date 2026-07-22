@@ -770,7 +770,7 @@ main#contact .content-container {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: 80vh;
+  min-height: 80vh;
 }
 .page-wrapper main#contact .sm-heading {
   margin-top: 2.5rem;
@@ -864,6 +864,52 @@ main#contact .contact-btn::after{
   background: rgba(55, 60, 75, 1);
   border-radius: 3px;
   z-index: 1;
+}
+main#contact .contact-details{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+main#contact .contact-card{
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1.5rem 2rem 1.5rem 4rem;
+  border: 1px solid rgba(255, 255, 255, .35);
+  border-radius: 2px;
+  backdrop-filter: blur(2px);
+  transition: .35s ease;
+}
+main#contact .contact-card:hover{
+    border-color:rgba(255,255,255,.35);
+    background:rgba(255,255,255,.06);
+}
+main#contact .contact-card h4{
+    display:flex;
+    align-items:center;
+    margin-bottom:1rem;
+    font-size:1rem;
+    letter-spacing:2px;
+    font-weight:500;
+}
+main#contact .contact-card i{
+    margin-right:.7rem;
+    width:20px;
+    text-align:center;
+}
+main#contact .contact-card a{
+    color:rgba(86,97,115,.85);
+    text-decoration:none;
+    transition:.3s;
+}
+main#contact .contact-card a:hover{
+    color:rgb(186,197,212);
+}
+main#contact .contact-card p{
+    margin:0;
+    color:rgba(86,97,115,.85);
+    line-height:1.6;
 }
 .btn, .btn-light, .btn-dark {
   display: block;
