@@ -711,12 +711,14 @@ main#work {
   padding: 0;
   margin: 0;
 }
-
+main .lg-heading {
+    font-size: 3rem;
+  }
 main#work .sm-heading {
   display: inline-block;
   margin-bottom: 2.5rem;
   width: auto;
-  margin-top: 2.5rem;
+  margin-top: 3.5rem;
 }
 main#work .sm-heading .sm-heading-wrapper {
   align-items: flex-start;
