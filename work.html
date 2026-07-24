@@ -13,20 +13,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    
-    <link rel="stylesheet" href="scss/main.css" />
+    <link rel="stylesheet" href="css/main.css" />
     <link rel="icon" href="img/logoFala.png" type="image/png" />
-    <title>Welcome to my Portfolio</title>
+    <title>Suenarte - Sites</title>
   </head>
 
   <body>
-    <header>
+        <header id ="main-header">
+      <h1  id="brand-name" class="lg-heading">
+            <div class="letter text-white">S</div>
+            <div class="letter text-white">u</div>
+            <div class="letter text-white">e</div>
+            <div class="letter text-white">n</div>
+            <div class="letter text-secondary">a</div>
+            <div class="letter text-secondary">r</div>
+            <div class="letter text-secondary">t</div>
+            <div class="letter text-secondary">e</div>
+          </h1>
+      <div id="brand-logo" class="logo"></div>
       <div class="menu-btn">
         <div class="btn-line"></div>
         <div class="btn-line"></div>
         <div class="btn-line"></div>
       </div>
       <nav class="menu">
-        <div class="menu-branding"><div class="portrait"></div></div>
+        <div class="menu-branding"><div class="brand-logo-hide"></div></div>
         <ul class="menu-nav">
           <li class="nav-item">
             <a href="index.html" class="nav-link"> Home </a>
@@ -66,6 +77,7 @@
         </div>
       <!--Bubbles End-->
       </div>
+      <div class="content-container">
       <h1 class="lg-heading">
           <div class="letter text-white">M</div>
           <div class="letter text-white">y</div>
@@ -77,7 +89,7 @@
       </h1>
       <h2 class="sm-heading">
         <span class="sm-heading-wrapper sm-head-work">
-          Check out some of my projects...
+          Selected digital experiences.
         </span>
       </h2>
       <div class="projects">
@@ -85,104 +97,77 @@
           <!-- MSciMath -->
           <div class="project">
             <a 
-              href="https://mscimath.eu" 
-              target="blank"
+              href="#" 
+              target="_blank"
+              onclick="return false;" 
             >
               <video width="100%" autoplay controls>
                 <source src="video/mscimath-front.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
-          </a>
-          <a
-            href="https://mscimath.eu"
-            target="blank"
-            class="btn-dark"
-          >
-            <i class="fab"></i> Visit the Website
-          </a>
-          </div>
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              class="btn-dark"
+              onclick="return false;"
+            >
+              <i class="fas fa-eye"></i> 
+              Educational Website<br/>  Interactive • Responsive 
+            </a>
+            </div>
           <!-- Pet Games -->
           <div class="project">
-          <a
-            href="https://olgamadej.github.io/petgames.github.io/"
-            target="blank"
-          >
-            <img src="img/GamesS.jpg" />
-          </a>
-          <a href="img/Games.jpg" class="btn-light">
-            <i class="fas fa-eye"></i> Full View
-          </a>
-          <a
-            href="https://github.com/olgamadej/petgames.github.io"
-            target="blank"
-            class="btn-dark"
-          >
-            <i class="fab fa-github"></i> Github
-          </a>
-        </div>
+            <a
+              href="img/GamesS.jpg"
+              target="_blank"
+            >
+              <img src="img/GamesS.jpg" loading=" lazy"/>
+            </a>
+            <a
+              href="img/Games.jpg"
+              target="_blank"
+              loading="lazy"
+              class="btn-dark"
+            >
+              <i class="fas fa-eye"></i> Gaming Website <br/>Interactive • Responsive
+            </a>
+          </div>
           
           <!--Kinko-->
           <div class="project">
           <a
-            href="https://olgamadej.github.io/kinkodesign.github.io/"
-            target="blank"
+            href="img/KinkoS.jpg"
+            target="_blank"
           >
-            <img src="img/KinkoS.jpg" />
+            <img src="img/KinkoS.jpg" loading="lazy"/>
           </a>
-          <!--<a
-            href="img/Kinko.jpg"
-            class="btn-light"
-          >
-            <i class="fas fa-eye"></i> Project
-          </a>-->
           <a
-            href="https://github.com/olgamadej/kinkodesign.github.io"
+            href="#"
             target="blank"
             class="btn-dark"
+            onclick="return false;"
           >
-            <i class="fab fa-github"></i> Github
+            <i class="fas fa-eye"></i> Handmade Jewellery <br/>Interactive • Responsive
           </a>
         </div>
 
           <!--Suenarte Page-->
           <div class="project">
           <a
-            href="https://olgamadej.github.io/Projects/EcommerceWebForDesign"
-            target="blank"
+            href="img/SuenartePage.jpg"
+            target="_blank"
           >
-            <img src="img/SuenartePage.jpg" />
+            <img src="img/SuenartePage.jpg" loading="lazy"/>
           </a>
-          <!--<a href="img/SuenartePage.jpg" class="btn-light">
-            <i class="fas fa-eye"></i> Project
-          </a>-->
           <a
-            href="https://github.com/olgamadej/olgamadej.github.io/tree/master/Projects/EcommerceWebForDesign"
-            target="blank"
+            href="#"
+            target="_blank"
             class="btn-dark"
+            onclick="return false;"
           >
-            <i class="fab fa-github"></i> Github
+            <i class="fas fa-eye"></i> Handmade Jewellery <br/>Interactive • Responsive
           </a>
-          </div>
-          
-          <!--Balls Animation-->
-          <div class="project">
-            <a href="https://codepen.io/o1g/full/ZEJbPJK" target="blank">
-              <img src="img/BallsS.PNG" />
-            </a>
-            <!--<a
-              href="img/Balls.PNG"
-              target="blank"
-              class="btn-light"
-            >
-             <i class="fas fa-eye"></i> Project
-            </a>-->
-            <a
-              href="https://codepen.io/o1g/pen/ZEJbPJK"
-              target="blank"
-              class="btn-dark"
-           >
-              <i class="fab fa-codepen"></i> Codepen
-           </a>
           </div>
         </div>
         <div class="item">
@@ -190,119 +175,54 @@
           <!--Translation Web-->
           <div class="project">
           <a
-            href="https://olgamadej.github.io/Projects/TranslationWeb"
-            target="blank"
+            href="img/TranslationS.jpg"
+            target="_blank"
           >
-            <img src="img/TranslationS.jpg" />
+            <img src="img/TranslationS.jpg" loading="lazy" />
           </a>
-          <!--<a
-            href="img/Translation.png"
-            target="blank"
-            class="btn-light"
-          >
-            <i class="fas fa-eye"></i> Project
-          </a>-->
           <a
-            href="https://github.com/olgamadej/olgamadej.github.io/tree/master/Projects/TranslationWeb"
-            target="blank"
+            href="#"
+            target="_blank"
             class="btn-dark"
+            onclick="return false;"
           >
-            <i class="fab fa-github"></i> GitHub
+            <i class="fas fa-eye"></i> Translation Services Website <br/>Interactive • Responsive
           </a>
         </div>
 
         <!--Double Page-->
         <div class="project">
-          <a href="https://codepen.io/o1g/full/omvoZa" target="blank">
-            <img src="img/DoubleS.jpg" />
+          <a href="img/DoubleS.jpg" target="_blank">
+            <img src="img/DoubleS.jpg" loading="lazy"/>
           </a>
-          <!--<a
-            href="img/Double.PNG"
-            target="blank"
-            class="btn-light"
-          >
-            <i class="fas fa-eye"></i> Project
-          </a>-->
           <a
-            href="https://codepen.io/o1g/pen/omvoZa"
-            target="blank"
+            href="#"
+            target="_blank"
             class="btn-dark"
+            onclick="return false;"
           >
-            <i class="fab fa-codepen"></i> Codepen
+            <i class="fas fa-eye"></i>Design & Coding Website <br/>Interactive • Responsive
           </a>
         </div>
         
         <!--Houses At 1 Euro-->
         <div class="project">
-          <a href="https://codepen.io/o1g/full/LYLOYMN" target="blank">
-            <img src="img/Houses1euS.png" />
+          <a href="img/Houses1euS.png" target="_blank">
+            <img src="img/Houses1euS.png" loading="lazy"/>
           </a>
-          <!--<a
-            href="img/Houses1eu.PNG"
-            target="blank"
-            class="btn-light"
-          >
-            <i class="fas fa-eye"></i> Project
-          </a>-->
           <a
-            href="https://codepen.io/o1g/pen/LYLOYMN"
-            target="blank"
+            href="#"
+            target="_blank"
             class="btn-dark"
+            onclick="return false;"
           >
-            <i class="fab fa-codepen"></i> Codepen
+            <i class="fas fa-eye"></i>Real Estate Website <br/>Interactive • Responsive
           </a>
+        </div>         
         </div>
-
-          
-        <!--Neon Sign-->
-        <div class="project">
-          <a href="https://codepen.io/o1g/full/zQaNjd" target="blank">
-            <img src="img/ComeOnInS.jpg" />
-          </a>
-          <!--<a href="img/ComeOnIn.PNG" target="blank" class="btn-light">
-            <i class="fas fa-eye"></i> Project
-          </a>-->
-          <a
-            href="https://codepen.io/o1g/pen/zQaNjd"
-            target="blank"
-            class="btn-dark"
-          >
-            <i class="fab fa-codepen"></i> Codepen
-          </a>
+        <div class="item">          
         </div>
-          <!--Snow Flakes-->
-          <div class="project">
-          <a href="https://codepen.io/o1g/full/rNayKBQ" target="blank">
-            <img src="img/SnowflakesS.jpg" />
-          </a>
-          <!--<a
-            href="img/Snowflakes.PNG"
-            target="blank"
-            class="btn-light"
-          >
-            <i class="fas fa-eye"></i> Project
-          </a>-->
-          <a
-            href="https://codepen.io/o1g/pen/rNayKBQ"
-            target="blank"
-            class="btn-dark"
-          >
-            <i class="fab fa-codepen"></i> Codepen
-          </a>
-          </div>          
-        </div>
-        <div class="item">
-          
-          
-        </div>
-        
-        <div class="item">
-        </div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-
-        <div class="item"></div>
+      </div>
       </div>
       <div id="chatbot-toggle"></div>
       <div id="chatbot-container">
@@ -320,6 +240,7 @@
     <footer id="main-footer">Copyright &copy; 2019</footer>
   </div>
     <script src="js/main.js"></script>
+    <script src ="js/brand_hide.js"></script>
     <script src="js/chatbot.js"></script>
 
   </body>
