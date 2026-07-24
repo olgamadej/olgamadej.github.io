@@ -638,6 +638,7 @@ main#about .lg-heading {
   color: rgb(47, 52, 71);
   letter-spacing: 15px;
   padding-left: 0.7rem;
+  padding-top: 1.7rem;
 }
 main#about .sm-heading {
   margin-top: 5rem;
@@ -776,20 +777,21 @@ main#contact .content-container {
   text-shadow: 0px 0px 0px white;
 }
 .page-wrapper main#contact .sm-heading .sm-heading-inside {
-  padding: 0.3rem;
+  padding: 0.7rem 0.9rem;
   margin: 0;
   background-color: rgba(110, 110, 120, .1);
-  border-top: dashed 1px white;
-  border-bottom: dashed 1px white;
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 main#contact .contact-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "intro form" "cards cards";
     gap:4rem;
     align-items:center;
-    margin-top:4rem;
+    margin-top:2rem;
 }
 main#contact .contact-intro{
+  grid-area: intro;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -861,8 +863,11 @@ main#contact .contact-btn::after{
   z-index: 1;
 }
 main#contact .contact-details{
+  grid-area: cards;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 main#contact .contact-card{
@@ -870,10 +875,10 @@ main#contact .contact-card{
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 1.5rem 2rem 1.5rem 4rem;
+  padding: 1.5rem 2rem 1.5rem 2.5rem;
   border: 1px solid rgba(255, 255, 255, .35);
   border-radius: 2px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(2px);
   transition: .35s ease;
 }
@@ -907,6 +912,70 @@ main#contact .contact-card p{
     color:rgba(86,97,115,.85);
     line-height:1.6;
 }
+main#contact .contact-form-container{
+  grid-area: form;
+  width: 100%;
+}
+main#contact .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, .22);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, .45);
+  border-radius: 4px;
+}
+main#contact .contact-form input,
+main#contact .contact-form textarea {
+  width: 100%;
+  padding: 1rem 2rem;
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  color: rgb(47, 52, 71);
+  background: rgba(255, 255, 255, .45);
+  border: 1px solid rgba(255, 255, 255, .4);
+  border-radius: 3px;
+  outline: none;
+  transition: ;
+    border .3s ease,
+    background .3s ease;
+}
+main#contact .contact-form input::placeholder, 
+main#contact .contact-form textarea::placeholder {
+ color: rgba(47, 52, 71, .65);  
+}
+main#contact .contact-form input:focus,
+main#contact .contact-form textarea:focus {
+  background:rgba(255,255,255,.55);
+  border-color:rgb(87,96,132);
+}
+main#contact .contact-form button {
+  align-self:flex-start;
+  padding:.9rem 2rem;
+  font-family:"Raleway", sans-serif;
+  font-size:1rem;
+  letter-spacing:2px;
+  color:white;
+  background: rgba(55,60,75,.95);
+  border: 1px solid rgba(255,255,255, 1);
+  box-shadow: 0 0 5px rgba(255,255,255, 1);
+  border-radius:3px;
+  cursor:pointer;
+  transition: background .3s ease, border .3s ease;
+}
+main#contact .contact-form button:hover {
+  background: rgb(47,52,71);
+  border: 2px solid rgba(255,255,255, 1);
+}
+main#contact #form-status {
+  min-height:1.2rem;
+  font-size:.9rem;
+  color:rgb(47,52,71);
+  letter-spacing:1px;
+}
+
 .btn, .btn-light, .btn-dark {
   display: block;
   padding: 0.5rem 1rem;
