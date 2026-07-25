@@ -442,6 +442,9 @@ h3.sm-heading.services-sm-heading .services-span-wrapper {
   font-size: 1.3rem;
   line-height: 1.3rem;
 }
+h2.sm-heading.services-sm-heading {
+  padding: 1rem 1.2rem;
+}
 h1.sm-heading .sm-heading-wrapper,
 h2.sm-heading .sm-heading-wrapper,
 h3.sm-heading .sm-heading-wrapper {
@@ -1123,7 +1126,6 @@ main#contact #form-status {
   main .snap-section {
     scroll-snap-align: start;
     scroll-snap-stop: normal;
-    min-height: 100svh;
   }
   main#home {
     scroll-snap-type: y proximity;
@@ -1148,11 +1150,21 @@ main#contact #form-status {
   main .sm-heading {
     font-size: 1rem;
   }
+  #services-section.snap-section {
+    min-height: auto;
+    height: auto;
+  }
   main .services-content-container {
+    min-height: auto;
     margin-top: 0;
     padding: 4rem 1.5rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
+  }
+  main .services-header {
+    flex-direction: column;
+    width: 100%;
     align-items: center;
   }
   main .services-lg-heading {
@@ -1170,26 +1182,29 @@ main#contact #form-status {
     text-align: center;
     white-space: normal;
   }
-  main .services-list {
+  main .content-container.services-content-container .services-list {
     width: 100%;
     display: flex;
+    align-items: center;
     flex-direction: column;
     gap: 1.5rem;
   }
   main .service-category {
     width: 100%;
+    height: auto;
     padding: 1.2rem;
     border-radius: 4px;
-    overflow: hidden;
+    overflow: visible;
   }
-  main .service-category .title {
+  main .content-container.services-content-container .service-category .title {
     font-size: 1rem;
-    line-height: 1.4;
+    line-height: 1.3;
     margin-bottom: 1rem;
+    padding: 1rem 1.2rem;
   }
   main .service-category .service {
     font-size: 0.95rem;
-    line-height: 1.5;
+    line-height: 1.4;
     margin-bottom: 0.8rem;
   }
   #main-header {
@@ -1253,7 +1268,12 @@ main#contact #form-status {
   }
   main#contact .contact-grid{
     grid-template-columns: 1fr;
+    grid-template-areas: "intro" "form" "cards";
     gap: 3rem;
+  }
+  #main-footer {
+    position: relative;
+    bottom:auto;
   }
 }
 @media screen and (max-width: 600px) {
