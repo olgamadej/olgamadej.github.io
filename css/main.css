@@ -1271,10 +1271,7 @@ main#contact #form-status {
     grid-template-areas: "intro" "form" "cards";
     gap: 3rem;
   }
-  #main-footer {
-    position: relative;
-    bottom:auto;
-  }
+  
 }
 @media screen and (max-width: 600px) {
   body {
