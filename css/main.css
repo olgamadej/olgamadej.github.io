@@ -309,7 +309,7 @@ header {
 }
 
 .content-container {
-  padding: 3rem 5rem 2rem 5rem;
+  padding: 5rem 5rem 2rem 5rem;
 }
 .content-container.services-content-container {
   margin-top: 2rem;
@@ -716,6 +716,7 @@ main#work {
   margin: 0;
 }
 main .lg-heading {
+  padding-top: 2rem;
     font-size: 3rem;
   }
 main#work .sm-heading {
