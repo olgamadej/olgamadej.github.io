@@ -466,12 +466,19 @@ h3.sm-heading {
   margin: 0.4rem;
   padding: 0.2rem;
   width: auto;
-  border-radius: 3px;
+  border-radius: 2px;
   color: rgb(215.085645933, 219.1794258373, 223.614354067);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 1;
+}
+#home h2.sm-heading {
+  color: rgba(0, 20, 45, 1);;
+  background-color: rgba(0, 0, 0, .1);
+}
+#home .sm-heading-wrapper {
+  border: 1px solid rgba(0, 20, 45, 1);
 }
 h1.sm-heading.services-sm-heading,
 h2.sm-heading.services-sm-heading,
@@ -503,6 +510,7 @@ h3.sm-heading .sm-heading-wrapper {
   border: 1px solid rgba(255, 255, 255, 0.229);
   z-index: 1;
 }
+
 h1.sm-heading .sm-heading-wrapper.services-span-wrapper,
 h2.sm-heading .sm-heading-wrapper.services-span-wrapper,
 h3.sm-heading .sm-heading-wrapper.services-span-wrapper {
