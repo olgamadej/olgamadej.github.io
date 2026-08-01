@@ -51,7 +51,7 @@
   z-index: 200;
 }
 #brand-logo.brand-hidden {
-  transform: translateY(-150%);
+  transform: translateX(-50%) translateY(-150%);
   transition: transform 0.8s ease-in 0.2s;
 }
 #brand-logo.brand-visible {
@@ -496,7 +496,10 @@ h3.sm-heading.services-sm-heading .services-span-wrapper {
   line-height: 1.3rem;
 }
 h2.sm-heading.services-sm-heading {
-  padding: 1rem 1.2rem;
+  padding: 0.4rem;
+}
+#home h2.sm-heading.services-sm-heading .services-span-wrapper {
+  padding: 0.7rem 0.9rem;
 }
 h1.sm-heading .sm-heading-wrapper,
 h2.sm-heading .sm-heading-wrapper,
