@@ -1177,6 +1177,14 @@ main#contact #form-status {
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
   }
+  .bubble {
+    height: 65vw;
+    width: 65vw;
+    padding: 1rem;
+  }
+  .bubble .inside-bubble {
+    transform: translateX(100px);
+  }
   main {
     padding: 0;
     overflow-x: hidden;
