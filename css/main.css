@@ -574,17 +574,6 @@ a {
 .btn-front-container .btn-front i {
   vertical-align: middle;
 }
-
-.chatbot-bg {
-  border-radius: 50%;
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  width: 56px;
-  height: 56px;
-  z-index: 199;
-}
-
 #chatbot-toggle {
   cursor: pointer;
   position: fixed;
@@ -598,19 +587,46 @@ a {
   transition: all 0.5s ease-out;
 }
 #chatbot-toggle.close-toggle {
-  visibility: visible;
+  background-image: none !important;
+  background-color: rgba(199, 200, 214, 0.5);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  bottom: 10px;
+  right: 20px;
 }
-
+/* The green online dot */
+#chatbot-toggle.close-toggle::after {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background-color: #22c55e; /* nice green */
+  border-radius: 50%;
+  border: 2px solid rgb(57, 255, 20);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 #chatbot-container {
   max-width: 400px;
   max-height: 90vh;
   position: fixed;
-  bottom: 20px;
+  bottom: 30px;
   right: 20px;
   border-radius: 3px;
+  overflow-x: visible;
   overflow-y: scroll;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  background: white;
+  background-color: rgba(199, 200, 214, 0.85);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   transform: translate(95%, 0);
   z-index: 100;
   opacity: 0;
@@ -630,11 +646,15 @@ a {
   max-width: 90%;
 }
 #chatbot-container #chatbot .bot {
-  background: #f0f0f0;
+  background-color: rgba(199, 200, 214, 0.9);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgb(219, 220, 234);
 }
 #chatbot-container #chatbot .user {
   background: rgb(87.6271186441, 96.9491525424, 132.3728813559);
   align-self: flex-end;
+  border: 2px solid rgb(197, 196, 222);
 }
 #chatbot-container #chatbot .chat-options button {
   margin: 4px 5px 0 0;
@@ -646,6 +666,33 @@ a {
 #chatbot-container #chatbot .chat-options button:hover {
   background: rgb(87.6271186441, 96.9491525424, 132.3728813559);
 }
+
+/* Chatbot scrollbar */
+/* Firefox */
+#chatbot-container {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(87, 97, 132) rgba(199, 200, 214, 0.3);
+}
+
+/* Chrome, Safari, Edge */
+#chatbot-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+#chatbot-container::-webkit-scrollbar-track {
+  background: rgba(199, 200, 214, 0.3);
+  border-radius: 4px;
+}
+
+#chatbot-container::-webkit-scrollbar-thumb {
+  background: rgb(87, 97, 132);
+  border-radius: 4px;
+}
+
+#chatbot-container::-webkit-scrollbar-thumb:hover {
+  background: rgb(47, 52, 71);
+}
+
 
 main {
   min-height: 91.6vh;
