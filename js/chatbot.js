@@ -1,325 +1,370 @@
 // Toggle Chatbot
-// Select DOM Items
 const chatbotToggle = document.querySelector("#chatbot-toggle");
 const container = document.querySelector("#chatbot-container");
-const chatbot  = document.querySelector("#chatbot");
+const chatbot = document.querySelector("#chatbot");
 
-// Chatbot Data
-const faqData = [
-  {
-    id: "process",
-    category: "Workflow",
-    priority: 1,
-    questions: [
-      "What is your process?", "How do you usually work?"
-    ],
-    answer: `
-I usually work in clear phases: 
- * Discovery and requirements
- * Design and architecture
- * Development
- * Feedback and iteration
- * Delivery
-
-You are involved at every step so there are no surprises.`,
-    followUps: ["tools", "timeline"]
-  },
-  {
-    id: "stack",
-    category: "Technical",
-    priority: 2,
-    questions: [
-      "What tech stack do you use?", "What tech stack do you work with?"
-    ],
-    answer: `    
-The stack depends on the problem being solved.
-
-However, I most commonly use:
- * Python (AI pipelines, automation, data processing)
- * Django / FastAPI (APIs, AI services)
- * JavaScript (frontend logic, integrations)
- * REST APIs and background workers.`,
-  followUps: ["ai_use_cases", "integration"]
-  },
-  {
-    id: "timeline",
-    category: "Planning",
-    priority: 1,
-    questions: [
-
-    ]
-  },
-  {
-    id: "ai_use_cases",
-    category: "AI Solutions",
-    priority: 1,
-    questions: [
-      "What kind of AI solutions do you build?", "How do you use AI in projects?"
-    ],
-    answer: `
-Typical AI-related work includes:
- * Chatbots and assistants
- * Automation of internal workflows
- * AI-powered search or summarization
- * Data enrichment and analysis
- * Integrating LLMs into existing systems
-
-My goal is always to solve a concrete business problem, not to add AI for its own sake.`,
-    followUps: ["integration", "data"]
-  },
-  {
-    id: "integration",
-    category: "Architecture",
-    priority: 1,
-    questions: [
-      "How do you integrate AI into existing systems?",
-      "Can you add AI to an existing product?"
-    ],
-    answer: `
-Yes - most projects involve integration rather than greenfield builds.
-
-My typical approach:
- 1st: Analyze the existing architecture.
- 2nd: Identify where AI adds value.
- 3rd: Expose AI logic via APIs.
- 4th: Integrate with front end or backend services.
- 5th: Ensure reliability and monitoring.
-
-My goal is minimal disruption with maximum impact.
-`,
-followUps: ["data", "security"]
-  },
-  {
-    id: "data",
-    category: "AI Constraints",
-    priority: 2,
-    questions: [
-      "What data do you need?",
-      "Do I need a lot of data?"
-    ],
-    answer: "It depends on the use case. Some solutions work with existing structured data, others use third-party models and APIs. Moreover, not every project requires large datasets. Part of the work is determining what's feasible with the data you already have.",
-    followUps: ["security", "timeline"]
-  },
-  {
-    id: "security",
-    category: "AI Constraints",
-    priority: 2,
-    questions: [
-      "Is my data secure?", "How do you handle privacy?"
-    ],
-    answer: "Security and privacy are considered from the start of every project. I aim to minimize data retention, ensure secure communication between services and APIs, and keep a clear separation of concerns within the system architecture. When required, compliance and regulatory constraints are taken into account as part of the design. The exact measures always depend on the project context, the data involved, and the applicable regulations.",
-    followUps: ["integration", "budget"]
-  }
-]
-
-//Set Initial State of ChatBot to be Hidden
 let showChatbot = false;
 
 chatbotToggle.addEventListener("click", toggleChatbot);
 
-function toggleChatbot() {
-    if (!showChatbot) {
-        chatbotToggle.classList.add("close-toggle");
-        container.classList.add("show-container");
-        chatbot.classList.add("show-chatbot");
+function positionBoyInChat() {
+	// Wait one frame so the container has its final size
+	requestAnimationFrame(() => {
+    const rect = container.getBoundingClientRect();
 
-        // Set Chatbot State
-        showChatbot = true;
-    } else {
-        chatbotToggle.classList.remove("close-toggle");
-        container.classList.remove("show-container");
-        chatbot.classList.remove("show-chatbot");
-
-        // Set Chatbot State
-        showChatbot = false;
-    }
+    // Place the boy 12px from the top and right edges of the chat window
+    chatbotToggle.style.top = `${rect.top + 12}px`;
+    chatbotToggle.style.right = `${window.innerWidth - rect.right + 12}px`;
+  });
 }
 
+function toggleChatbot() {
+	if (!showChatbot) {
+		chatbotToggle.classList.add("close-toggle");
+		container.classList.add("show-container");
+		chatbot.classList.add("show-chatbot")
+		showChatbot = true;
 
-// Chatbot logic
-document.addEventListener("DOMContentLoaded", function() {  
-    //const chatbot = document.getElementById('chatbot');
-    let state = null;
-    let projectData = {};
+		// Position the boy relative to the chat window
 
-    function addMessage(text, sender = 'bot') {
-      const msg = document.createElement('div');
-      msg.className = `chat-message ${sender}`;
-      msg.innerText = text;
-      chatbot.appendChild(msg);
-      chatbot.scrollTop = chatbot.scrollHeight;
-    }
+	} else {
+		chatbotToggle.classList.remove("close-toggle");
+		container.classList.remove("show-container");
+		chatbot.classList.remove("show-chatbot");
+		showChatbot = false;
+	}
+}
 
-    function showOptions(options) {
-      clearOptions();
+// ===================
+// Chatbot Core
+// ===================
+document.addEventListener("DOMContentLoaded", function () {
+	let state = null;
+	let projectData = {};
+	let conversation = []; // full history
 
-      const container = document.createElement("div");
-      container.className = "chat-options";
+	// --------- Helpers ------------
+	function scrollToBottom() {
+		//Double rAF so we scroll *after* the browser has painted the new height
+	    requestAnimationFrame(() => {
+	    	requestAnimationFrame(() => {
+	    		container.scrollTop = container.scrollHeight;
+	    	});
+	    });	
+	}
 
-      options.forEach(opt => {
-        const btn = document.createElement("button");
-        btn.innerText = opt.label;
-        btn.onclick = () => handleChoice(opt.value);
-        container.appendChild(btn);
-      });
+	function addMessage(text, sender = "bot") {
+		const msg = document.createElement("div");
+		msg.className = `chat-message ${sender}`;
+		msg.innerText = text;
+		chatbot.appendChild(msg);
+		scrollToBottom();
+		// Save to history
+		conversation.push({ sender, text, timestamp: new Date().toISOString() });
+	}
 
-      chatbot.appendChild(container);
-      chatbot.scrollTop = chatbot.scrollHeight;
-    }
+	function botTyping(text, delay = 500) {
+		const msg = document.createElement("div");
+		msg.className = "chat-message bot typing";
+		msg.innerText = "...";
+		chatbot.appendChild(msg);
+		scrollToBottom();
 
-    function clearOptions() {
-      const opts = document.querySelector('.chat-options');
-      if (opts) opts.remove();
-    }
+		setTimeout(() => {
+			msg.innerText = text;
+			msg.classList.remove("typing");
+			scrollToBottom();
+			conversation.push({ sender: "bot", text, timestamp: new Date().toISOString() });
+		}, delay);
+	}
 
-    function botTyping(text, delay = 500) {
-      const msg = document.createElement("div");
-      msg.className = "chat-message bot typing";
-      msg.innerText = "...";
-      chatbot.appendChild(msg);
-      chatbot.scrollTop = chatbot.scrollHeight;
+	function showOptions(options) {
+		clearOptions();
+		const optsContainer = document.createElement("div");
+		optsContainer.className = "chat-options";
 
-      setTimeout(() => {
-        msg.innerText = text;
-        msg.classList.remove("typing");
-        chatbot.scrollTop = chatbot.scrollHeight;
-      }, delay);
-    }
+		options.forEach((opt) => {
+			const btn = document.createElement("button");
+			btn.innerText = opt.label;
+			btn.onclick = () => handleChoice(opt.value);
+			optsContainer.appendChild(btn);
+		});
 
-    // Step Form
-    function nextStep(step) {
-      clearOptions();
-      switch (step) {
-        case 1: 
-          botTyping("What do you need help with?");
-          setTimeout(() => 
-            showOptions([
-              { label: "Website", value: "Website" },
-              { label: "Branding", value: "Branding" },
-              { label: "Web / Mobile App", value: "App" },
-            ]), 600
-          );
-          state = "project_type";
-          break;
-        case 2: 
-          botTyping("What's your estimated budget?");
-          setTimeout(() =>
-            showOptions([
-              { label: "< 1000€", value: "<1000" },
-              { label: "1000€ - 5000€", value: "1000-5000" },
-              { label: "> 5000€", value: ">5000" },
-            ]), 600
-          );
-          state = "project_budget";
-          break;
-        case 3:
-          botTyping("When would you like to start?");
-          setTimeout(() => 
-            showOptions([
-              { label: "ASAP", value: "ASAP" },
-              { label: "Specific date", value: "date" },
-              { label: "Not sure yet", value: "unsure" },
-            ]), 600
-          );
-          state = "project_start";
-          break;
-        case 4:
-          botTyping("Awesome! Here's what you told me:");
-          setTimeout(() => {
-            addMessage(`• Type: ${projectData.type}`);
-            addMessage(`• Budget: ${projectData.budget}`);
-            addMessage(`• Start: ${projectData.start}`);
-            botTyping("Want to send this my way?");
-            setTimeout(() => 
-              showOptions([
-                { label: "Yes, send it.", value: "send_project" },
-                { label: "Start over", value: "project" },
-              ]), 600
-            );
-          }, 800);
-          state = "project_summary";
-          break;
-      }
-    }
+		chatbot.appendChild(optsContainer);
+		scrollToBottom();
+	}
 
-    // Attach handleChoice to window so it's globally accessible 
-    window.handleChoice = function(choice) {
-      clearOptions();
+	function clearOptions() {
+		const opts = document.querySelector(".chat-options");
+		if (opts) opts.remove();
+	}
 
-      if (choice === 'project') {
-        projectData = {}; // data reset
-        nextStep(1);
-      } else if (choice === 'availability') {
-        botTyping("What are your time constraints?");
-        setTimeout(() => addMessage("How complex is your project?"), 800);
-        //Some logic to manage the questions and logic to see availability
-      } else if (choice === "faq") {
-        botTyping("Here are some common questions about how I work with AI and systems:");
-        setTimeout(() => {
-          addMessage("• What's your process?\n• What tools do you use?\n• How long do projects take?");
-        }, 600);
-      } else if (choice === 'call') {
-        botTyping("You can book a call here:");
-        setTimeout(() => {
-          const link = document.createElement('a');
-          link.href = 'https://calendly.com/Your-Calendly';
-          link.innerText = 'Book via Calendly';
-          link.target = '_blank';
-          chatbot.appendChild(link);
-          chatbot.scrollTop = chatbot.scrollHeight;
-        }, 500);
-      }
+	function showTextInput(placeholder, onSubmit, validate = null) {
+		clearOptions();
 
-      // Step by step - form wizard
-      else if (state === "project_type") {
-        projectData.type = choice;
-        addMessage(choice, "user");
-        nextStep(2);
-      } else if (state === "project_budget") {
-        projectData.budget = choice;
-        addMessage(choice, "user");
-        nextStep(3);
-      } else if (state === "project_start") {
-        projectData.start = choice;
-        addMessage(choice, "user");
-        nextStep(4);
-      } else if (state === "project_summary" && choice === "send_project") {
-        botTyping("Got everything I need! I will reach out shortly. ")
-      }
-    };
+		const inputWrapper = document.createElement("div");
+		inputWrapper.className = "chat-input-wrapper";
+		inputWrapper.style.display = "flex";
+		inputWrapper.style.flexDirection = "column";
+		inputWrapper.style.gap = "8px";
+		inputWrapper.style.marginTop = "10px";
 
-    // Optional: Input listener for when there is  a user input field
-    /*
-    const input = document.getElementById("chat-input"); // Optional field
-    if (input) {
-      input.addEventListener("keypress", function (e) {
-        if (e.key === "Enter") {
-          const value = input.value.trim();
-          if (!value) return;
+		const row = document.createElement("div");
+		row.style.display = "flex";
+		row.style.gap = "8px";
 
-          addMessage(value, "user");
-          input.value = "";
+		const input = document.createElement("input");
+		input.type = "text";
+		input.placeholder = placeholder;
+		input.style.flex = "1";
+		input.style.padding = "8px 12px";
+		input.style.borderRadius = "2px";
+		input.style.border = "1px solid #ccc";
 
-          // Respond based on state 
-          if (state === "awaiting_project") {
-            botTyping("Awesome. I'll review that and get back to you soon.");
-            state = null;
-          } else if (state === "awaiting_time") {
-            botTyping("Thanks for that info. I'll check my availability and follow up!");
-            state = null; 
-          } else {
-           botTyping("Thanks! Let me know how else I can help.");
-          }
+		const errorMsg = document.createElement("div");
+		errorMsg.style.color = "#c0392b";
+		errorMsg.style.fontSize = "0.85em";
+		errorMsg.style.display = "none";
+
+		const btn = document.createElement("button");
+		btn.innerText = "Send";
+
+		function trySubmit() {
+			const value = input.value.trim();
+
+			if (!value) return;
+
+			if (validate) {
+				const result = validate(value);
+				if (result !== true) {
+					errorMsg.textContent = result; // validate() returns an error string
+					errorMsg.style.display = "block";
+					input.style.border = "1px solid #c0392b";
+					return;
+				}
+			}
+
+			inputWrapper.remove();
+			onSubmit(value);
+		}
+
+		btn.onclick = trySubmit;
+
+		input.addEventListener("keypress", (e) => {
+			if (e.key === "Enter") trySubmit();
+		});
+
+		// Clear the error as soon as they start fixing it
+		input.addEventListener("input", () => {
+			if (errorMsg.style.display === "block") {
+				errorMsg.style.display = "none";
+				input.style.border = "1px solid #ccc";
+			}
+		});
+
+		row.appendChild(input);
+		row.appendChild(btn);
+		inputWrapper.appendChild(row);
+		inputWrapper.appendChild(errorMsg);
+		chatbot.appendChild(inputWrapper);
+		scrollToBottom();
+		input.focus();
+	}
+
+	// ----------- Steps -------------
+	function nextStep(step) {
+		clearOptions();
+
+		switch (step) {
+			case 1:
+				botTyping("What do you need help with?");
+				setTimeout(() => {
+					showOptions([
+						{ label: "Website", value: "Website" },
+						{ label: "Branding", value: "Branding" }, // Change!
+						{ label: "Web / Mobile App", value: "App" },
+					]);
+				}, 600);
+				state = "project_type";
+				break;
+			case 2: 
+				botTyping("What is your estimated budget?");
+				setTimeout(() => {
+					showOptions([
+            			{ label: "< 1000€", value: "<1000" },
+            			{ label: "1000€ - 5000€", value: "1000-5000" },
+            			{ label: "> 5000€", value: ">5000" },
+          			]);
+				}, 600);
+				state = "project_budget";
+				break;
+
+			case 3:
+				botTyping("When would you like to start?");
+				setTimeout(() => {
+					showOptions([
+						{ label: "ASAP", value: "ASAP" },
+						{ label: "Specific date", value: "date" },
+						{ label: "Not sure yet", value: "unsure" },
+					]);
+				}, 600);
+				state = "project_start";
+				break;
+
+			case 4:
+				botTyping("Great. What is your name?");
+				setTimeout(() => {
+					showTextInput("Your name", (name) => {
+						projectData.name = name;
+						addMessage(name, "user");
+						nextStep(5);
+					});
+				}, 500);
+				state = "project_name";
+				break;
+
+			case 5:
+				botTyping("And your email address?");
+				setTimeout(() => {
+					showTextInput("your@email.com", (email) => {
+						projectData.email = email;
+						addMessage(email, "user");
+						nextStep(6);
+					},
+					(value) => {
+						const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+						return emailRegex.test(value)
+							? true
+							: "That doesn't look like a valid email - please try again.";
+					}
+				);
+			}, 500);
+			state = "project_email";
+			break;
+
+			case 6:
+				botTyping("Perfect. Here is a quick summary:")
+				setTimeout(() => {
+					addMessage(`• Type: ${projectData.type}`);
+					addMessage(`• Budget: ${projectData.budget}`);
+					addMessage(`• Start: ${projectData.start}`);
+					addMessage(`• Name: ${projectData.name}`);
+					addMessage(`• Email: ${projectData.email}`);
+
+					botTyping("Shall I send this over?");
+					setTimeout(() => {
+						showOptions([
+							{ label: "Yes, send it", value: "send_project" },
+							{ label: "Start over", value: "project" },
+						]);
+					}, 700);
+				}, 700);
+				state = "project_summary";
+				break;
+		}
+	}
+
+	// ----------Main choice handler ----------- 
+	window.handleChoice = function (choice) {
+		clearOptions();
+
+		// Initial menu choices
+		if (choice === "project") {
+			projectData = {};
+			conversation = []; // reset history for new project
+			nextStep(1);
+			return;
+		}
+
+		if (choice === "faq") {
+			botTyping("Here are some common questions:");
+			setTimeout(() => {
+      		  addMessage("• What's your process?\n• What tools do you use?\n• How long do projects take?");
+      		  // You can expand this later with real FAQ answers
+      		}, 600);
+      		return;
+		}
+		if (choice === "call") {
+			botTyping("You can book a call here:");
+			setTimeout(() => {
+				const link = document.createElement("a");
+				link.href = "https://calendly.com/Your-Calendly";
+				link.innerText = "Book via Calendly"
+				link.target = "_blank";
+				chatbot.appendChild(link);
+				chatbot.scrollTop = chatbot.scrollHeight;
+			}, 500);
+			return;
+		}
+
+		// Project flow steps
+		if (state === "project_type") {
+			projectData.type = choice;
+			addMessage(choice, "user");
+			nextStep(2);
+		} else if (state === "project_budget") {
+			projectData.budget = choice;
+			addMessage(choice, "user");
+			nextStep(3);
+		} else if (state === "project_start") {
+			projectData.start = choice;
+			addMessage(choice, "user");
+			nextStep(4);
+		} else if (state === "project_summary" && choice === "send_project") {
+			sendToBackend();
+		}
+	};
+
+	// ------- Send to backend ----------
+	async function sendToBackend() {
+		botTyping("Sending your request...");
+
+		// Build a clean message for the email
+		let message = `New lead from Chatbot\n\n`;
+		message += `Name: ${projectData.name}\n`;
+		message += `Email: ${projectData.email}\n`;
+		message += `Project Type: ${projectData.type}\n`;
+        message += `Budget: ${projectData.budget}\n`;
+        message += `Start: ${projectData.start}\n\n`;
+        message += `--- Full Conversation ---\n\n`;
+
+        conversation.forEach((entry) => {
+        	const who = entry.sender === "user" ? "User" : "Bot";
+        	message += `${who}: ${entry.text}\n`;
+        });
+
+        const payload = {
+        	name: projectData.name,
+        	email: projectData.email,
+        	message: message,
+        };
+
+        try {
+        	console.log("Sending payload:", payload);
+        	const response = await fetch("https://suenartetools-backend.onrender.com/contact", {
+        		method: "POST",
+        		headers: {
+        			"Content-Type": "application/json",
+        		},
+        		body: JSON.stringify(payload),
+        	});
+
+        	const data = await response.json();
+        	if (response.ok) {
+        		botTyping("Got it! I have sent everything. We will get back to you soon.");
+        	} else {
+        		botTyping("Something went wrong while sending. You can also use the contact form.");
+        	}
+        } catch (err) {
+        	console.error(err);
+        	botTyping("Couldn't reach the server. Please try the contact form instead");
         }
-      });
-    }
-    */
+	}
 
-    // Initial options
-    showOptions([
-      { label: "Start a project", value: "project" },
-      //{ label: "Check availability", value: "availability" },
-      { label: "FAQs", value: "faq" },
-      { label: "Book a call", value: "call" },
-    ]);
-  });
+	// ---------- Initial Options -------------
+	showOptions([
+		{ label: "Start a project", value: "project" },
+		{ label: "FAQs", value: "faq" },
+		{ label: "Book a call", value: "call" },
+	]);
+});
