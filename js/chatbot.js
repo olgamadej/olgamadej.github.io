@@ -317,49 +317,69 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	// ------- Send to backend ----------
 	async function sendToBackend() {
-		botTyping("Sending your request...");
+	botTyping("Sending your request...");
 
-		// Build a clean message for the email
-		let message = `New lead from Chatbot\n\n`;
-		message += `Name: ${projectData.name}\n`;
-		message += `Email: ${projectData.email}\n`;
-		message += `Project Type: ${projectData.type}\n`;
-        message += `Budget: ${projectData.budget}\n`;
-        message += `Start: ${projectData.start}\n\n`;
-        message += `--- Full Conversation ---\n\n`;
+	// Build a clean message for the email
+	let message = `New lead from Chatbot\n\n`;
+	message += `Name: ${projectData.name}\n`;
+	message += `Email: ${projectData.email}\n`;
+	message += `Project Type: ${projectData.type}\n`;
+	message += `Budget: ${projectData.budget}\n`;
+	message += `Start: ${projectData.start}\n\n`;
+	message += `--- Full Conversation ---\n\n`;
 
-        conversation.forEach((entry) => {
-        	const who = entry.sender === "user" ? "User" : "Bot";
-        	message += `${who}: ${entry.text}\n`;
-        });
+	conversation.forEach((entry) => {
+		const who = entry.sender === "user" ? "User" : "Bot";
+		message += `${who}: ${entry.text}\n`;
+	});
 
-        const payload = {
-        	name: projectData.name,
-        	email: projectData.email,
-        	message: message,
-        };
+	const payload = {
+		name: projectData.name,
+		email: projectData.email,
+		message: message,
+	};
 
-        try {
-        	console.log("Sending payload:", payload);
-        	const response = await fetch("https://suenartetools-backend.onrender.com/contact", {
-        		method: "POST",
-        		headers: {
-        			"Content-Type": "application/json",
-        		},
-        		body: JSON.stringify(payload),
-        	});
+	try {
+		console.log("Sending payload:", payload);
+		const response = await fetch("https://suenartetools-backend.onrender.com/contact", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(payload),
+		});
 
-        	const data = await response.json();
-        	if (response.ok) {
-        		botTyping("Got it! I have sent everything. We will get back to you soon.");
-        	} else {
-        		botTyping("Something went wrong while sending. You can also use the contact form.");
-        	}
-        } catch (err) {
-        	console.error(err);
-        	botTyping("Couldn't reach the server. Please try the contact form instead");
-        }
+		console.log("Backend response status:", response.status, response.statusText);
+
+		// Try to parse as JSON if possible, otherwise grab text
+		let data = null;
+		const contentType = response.headers.get("content-type") || "";
+		if (contentType.includes("application/json")) {
+			try {
+				data = await response.json();
+			} catch (e) {
+				console.warn("Failed to parse JSON from backend:", e);
+				data = { message: await response.text() };
+			}
+		} else {
+			const text = await response.text();
+			data = { message: text };
+		}
+
+		console.log("Backend response body:", data);
+
+		if (response.ok) {
+			botTyping(data.message || "Got it! I have sent everything. We will get back to you soon.");
+		} else {
+			// Show specific error from backend if available
+			const msg = data?.message || `Server returned ${response.status}`;
+			botTyping(`Something went wrong while sending: ${msg}. You can also use the contact form.`);
+		}
+	} catch (err) {
+		console.error("Fetch failed:", err);
+		botTyping("Couldn't reach the server. Please try the contact form instead");
 	}
+}
 
 	// ---------- Initial Options -------------
 	showOptions([
