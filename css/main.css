@@ -615,20 +615,20 @@ a {
   transform: translate(-50%, -50%);
 }
 #chatbot-container {
-  max-width: 400px;
-  max-height: 90vh;
+  width: min(400px, calc(100vw - 30px));
+  max-height: cal(100dvh - 40px);
   position: fixed;
-  bottom: 30px;
+  bottom: calc(80px + env(safe-area-inset-bottom));
   right: 20px;
   border-radius: 3px;
   overflow-x: visible;
-  overflow-y: scroll;
+  overflow-y: auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   background-color: rgba(199, 200, 214, 0.85);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   transform: translate(95%, 0);
-  z-index: 100;
+  z-index: 1000;
   opacity: 0;
   transition: all 0.5s ease-out;
 }
@@ -693,6 +693,10 @@ a {
   background: rgb(47, 52, 71);
 }
 
+/*input focus fix */
+#chatbot input, #chatbot textarea, #chatbot select {
+  font-size: 16px;
+}
 
 main {
   min-height: 91.6vh;
