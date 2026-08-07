@@ -174,94 +174,275 @@ document.addEventListener("DOMContentLoaded", function () {
 	// ----------- Steps -------------
 	function nextStep(step) {
 		clearOptions();
-
 		switch (step) {
-			case 1:
-				botTyping("What do you need help with?");
-				setTimeout(() => {
-					showOptions([
-						{ label: "Website", value: "Website" },
-						{ label: "Branding", value: "Branding" }, // Change!
-						{ label: "Web / Mobile App", value: "App" },
-					]);
-				}, 600);
-				state = "project_type";
-				break;
-			case 2: 
-				botTyping("What is your estimated budget?");
-				setTimeout(() => {
-					showOptions([
-            			{ label: "< 1000€", value: "<1000" },
-            			{ label: "1000€ - 5000€", value: "1000-5000" },
-            			{ label: "> 5000€", value: ">5000" },
-          			]);
-				}, 600);
-				state = "project_budget";
-				break;
+		  case 1:
+		    botTyping("What can I help you with today?");
+		    setTimeout(() => {
+		    showOptions([
+		    { label: "Website", value: "Website" },
+		    { label: "AI Solutions", value: "AI" },
+		    { label: "Web / Mobile App", value: "App" },
+		    ]);
+		    }, 600);
+		    state = "project_type";
+		    break;
+		  
+		  // ==========================
+		  // WEBSITE
+		  // ==========================
+		  
+		  case 2:
+		  	if (projectData.type !== "Website") {
+		  	nextStep(5);
+		  	return;
+		  	}
+		  	
+		  	botTyping("What kind of website do you need?");
+		  	setTimeout(() => {
+		  	showOptions([
+		  	{ label: "Business Website", value: "business" },
+		  	{ label: "Landing Page", value: "landing" },
+		  	{ label: "E-commerce", value: "shop" },
+		  	{ label: "Portfolio", value: "portfolio" },
+		  	{ label: "Other (describe your idea)", value: "custom" },
+		  	{ label: "Not sure", value: "unsure" },
+		  	]);
+		  	}, 600);
+		  	state = "website_type";
+		  	break;
+		  
+		  case 3:
+		    if (projectData.websiteType !== "custom") {
+		    nextStep(4);
+		    return;
+		    }
+		    
+		    botTyping("Tell me about your website idea.");
+		    setTimeout(() => {
+		    showTextInput("Describe your idea...", (text) => {
+		    projectData.websiteIdea = text;
+		    addMessage(text, "user");
+		    nextStep(4);
+		    });
+		    }, 500);
+		    state = "website_custom";
+		    break;
+		  
+		  case 4:
+		    botTyping("Would you like any extras?");
+		    setTimeout(() => {
+		    showOptions([
+		    { label: "AI Chatbot", value: "chatbot" },
+		    { label: "AI Automation", value: "automation" },
+		    { label: "Branding", value: "branding" },
+		    { label: "SEO", value: "seo" },
+		    { label: "Other (describe your idea)", value: "other" },
+		    { label: "No extras", value: "none" },
+		    ]);
+		    }, 600);
+		    state = "website_extras";
+		    break;
+		  
+		  // ==========================
+		  // AI
+		  // ==========================
+		  
+		  case 5:
+		  if (projectData.type !== "AI") {
+		  nextStep(8);
+		  return;
+		  }
+		  
+		  botTyping("What would you like AI to help you with?");
+		  setTimeout(() => {
+		  showOptions([
+		  { label: "AI Chatbot", value: "chatbot" },
+		  { label: "AI Assistant", value: "assistant" },
+		  { label: "Workflow Automation", value: "automation" },
+		  { label: "Content Generation", value: "content" },
+		  { label: "Translation & Multilingual AI", value: "translation" },
+		  { label: "Other (describe your idea)", value: "custom" },
+		  { label: "Not sure", value: "unsure" },
+		  ]);
+		  }, 600);
+		  state = "ai_type";
+		  break;
+		  
+		  case 6:
+		  if (projectData.aiType !== "custom") {
+		  nextStep(8);
+		  return;
+		  }
+		  
+		  botTyping("Tell me about your AI idea.");
+		  setTimeout(() => {
+		  showTextInput("Describe your idea...", (text) => {
+		  projectData.aiIdea = text;
+		  addMessage(text, "user");
+		  nextStep(8);
+		  });
+		  }, 500);
+		  state = "ai_custom";
+		  break;
+		  
+		  // ==========================
+		  // APPS
+		  // ==========================
+		  
+		  case 8:
+		  if (projectData.type !== "App") {
+		  nextStep(11);
+		  return;
+		  }
+		  
+		  botTyping("What are you looking to build?");
+		  setTimeout(() => {
+		  showOptions([
+		  { label: "Web Application", value: "webapp" },
+		  { label: "Mobile App", value: "mobile" },
+		  { label: "Both", value: "both" },
+		  { label: "Other (describe your idea)", value: "custom" },
+		  { label: "Not sure", value: "unsure" },
+		  ]);
+		  }, 600);
+		  state = "app_type";
+		  break;
+		  
+		  case 9:
+		  if (projectData.appType !== "custom") {
+		  nextStep(11);
+		  return;
+		  }
+		  
+		  botTyping("Tell me about your app idea.");
+		  setTimeout(() => {
+		  showTextInput("Describe your idea...", (text) => {
+		  projectData.appIdea = text;
+		  addMessage(text, "user");
+		  nextStep(11);
+		  });
+		  }, 500);
+		  state = "app_custom";
+		  break;
+		  
+		  // ==========================
+		  // COMMON QUESTIONS
+		  // ==========================
+		  
+		  case 11:
+		  botTyping("Is there anything else you'd like me to know about your project? (Optional)");
+		  setTimeout(() => {
+		  showTextInput("Additional details...", (text) => {
+		  projectData.notes = text;
+		  addMessage(text, "user");
+		  nextStep(12);
+		  });
+		  }, 500);
+		  state = "project_notes";
+		  break;
+		  
+		  case 12:
+		  botTyping("What is your estimated budget?");
+		  setTimeout(() => {
+		  showOptions([
+		  { label: "< €1,000", value: "<1000" },
+		  { label: "€1,000 – €5,000", value: "1000-5000" },
+		  { label: "> €5,000", value: ">5000" },
+		  ]);
+		  }, 600);
+		  state = "project_budget";
+		  break;
+		  
+		  case 13:
+		  botTyping("When would you like to start?");
+		  setTimeout(() => {
+		  showOptions([
+		  { label: "ASAP", value: "ASAP" },
+		  { label: "Specific date", value: "date" },
+		  { label: "Not sure yet", value: "unsure" },
+		  ]);
+		  }, 600);
+		  state = "project_start";
+		  break;
+		  
+		  case 14:
+		  botTyping("Great! What's your name?");
+		  setTimeout(() => {
+	    	showTextInput("Your name", (name) => {
+	    		projectData.name = name;
+	    		addMessage(name, "user");
+	    		nextStep(15);
+	    	});
+	      }, 500);
 
-			case 3:
-				botTyping("When would you like to start?");
-				setTimeout(() => {
-					showOptions([
-						{ label: "ASAP", value: "ASAP" },
-						{ label: "Specific date", value: "date" },
-						{ label: "Not sure yet", value: "unsure" },
-					]);
-				}, 600);
-				state = "project_start";
-				break;
+		  state = "project_name";
+		  	  break;
+		  
+		  case 15:
+		  botTyping("And your email address?");
+		  setTimeout(() => {
+			showTextInput(
+				"your@email.com",
+				(email) => {
+					projectData.email = email;
+					addMessage(email, "user");
+					nextStep(16);
+				},
+				(value) => {
+					const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	
+					return emailRegex.test(value)
+						? true
+						: "That doesn't look like a valid email - please try again.";
+				}
+			);
+		  }, 500);
+	
+		  state = "project_email";
+		  break;
+		  
+		  case 16:
+		  botTyping("Perfect. Here's a summary of your project.");
+		  setTimeout(() => {
 
-			case 4:
-				botTyping("Great. What is your name?");
-				setTimeout(() => {
-					showTextInput("Your name", (name) => {
-						projectData.name = name;
-						addMessage(name, "user");
-						nextStep(5);
-					});
-				}, 500);
-				state = "project_name";
-				break;
-
-			case 5:
-				botTyping("And your email address?");
-				setTimeout(() => {
-					showTextInput("your@email.com", (email) => {
-						projectData.email = email;
-						addMessage(email, "user");
-						nextStep(6);
-					},
-					(value) => {
-						const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-						return emailRegex.test(value)
-							? true
-							: "That doesn't look like a valid email - please try again.";
-					}
-				);
-			}, 500);
-			state = "project_email";
-			break;
-
-			case 6:
-				botTyping("Perfect. Here is a quick summary:")
-				setTimeout(() => {
-					addMessage(`• Type: ${projectData.type}`);
-					addMessage(`• Budget: ${projectData.budget}`);
-					addMessage(`• Start: ${projectData.start}`);
-					addMessage(`• Name: ${projectData.name}`);
-					addMessage(`• Email: ${projectData.email}`);
-
-					botTyping("Shall I send this over?");
-					setTimeout(() => {
-						showOptions([
-							{ label: "Yes, send it", value: "send_project" },
-							{ label: "Start over", value: "project" },
-						]);
-					}, 700);
-				}, 700);
-				state = "project_summary";
-				break;
+		addMessage(`• Type: ${projectData.type}`);
+		
+		if (projectData.websiteType) {
+			addMessage(`• Website: ${projectData.websiteType}`);
 		}
+
+		if (projectData.aiType) {
+			addMessage(`• AI Solution: ${projectData.aiType}`);
+		}
+
+		if (projectData.appType) {
+			addMessage(`• App: ${projectData.appType}`);
+		}
+
+		if (projectData.notes) {
+			addMessage(`• Notes: ${projectData.notes}`);
+		}
+
+		addMessage(`• Budget: ${projectData.budget}`);
+		addMessage(`• Start: ${projectData.start}`);
+		addMessage(`• Name: ${projectData.name}`);
+		addMessage(`• Email: ${projectData.email}`);
+
+		botTyping("Shall I send this over?");
+
+		setTimeout(() => {
+			showOptions([
+				{ label: "Yes, send it", value: "send_project" },
+				{ label: "Start over", value: "project" },
+			]);
+		}, 700);
+
+	}, 700);
+
+	state = "project_summary";
+		  break;
+		  }
+		
 	}
 
 	// ----------Main choice handler ----------- 
@@ -302,14 +483,33 @@ document.addEventListener("DOMContentLoaded", function () {
 			projectData.type = choice;
 			addMessage(choice, "user");
 			nextStep(2);
+		} else if (state === "website_type") {
+            projectData.websiteType = choice;
+            addMessage(choice, "user");
+            nextStep(3);
+    
+        } else if (state === "website_extras") {
+            projectData.websiteExtra = choice;
+            addMessage(choice, "user");
+            nextStep(11);
+    
+        } else if (state === "ai_type") {
+            projectData.aiType = choice;
+            addMessage(choice, "user");
+            nextStep(6);
+
+    	} else if (state === "app_type") {
+    	    projectData.appType = choice;
+    	    addMessage(choice, "user");
+    	    nextStep(9);	
 		} else if (state === "project_budget") {
 			projectData.budget = choice;
 			addMessage(choice, "user");
-			nextStep(3);
+			nextStep(13);
 		} else if (state === "project_start") {
 			projectData.start = choice;
 			addMessage(choice, "user");
-			nextStep(4);
+			nextStep(14);
 		} else if (state === "project_summary" && choice === "send_project") {
 			sendToBackend();
 		}
