@@ -628,7 +628,7 @@ a {
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   transform: translate(95%, 0);
-  z-index: 1000;
+  z-index: 100;
   opacity: 0;
   transition: all 0.5s ease-out;
 }
