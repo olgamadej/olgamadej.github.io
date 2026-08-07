@@ -19,7 +19,22 @@ function positionBoyInChat() {
 }
 
 function toggleChatbot() {
+	async function wakeBackend() {
+		try {
+			await fetch("https://suenartetools-backend.onrender.com/health", {
+				method: "GET",
+				mode: "cors",
+				cache: "no-store"
+			});
+			console.log("Backend awake");
+		} catch (err) {
+			console.log("Backend wake attempt:", err);
+		}
+	}
+
 	if (!showChatbot) {
+		wakeBackend();
+
 		chatbotToggle.classList.add("close-toggle");
 		container.classList.add("show-container");
 		chatbot.classList.add("show-chatbot")
@@ -517,6 +532,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	// ------- Send to backend ----------
 	async function sendToBackend() {
+	console.log("SEND FUNCTION STARTED");
 	botTyping("Sending your request...");
 
 	// Build a clean message for the email
