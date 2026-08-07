@@ -5,6 +5,16 @@ const chatbot = document.querySelector("#chatbot");
 
 let showChatbot = false;
 
+window.addEventListener("load", () => {
+	fetch("https://suenartetools-backend.onrender.com/health", {
+		method: "GET",
+		mode: "cors",
+		cache: "no-store"
+	})
+	.then(() => console.log("Backend waken up."))
+	.catch(err => console.log("Coffee not served", err));
+});
+
 chatbotToggle.addEventListener("click", toggleChatbot);
 
 function positionBoyInChat() {
@@ -19,22 +29,9 @@ function positionBoyInChat() {
 }
 
 function toggleChatbot() {
-	async function wakeBackend() {
-		try {
-			await fetch("https://suenartetools-backend.onrender.com/health", {
-				method: "GET",
-				mode: "cors",
-				cache: "no-store"
-			});
-			console.log("Backend awake");
-		} catch (err) {
-			console.log("Backend wake attempt:", err);
-		}
-	}
+	
 
 	if (!showChatbot) {
-		wakeBackend();
-
 		chatbotToggle.classList.add("close-toggle");
 		container.classList.add("show-container");
 		chatbot.classList.add("show-chatbot")
