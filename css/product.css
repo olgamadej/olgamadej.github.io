@@ -1,329 +1,751 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artists - Dark | Suenarte </title>
-  <!-- Main site stylesheet -->
-  <link rel="stylesheet" href="../css/main.css">
-  <!-- Product page stylesheet -->
-  <link rel="stylesheet" href="../css/product.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-</head>
-<body>
-  <div class="gradient-bg">
-    <div class="bubble bub-1">
-      <div class="inside-bubble"></div>
-    </div>
-    <div class="bubble bub-2">
-      <div class="inside-bubble"></div>
-    </div>
-    <div class="bubble bub-3">
-      <div class="inside-bubble"></div>
-    </div>
-    <div class="bubble bub-4">
-      <div class="dot-container"><div class="dot"></div></div>
-    </div>
-    <div class="bubble bub-5">
-      <div class="inside-bubble"></div>
-    </div>
-    <div class="bubble bub-6">
-      <div class="inside-bubble"></div>
-    </div>
-  </div>
-  <header id="main-header">
-    <div id="brand-name">
-      <!-- Existing brand-name markup from the main site -->
-    </div>
-    <div id="brand-logo" class="brand-visible">
-      <a href="../index.html" aria-label="Suenarte home">
-        <div class="logo"></div>
-      </a>
-    </div>
-    <div class="menu-btn" id="menu-btn">
-      <div class="btn-line"></div>
-      <div class="btn-line"></div>
-      <div class="btn-line"></div>
-    </div>
-    <nav class="menu" id="main-menu">
-      <div class="menu-branding">
-        <div class="brand-logo-hide"></div>
-      </div>
-      <ul class="menu-nav">
-        <li class="nav-item">
-          <a href="../index.html" class="nav-link">
-            Home
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="../about.html" class="nav-link">
-            About
-          </a>
-        </li>
-        <li class="nav-item current">
-          <a href="../work.html" class="nav-link">
-            Work
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="../contact.html" class="nav-link">
-            Contact
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <main id="product-page">
-    <section class="product-hero">
-      <div class="product-hero-content">
-        <div class="product-kicker">
-          WEBSITE FOR ARTISTS / GALLERIES / ART DEALERS
-        </div>
-        <h1 class="product-title">
-          DARK THEME
-        </h1>
-        <p class="product-intro">
-          A responsive website designed for modern businesses,
-          with a carefully crafted interface across mobile,
-          tablet and desktop.
-        </p>
-      </div>
-    </section>
-    <section class="product-video-section">
-      <div class="product-section-heading">
-        <span class="section-number">
-          01
-        </span>
-        <h2>
-          See it in action
-        </h2>
-      </div>
-      <div class="product-video-frame">
-        <video
-          class="product-video"
-          controls
-          playsinline
-          preload="metadata"
-        >
-          <source
-            src="../video/dark_gal_full_scroll.mp4"
-            type="video/mp4"
-          >
-          Your browser does not support the video element.
-        </video>
-      </div>
-    </section>
-    <section class="responsive-showcase">
-      <div class="responsive-heading">
-        <span class="section-number">
-          03
-        </span>
-        <h2>
-          Same site, every screen.
-        </h2>
-        <p>
-          Switch between phone, tablet and desktop — the frame
-          adapts, not just the screenshot inside it.
-        </p>
-      </div>
-      <div class="ds-switch" role="tablist">
-        <button type="button" class="ds-switch-btn" data-device="mobile">
-          Mobile
-        </button>
-        <button type="button" class="ds-switch-btn" data-device="tablet">
-          Tablet
-        </button>
-        <button type="button" class="ds-switch-btn active" data-device="desktop">
-          Desktop
-        </button>
-      </div>
-      <div class="ds-stage-col">
-        <div class="ds-stage" id="dsStage">
-          <div class="ds-peek ds-peek-mobile" data-device="mobile"></div>
-          <div class="ds-peek ds-peek-tablet" data-device="tablet"></div>
-          <div class="ds-frame ds-frame-desktop" id="dsFrame">
-            <div class="ds-chrome ds-chrome-desktop" id="dsChrome">
-              <span class="ds-dot"></span>
-              <span class="ds-dot"></span>
-              <span class="ds-dot"></span>
-              <span class="ds-url">suenarte.studio/product-1</span>
-            </div>
-            <div class="ds-screen" id="dsScreen">
-              <img
-                src="img/front1.png"
-                alt="Product 1 desktop view"
-                id="dsImage"
-              >
-            </div>
-          </div>
-        </div>
-        <div class="ds-nav">
-          <button type="button" class="ds-arrow" id="dsPrev" aria-label="Previous screenshot">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          <span class="ds-counter" id="dsCounter">
-            DESKTOP — 1 / 7
-          </span>
-          <button type="button" class="ds-arrow" id="dsNext" aria-label="Next screenshot">
-            <i class="fas fa-chevron-right"></i>
-          </button>
-        </div>
-      </div>
-    </section>
-    <section class="product-description-section">
-      <div class="product-description-grid">
-        <div class="product-description-heading">
-          <span class="section-number">
-            02
-          </span>
-          <h2>
-            The website
-          </h2>
-        </div>
-        <div class="product-description-content">
-          <p>
-            This website combines a distinctive visual identity
-            with a responsive structure designed to work across
-            different screen sizes.
-          </p>
-          <p>
-            Every section has been designed to remain usable,
-            readable and visually balanced from mobile phones
-            through to large desktop screens.
-          </p>
-        </div>
-      </div>
-    </section>
-    <section class="product-features-section">
-      <div class="product-section-heading">
-        <span class="section-number">
-          04
-        </span>
-        <h2>
-          What you get
-        </h2>
-      </div>
-      <div class="product-features-grid">
-        <article class="product-feature">
-          <span class="feature-number">
-            01
-          </span>
-          <h3>
-            Responsive design
-          </h3>
-          <p>
-            Designed to adapt across mobile, tablet and
-            desktop screen sizes.
-          </p>
-        </article>
-        <article class="product-feature">
-          <span class="feature-number">
-            02
-          </span>
-          <h3>
-            Complete website
-          </h3>
-          <p>
-            The complete website files are supplied with
-            the product.
-          </p>
-        </article>
-        <article class="product-feature">
-          <span class="feature-number">
-            03
-          </span>
-          <h3>
-            Ready to customise
-          </h3>
-          <p>
-            Modify the content, images, colours and other
-            elements to suit your business.
-          </p>
-        </article>
-        <article class="product-feature">
-          <span class="feature-number">
-            04
-          </span>
-          <h3>
-            Built for the web
-          </h3>
-          <p>
-            Clean, responsive structure designed for
-            modern browsers and devices.
-          </p>
-        </article>
-      </div>
-    </section>
-    <section class="product-purchase-section">
-      <div class="purchase-content">
-        <span class="section-number">
-          05
-        </span>
-        <h2>
-          Get this website
-        </h2>
-        <p>
-          Purchase the complete website through Gumroad.
-        </p>
-        <div class="purchase-button-container">
-          <a
-            href="YOUR-GUMROAD-URL"
-            class="purchase-button"
-            target="_blank"
-            rel="noopener"
-          >
-            <span>
-              Buy on Gumroad
-            </span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-    <section class="product-navigation">
-      <a
-        href="../work.html"
-        class="back-to-work"
-      >
-        <i class="fas fa-arrow-left"></i>
-        <span>
-          Back to projects
-        </span>
-      </a>
-    </section>
-  </main>
-  <div class="chatbot-bg">
-    <div id="chatbot-toggle"></div>
-  </div>
-  <div id="chatbot-container">
-    <div id="chatbot">
-      <div class="chat-message bot">
-        Hi! I'm Olga's assistant.
-        Want to start a project or ask something?
-      </div>
-      <div class="chat-options">
-        <button onclick="handleChoice('project')">
-          Start a Project
-        </button>
-        <button onclick="handleChoice('availability')">
-          Ask about Availability
-        </button>
-        <button onclick="handleChoice('faq')">
-          Browse FAQs
-        </button>
-        <button onclick="handleChoice('call')">
-          Book a Call
-        </button>
-      </div>
-    </div>
-  </div>
-  <footer id="main-footer">
-    Copyright &copy; 2019
-  </footer>
-    <script src="../js/main.js"></script>
-    <script src="../js/brand_hide.js"></script>
-    <script src="../js/chatbot.js"></script>
-    <script src="../js/device-stage.js"></script>
-</body>
-</html>
+#product-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  overflow: hidden;
+  color: #000;
+}
+#product-page section {
+  position: relative;
+  width: 100%;
+}
+.product-hero,
+.product-video-section,
+.product-description-section,
+.responsive-showcase,
+.product-features-section,
+.product-purchase-section,
+.product-navigation {
+  padding-left: 7vw;
+  padding-right: 7vw;
+}
+#product-page h1,
+#product-page h2,
+#product-page h3,
+#product-page p {
+  margin: 0;
+}
+#product-page h1,
+#product-page h2,
+#product-page h3 {
+  font-family:
+    "Lucida Sans",
+    "Lucida Sans Regular",
+    "Lucida Grande",
+    "Lucida Sans Unicode",
+    Geneva,
+    Verdana,
+    sans-serif;
+  font-weight: 400;
+}
+#product-page p {
+  line-height: 1.7;
+}
+.product-section-heading,
+.responsive-heading,
+.product-description-heading,
+.purchase-content {
+  position: relative;
+}
+.section-number {
+  display: inline-block;
+  margin-bottom: 0.7rem;
+  font-family:
+    "Courier New",
+    monospace;
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  color: rgba(47, 52, 71, 0.65);
+}
+.product-hero {
+  display: flex;
+  align-items: flex-end;
+  padding-top: 5rem;
+}
+.product-hero-content {
+  width: min(100%, 1000px);
+}
+.product-kicker {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.72rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgb(47, 52, 71);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.product-title {
+  max-width: 1000px;
+  font-size: clamp(2.5rem, 5vw, 3rem);
+  line-height: 0.95;
+  letter-spacing: -3px;
+  color: rgb(47, 52, 71);
+  margin-bottom: 2rem !important;
+}
+.product-intro {
+  max-width: 650px;
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  letter-spacing: 0.5px;
+  color: rgba(47, 52, 71, 0.9);
+  padding-left: 1rem;
+  border-left: 1px solid
+    rgba(47, 52, 71, 0.35);
+}
+.product-video-section {
+  padding-top: 4rem;
+  padding-bottom: 8rem;
+}
+.product-section-heading {
+  margin-bottom: 2.5rem;
+}
+.product-section-heading h2,
+.responsive-heading h2,
+.product-description-heading h2,
+.purchase-content h2 {
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1;
+  color: rgb(47, 52, 71);
+}
+.product-video-frame {
+  position: relative;
+  width: 100%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid
+    rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow:
+    0 15px 50px
+    rgba(30, 35, 55, 0.12);
+}
+.product-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid
+    rgba(47, 52, 71, 0.25);
+  background: #111;
+}
+.product-description-section {
+  padding-bottom: 2rem;
+}
+.product-description-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(220px, 0.7fr)
+    minmax(300px, 1.3fr);
+  gap: 6rem;
+  align-items: start;
+}
+.product-description-content {
+  max-width: 720px;
+  font-size: 1.05rem;
+  color: rgba(47, 52, 71, 0.9);
+}
+.product-description-content p + p {
+  margin-top: 1.5rem;
+}
+
+.responsive-showcase {
+}
+.responsive-heading {
+  max-width: 850px;
+  margin-bottom: 4rem;
+}
+.responsive-heading p {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: rgba(47, 52, 71, 0.75);
+}
+.ds-switch {
+  display: inline-flex;
+  gap: 0.3rem;
+  padding: 0.3rem;
+  margin-bottom: 4rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid
+    rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.ds-switch-btn {
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.65rem 1.3rem;
+  font-family:
+    "Courier New",
+    monospace;
+  font-size: 0.75rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(47, 52, 71, 0.7);
+  background: transparent;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+.ds-switch-btn.active {
+  background: rgb(47, 52, 71);
+  color: #f1f2f6;
+}
+.ds-stage-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ds-stage {
+  position: relative;
+  width: 100%;
+  min-height: 360px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Inactive devices peeking behind the active frame */
+.ds-peek {
+  position: absolute;
+  border: 1px solid
+    rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow:
+    0 20px 60px
+    rgba(35, 40, 60, 0.1);
+  opacity: 0.5;
+  filter: saturate(0.7);
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+.ds-peek:hover {
+  opacity: 0.8;
+}
+.ds-peek-mobile {
+  width: 220px;
+  height: 440px;
+  border-radius: 30px;
+}
+.ds-peek-tablet {
+  width: 460px;
+  height: 320px;
+  border-radius: 22px;
+}
+/* Active frame */
+.ds-frame {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.28);
+  border: 1px solid
+    rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow:
+    0 30px 80px
+    rgba(30, 35, 55, 0.18);
+  overflow: hidden;
+  transition:
+    width 0.5s cubic-bezier(.65, 0, .35, 1),
+    border-radius 0.5s ease;
+}
+.ds-frame-desktop {
+  width: min(760px, 88vw);
+  border-radius: 10px;
+}
+.ds-frame-tablet {
+  width: min(560px, 85vw);
+  border-radius: 22px;
+}
+.ds-frame-mobile {
+  width: min(300px, 68vw);
+  border-radius: 36px;
+}
+/* Frame chrome */
+.ds-chrome {
+  display: flex;
+  align-items: center;
+  background: rgba(47, 52, 71, 0.92);
+}
+.ds-chrome-desktop {
+  height: 34px;
+  padding: 0 12px;
+  gap: 8px;
+}
+.ds-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+}
+.ds-url {
+  margin-left: 14px;
+  flex: 1;
+  max-width: 280px;
+  height: 18px;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.65);
+  font-family:
+    "Courier New",
+    monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ds-chrome-tablet {
+  height: 26px;
+  justify-content: center;
+}
+.ds-cam {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+}
+.ds-chrome-mobile {
+  height: 30px;
+  justify-content: center;
+}
+.ds-notch {
+  display: inline-block;
+  width: 70px;
+  height: 14px;
+  border-radius: 0 0 12px 12px;
+  background: rgba(255, 255, 255, 0.28);
+}
+.ds-screen {
+  max-height: 78vh;
+  overflow-y: auto;
+  background: #fff;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(47, 52, 71, 0.4) transparent;
+}
+.ds-screen::-webkit-scrollbar {
+  width: 6px;
+}
+.ds-screen::-webkit-scrollbar-thumb {
+  background: rgba(47, 52, 71, 0.35);
+  border-radius: 3px;
+}
+.ds-screen img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.ds-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  margin-top: 1.6rem;
+}
+.ds-arrow {
+  appearance: none;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(47, 52, 71);
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid
+    rgba(47, 52, 71, 0.35);
+  border-radius: 50%;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+.ds-arrow:hover {
+  background: rgba(255, 255, 255, 0.75);
+  transform: translateY(-2px);
+}
+.ds-counter {
+  min-width: 150px;
+  font-family:
+    "Courier New",
+    monospace;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-align: center;
+  color: rgba(47, 52, 71, 0.65);
+}
+.gradient-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+.gradient-bg .bub-1,
+.gradient-bg .bub-2,
+.gradient-bg .bub-3,
+.gradient-bg .bub-5,
+.gradient-bg .bub-6 {
+  display: none;
+}
+.gradient-bg .bub-4 {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.98;
+  transform: none;
+}
+.product-features-section {
+  padding-top: 6rem;
+  padding-bottom: 9rem;
+}
+.product-features-section
+.product-section-heading {
+  margin-bottom: 4rem;
+}
+.product-features-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+.product-feature {
+  position: relative;
+  min-height: 250px;
+  padding: 2rem 1.5rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid
+    rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease;
+}
+.product-feature:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.2);
+  border-color:
+    rgba(255, 255, 255, 0.65);
+}
+.feature-number {
+  display: block;
+  margin-bottom: 3rem;
+  font-family:
+    "Courier New",
+    monospace;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  color: rgba(47, 52, 71, 0.55);
+}
+.product-feature h3 {
+  margin-bottom: 1rem !important;
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+  color: rgb(47, 52, 71);
+}
+.product-feature p {
+  font-size: 0.9rem;
+  color: rgba(47, 52, 71, 0.75);
+}
+.product-purchase-section {
+  padding-top: 7rem;
+  padding-bottom: 8rem;
+  display: flex;
+  justify-content: center;
+}
+.purchase-content {
+  width: min(850px, 100%);
+  text-align: center;
+  padding: 5rem 3rem;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.2),
+      rgba(198, 198, 218, 0.15)
+    );
+  border: 1px solid
+    rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow:
+    0 20px 70px
+    rgba(30, 35, 55, 0.12);
+}
+.purchase-content .section-number {
+  margin-bottom: 1.5rem;
+}
+.purchase-content p {
+  margin-top: 1.5rem;
+  color: rgba(47, 52, 71, 0.75);
+}
+.purchase-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+.purchase-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.8rem 1.4rem;
+  color: #f0f0f0;
+  background:
+    rgba(20, 23, 31, 0.92);
+  border: 2px solid
+    rgb(186, 197, 212);
+  border-radius: 2px;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.purchase-button::before {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border: 1px solid
+    rgba(255, 255, 255, 0.35);
+  pointer-events: none;
+}
+.purchase-button:hover {
+  transform:
+    translateY(-3px)
+    scale(1.02);
+  background:
+    rgba(47, 52, 71, 1);
+  box-shadow:
+    5px 5px
+    rgba(35, 35, 35, 0.5);
+}
+.purchase-button i {
+  transition:
+    transform 0.3s ease;
+}
+.purchase-button:hover i {
+  transform:
+    translateX(5px);
+}
+.product-navigation {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+  padding-bottom: 8rem;
+}
+.back-to-work {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.7rem 1rem;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: rgb(47, 52, 71);
+  border-bottom:
+    1px solid
+    rgba(47, 52, 71, 0.35);
+  transition:
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+.back-to-work:hover {
+  color: #111;
+  border-color:
+    rgb(47, 52, 71);
+  transform:
+    translateX(-4px);
+}
+
+@media screen and (max-width: 1100px) {
+  .product-hero,
+  .product-video-section,
+  .product-description-section,
+  .responsive-showcase,
+  .product-features-section,
+  .product-purchase-section,
+  .product-navigation {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  .product-description-grid {
+    gap: 3rem;
+  }
+  .product-features-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+  .ds-frame-desktop {
+    width: min(640px, 86vw);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .ds-peek {
+    display: none !important;
+  }
+  .ds-stage {
+    min-height: 560px;
+  }
+  .product-section-heading {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 798px) {
+  #product-page {
+    overflow-x: hidden;
+  }
+  .product-hero,
+  .product-video-section,
+  .product-description-section,
+  .responsive-showcase,
+  .product-features-section,
+  .product-purchase-section,
+  .product-navigation {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .product-hero {
+    padding-top: 3rem;
+    align-items: flex-end;
+  }
+  .product-kicker {
+    font-size: 0.62rem;
+    letter-spacing: 3px;
+  }
+  .product-title {
+    font-size: clamp(1.5rem, 8vw, 2.5rem);
+    letter-spacing: 3px;
+    line-height: 1;
+  }
+  .product-intro {
+    font-size: 0.95rem;
+    padding-left: 0.8rem;
+  }
+  .product-video-section {
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+  }
+  .product-video-frame {
+    padding: 0.5rem;
+  }
+  .product-description-section {
+    padding-bottom: 5rem;
+  }
+  .product-description-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .product-description-content {
+    font-size: 0.95rem;
+  }
+  .responsive-heading {
+    margin-bottom: 3rem;
+  }
+  .responsive-heading p {
+    font-size: 0.9rem;
+  }
+  .ds-switch {
+    margin-bottom: 2.5rem;
+  }
+  .ds-switch-btn {
+    padding: 0.55rem 0.9rem;
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+  }
+  .ds-frame-desktop {
+    width: 92vw;
+  }
+  .ds-frame-tablet {
+    width: 82vw;
+  }
+  .ds-frame-mobile {
+    width: 64vw;
+  }
+  .ds-nav {
+    gap: 1rem;
+  }
+  .ds-counter {
+    min-width: auto;
+    font-size: 0.62rem;
+  }
+  .product-features-section {
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+  }
+  .product-features-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .product-feature {
+    min-height: auto;
+    padding: 1.5rem;
+  }
+  .feature-number {
+    margin-bottom: 2rem;
+  }
+  .product-purchase-section {
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+  }
+  .purchase-content {
+    padding: 3.5rem 1.5rem;
+  }
+  .purchase-content h2 {
+    font-size: 2rem;
+  }
+  .purchase-button {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+  }
+  .product-navigation {
+    padding-bottom: 6rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .product-hero,
+  .product-video-section,
+  .product-description-section,
+  .responsive-showcase,
+  .product-features-section,
+  .product-purchase-section,
+  .product-navigation {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .product-hero {
+    padding-top: 5rem;
+  }
+  .product-title {
+    font-size: 1.5rem;
+  }
+  .product-section-heading h2,
+  .responsive-heading h2,
+  .product-description-heading h2 {
+    font-size: 2rem;
+  }
+  .ds-frame-mobile {
+    width: 78vw;
+  }
+  .purchase-content {
+    padding: 3rem 1rem;
+  }
+}
