@@ -93,13 +93,9 @@
    ========================================================= */
 
 .product-hero {
-  min-height: 75vh;
-
   display: flex;
   align-items: flex-end;
-
-  padding-top: 10rem;
-  padding-bottom: 7rem;
+  padding-top: 5rem;
 }
 
 .product-hero-content {
@@ -128,13 +124,10 @@
 
 .product-title {
   max-width: 1000px;
-
-  font-size: clamp(3rem, 8vw, 7rem);
+  font-size: clamp(2.5rem, 5vw, 3rem);
   line-height: 0.95;
   letter-spacing: -3px;
-
   color: rgb(47, 52, 71);
-
   margin-bottom: 2rem !important;
 }
 
@@ -213,8 +206,7 @@
    ========================================================= */
 
 .product-description-section {
-  padding-top: 7rem;
-  padding-bottom: 8rem;
+  padding-bottom: 2rem;
 }
 
 .product-description-grid {
@@ -247,8 +239,6 @@
    ========================================================= */
 
 .responsive-showcase {
-  padding-top: 6rem;
-  padding-bottom: 8rem;
 }
 
 .responsive-heading {
@@ -328,12 +318,9 @@
 
 .ds-stage {
   position: relative;
-
   width: 100%;
   min-height: 360px;
-
-  padding: 2rem 0;
-
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -915,12 +902,6 @@
   }
 
 }
-
-
-/* =========================================================
-   PEEK DEVICES OFF BELOW STAGE-CROWDING WIDTHS
-   ========================================================= */
-
 @media screen and (max-width: 900px) {
 
   .ds-peek {
@@ -929,6 +910,10 @@
 
   .ds-stage {
     min-height: 560px;
+  }
+
+  .product-section-heading {
+    display: none;
   }
 
 }
@@ -960,8 +945,7 @@
   /* HERO */
 
   .product-hero {
-    min-height: 75svh;
-    padding-bottom: 4rem;
+    padding-top: 3rem;
     align-items: flex-end;
   }
 
@@ -971,10 +955,8 @@
   }
 
   .product-title {
-    font-size: clamp(2.5rem, 13vw, 4.5rem);
-
-    letter-spacing: -1.5px;
-
+    font-size: clamp(1.5rem, 8vw, 2.5rem);
+    letter-spacing: 3px;
     line-height: 1;
   }
 
@@ -1000,7 +982,6 @@
   /* DESCRIPTION */
 
   .product-description-section {
-    padding-top: 4rem;
     padding-bottom: 5rem;
   }
 
@@ -1017,11 +998,6 @@
 
 
   /* RESPONSIVE SHOWCASE */
-
-  .responsive-showcase {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-  }
 
   .responsive-heading {
     margin-bottom: 3rem;
@@ -1140,11 +1116,11 @@
   }
 
   .product-hero {
-    padding-top: 7rem;
+    padding-top: 5rem;
   }
 
   .product-title {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
 
   .product-section-heading h2,
