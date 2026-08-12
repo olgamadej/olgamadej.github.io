@@ -48,19 +48,9 @@
 .purchase-content {
   position: relative;
 }
-.section-number {
-  display: inline-block;
-  margin-bottom: 0.7rem;
-  font-family:
-    "Courier New",
-    monospace;
-  font-size: 0.72rem;
-  letter-spacing: 3px;
-  color: rgba(47, 52, 71, 0.65);
-}
 .product-hero {
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   padding-top: 5rem;
 }
 .product-hero-content {
@@ -153,10 +143,19 @@
 }
 
 .responsive-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.42fr);
+  grid-template-rows: auto 1fr;
+  column-gap: 5vw;
+  align-items: start;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
 }
 .responsive-heading {
-  max-width: 850px;
-  margin-bottom: 4rem;
+  grid-column: 2;
+  grid-row: 1;
+  max-width: 500px;
+  margin-bottom: 2rem;
 }
 .responsive-heading p {
   margin-top: 1.5rem;
@@ -164,15 +163,36 @@
   color: rgba(47, 52, 71, 0.75);
 }
 .ds-switch {
-  display: inline-flex;
+  grid-column: 2;
+  grid-row: 2;
+  display: inine-flex;
+  flex-direction: column;
+  width: fit-content;
   gap: 0.3rem;
   padding: 0.3rem;
-  margin-bottom: 4rem;
+  justify-self: start;
+}
+.ds-switch-buttons {
+  display: flex;
+  gap: 0.3rem;
+  padding: 0.3rem;
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid
     rgba(255, 255, 255, 0.45);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+}
+.ds-counter {
+  display: inline-block;
+  font-family:
+    "Courier New",
+    monospace;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-align: center;
+  color: rgba(47, 52, 71, 0.65);
+  margin-top: 0.6rem;
+  margin-left: 1.6rem;
 }
 .ds-switch-btn {
   appearance: none;
@@ -196,14 +216,18 @@
   color: #f1f2f6;
 }
 .ds-stage-col {
+  grid-column: 1;
+  grid-row: 1 /3;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: start;
+  min-width: 0;
 }
 .ds-stage {
   position: relative;
   width: 100%;
-  min-height: 360px;
+  min-height: 500px;
   padding: 0;
   display: flex;
   align-items: center;
@@ -347,7 +371,7 @@
   display: flex;
   align-items: center;
   gap: 1.4rem;
-  margin-top: 1.6rem;
+  margin-top: .4rem;
 }
 .ds-arrow {
   appearance: none;
@@ -369,16 +393,6 @@
 .ds-arrow:hover {
   background: rgba(255, 255, 255, 0.75);
   transform: translateY(-2px);
-}
-.ds-counter {
-  min-width: 150px;
-  font-family:
-    "Courier New",
-    monospace;
-  font-size: 0.72rem;
-  letter-spacing: 2px;
-  text-align: center;
-  color: rgba(47, 52, 71, 0.65);
 }
 .gradient-bg {
   position: fixed;
@@ -481,9 +495,6 @@
     0 20px 70px
     rgba(30, 35, 55, 0.12);
 }
-.purchase-content .section-number {
-  margin-bottom: 1.5rem;
-}
 .purchase-content p {
   margin-top: 1.5rem;
   color: rgba(47, 52, 71, 0.75);
@@ -581,6 +592,13 @@
     padding-left: 4rem;
     padding-right: 4rem;
   }
+  .product-hero {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .ds-switch {
+    margin-bottom: 2rem;
+  }
   .product-description-grid {
     gap: 3rem;
   }
@@ -621,7 +639,6 @@
   }
   .product-hero {
     padding-top: 3rem;
-    align-items: flex-end;
   }
   .product-kicker {
     font-size: 0.62rem;
@@ -681,7 +698,6 @@
     gap: 1rem;
   }
   .ds-counter {
-    min-width: auto;
     font-size: 0.62rem;
   }
   .product-features-section {
