@@ -6,7 +6,7 @@ const chatbot = document.querySelector("#chatbot");
 let showChatbot = false;
 
 window.addEventListener("load", () => {
-	fetch("https://suenartetools-backend.onrender.com/health", {
+	fetch("https://api.suenartetools.club/health", {
 		method: "GET",
 		mode: "cors",
 		cache: "no-store"
@@ -554,7 +554,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	try {
 		console.log("Sending payload:", payload);
-		const response = await fetch("https://suenartetools-backend.onrender.com/contact", {
+		const response = await fetch("https://api.suenartetools.club/contact", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
