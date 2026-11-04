@@ -24,7 +24,7 @@
   transition: all 0.5s ease-out;
 }
 
-#brand-name, #brand-logo {
+#brand-name, #brand-logo, #brand-line, #brand-spec{
   position: fixed;
   transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
   will-change: transform;
@@ -41,22 +41,53 @@
   transform: translateY(0);
   transition: transform 0.5s ease-out;
 }
+#brand-line {
+  width: 250px;
+  height: 3px;
+  margin-left: 10px;
+  background-image: linear-gradient(to bottom right, rgba(65.2822033898, 72.2271186441, 98.6177966102, 0.7), rgba(252.45, 252.45, 252.45, 0.2));
+}
+#brand-line.brand-hidden {
+  transform: translateY(-1750%);
+  transition: transform 0.8s ease-in 0.14s;
+}
+#brand-line.brand-visible {
+  transform: translateY(0);
+  transition: transform 0.8s ease-out 0.14s;
+}
+.brand-line {
+  top: 49px;
+  left: 155px;
+}
+#brand-spec {
+  top: 42px;
+  left: 440px;
+  font-size: 0.7rem;
+  letter-spacing: 2.5px;
+}
+#brand-spec.brand-hidden {
+  transform: translateY(-350%);
+  transition: transform 0.8s ease-in 0.28s;
+}
+#brand-spec.brand-visible {
+  transform: translateY(0);
+  transition: transform 0.8s ease-out 0.28s;
+}
 
 #brand-logo {
   transition: transform 0.8s cubic-bezier(0.25, 1, 0.25, 1) 0.2s;
   position: fixed;
-  left: 50%;
+  left: 70%;
   top: 35px;
-  transform: translateX(-50%);
   z-index: 200;
 }
 #brand-logo.brand-hidden {
-  transform: translateX(-50%) translateY(-150%);
-  transition: transform 0.8s ease-in 0.2s;
+  transform: translateY(-150%);
+  transition: transform 0.8s ease-in 0.4s;
 }
 #brand-logo.brand-visible {
-  transform: translateX(-50%) translateY(0);
-  transition: transform 0.8s ease-out 0.2s;
+  transform: translateY(0);
+  transition: transform 0.8s ease-out 0.4s;
 }
 
 .logo {
@@ -230,8 +261,8 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  /*background-image: url("../img/background.png");
-  background-repeat: no-repeat;
+  background-image: url("../img/section-curve.svg");
+  /*background-repeat: no-repeat;
   background-position: right bottom;
   background-size: cover;*/
   opacity: 0.6;
@@ -267,17 +298,6 @@ body {
   transform: translateY(-500px);
   transform: translateX(100px);
   border-leftt: 1px solid rgba(210, 210, 250, .5);
-}
-.dot-container {
-  width: 10%;
-  height: 10%;
-  transform: translateX(40px);
-}
-.bub-4 .dot {
-  width: 4%;
-  height: 4%;
-  border-radius: 50%;
-  background: rgba(10, 10, 50, .1);
 }
 
 .gradient-bg svg {
@@ -345,13 +365,34 @@ header {
 .heading {
   padding: 9rem 4rem 1rem 4rem;
 }
+.lg-heading-wrapper {
+  width: 40%;
+  border-left: 1px solid rgb(87.6271186441, 96.9491525424, 132.3728813559);
+  margin: 0;
+  padding-left: 1.4rem;
+}
+.lg-heading-spec{
+  font-size: 0.65rem;
+  letter-spacing: 2.5px;
+}
+.text-light {
+  color: rgb(87.6271186441, 96.9491525424, 132.3728813559);
+}
 .heading .sm-heading-container {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 .heading .tag-lines {
-  padding: 2.5rem 0rem 1rem 0rem;
+  padding: 2.5rem 0rem 1rem 1.4rem;
+}
+
+.social-links {
+  padding-left: 1.4rem;
+}
+
+.social-title {
+  letter-spacing: 0.8px;
 }
 
 .content-container {
@@ -432,10 +473,16 @@ h3.services-lg-heading {
   color: rgb(47, 52, 71);
 }
 h1.lg-heading-subtitle,
-h2.lg-heading-subtitle,
 h3.lg-heading-subtitle {
   font-size: 2.5rem;
   padding: 0.2rem 0rem 2rem 0rem;
+  letter-spacing: 0px;
+  cursor: default;
+}
+h2.lg-heading-subtitle {
+  line-height: 1.2;
+  font-size: 2.2rem;
+  padding: 0.2rem 0rem 0rem 0rem;
   letter-spacing: 0px;
   cursor: default;
 }
