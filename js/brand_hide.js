@@ -1,10 +1,14 @@
 // Brand name and logo hide/show on scroll with delayed timing
     const brandName = document.getElementById('brand-name');
+    const brandLine = document.getElementById('brand-line');
+    const brandSpec = document.getElementById('brand-spec');
     const brandLogo = document.getElementById('brand-logo');
 
     let lastScrollTop = 0;
     let scrollTimeout;
     let nameHidden = false;
+    let lineHidden = false;
+    let brandSpecHidden = false;
     let logoHidden = false;
 
     function handleBrandVisibility() {
@@ -25,11 +29,18 @@
             brandName.classList.add('brand-hidden');
             brandName.classList.remove('brand-visible');
             nameHidden = true;
-            console.log(brandLogo.classList);
 
-            // Hide logo after 0.2s delay
-            
-            console.log('logo hide');
+            // Hide line after 0.14s delay
+            brandLine.classList.add('brand-hidden');
+            brandLine.classList.remove('brand-visible');
+            brandLineHidden = true;
+
+            // Hide spec after 0.28s delay
+            brandSpec.classList.add('brand-hidden');
+            brandSpec.classList.remove('brand-visible');
+            brandSpecHidden = true;
+
+            // Hide logo after 0.4s delay
             brandLogo.classList.add('brand-hidden');
             brandLogo.classList.remove('brand-visible');
             logoHidden = true;
@@ -41,6 +52,16 @@
             brandName.classList.remove('brand-hidden');
             brandName.classList.add('brand-visible');
             nameHidden = false;
+
+            // Show line immediately
+            brandLine.classList.remove('brand-hidden');
+            brandLine.classList.add('brand-visible');
+            brandLineHidden = false;
+
+            // Show spec immediately
+            brandSpec.classList.remove('brand-hidden');
+            brandSpec.classList.add('brand-visible');
+            brandSpecHidden = false;
 
             // Show logo with slight delay but slower animation
             brandLogo.classList.remove('brand-hidden');
@@ -68,5 +89,7 @@
     
     // Initital state - visible
     brandName.classList.add('brand-visible');
+    brandLine.classList.add('brand-visible');
+    brandSpec.classList.add('brand-visible');
     brandLogo.classList.add('brand-visible');
     console.log(brandLogo.classList);
