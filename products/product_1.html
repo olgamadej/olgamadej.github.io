@@ -1,16 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artists - Dark | Suenarte </title>
-  <!-- Main site stylesheet -->
-  <link rel="stylesheet" href="../css/main.css">
-  <!-- Product page stylesheet -->
-  <link rel="stylesheet" href="../css/product.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-</head>
+    <!-- Google tag (gtag.js) -->
+    <!-- Google Consent Mode: analytics denied until visitor gives consent -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
+    
+      gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied'
+      });
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="../css/main.css" />
+    <!-- Product page stylesheet -->
+    <link rel="stylesheet" href="../css/product.css">
+    <link rel="icon" href="../img/SlogoFaviconMinimalistic.png" type="image/png" />
+    <meta name="p:domain_verify" content="d207781b23d54a2d2aefc088ca30efd2"/>
+    <title>Artists - Dark | Suenarte</title>
+  </head>
 <body>
   <div class="gradient-bg">
     <div class="bubble bub-1">
@@ -32,49 +56,46 @@
       <div class="inside-bubble"></div>
     </div>
   </div>
-  <header id="main-header">
-    <div id="brand-name">
-      <!-- Existing brand-name markup from the main site -->
-    </div>
-    <div id="brand-logo" class="brand-visible">
-      <a href="../index.html" aria-label="Suenarte home">
-        <div class="logo"></div>
-      </a>
-    </div>
-    <div class="menu-btn" id="menu-btn">
-      <div class="btn-line"></div>
-      <div class="btn-line"></div>
-      <div class="btn-line"></div>
-    </div>
-    <nav class="menu" id="main-menu">
-      <div class="menu-branding">
-        <div class="brand-logo-hide"></div>
+      <header id ="main-header">
+      <h1  id="brand-name" class="lg-heading">
+        <div class="letter text-white">S</div>
+        <div class="letter text-white">u</div>
+        <div class="letter text-white">e</div>
+        <div class="letter text-white">n</div>
+        <div class="letter text-secondary">a</div>
+        <div class="letter text-secondary">r</div>
+        <div class="letter text-secondary">t</div>
+        <div class="letter text-secondary">e</div>
+      </h1>
+      <div id="brand-line" class="brand-line"></div>
+      <div id="brand-spec" class="brand-spec text-secondary"><i>WEB &nbsp; / &nbsp;APP &nbsp;/ &nbsp;AUTOMATION</i></div>
+      <a href="../index.html" class="nav-link"><div id="brand-logo" class="logo"></div></a>
+      <div class="menu-btn">
+        <div class="btn-line btn-line-1"></div>
+        <div class="btn-line btn-line-2"></div>
+        <div class="btn-line btn-line-3"></div>
       </div>
-      <ul class="menu-nav">
-        <li class="nav-item">
-          <a href="../index.html" class="nav-link">
-            Home
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="../about.html" class="nav-link">
-            About
-          </a>
-        </li>
-        <li class="nav-item current">
-          <a href="../work.html" class="nav-link">
-            Work
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="../contact.html" class="nav-link">
-            Contact
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <main id="product-page">
+      <nav class="menu">
+        <div class="menu-branding">
+          <a href="../index.html" class="nav-link"><div class="brand-logo-hide"></div></a>
+        </div>
+        <ul class="menu-nav">
+          <li class="nav-item current">
+            <a href="../index.html" class="nav-link"> Home </a>
+          </li>
+          <li class="nav-item">
+            <a href="../about.html" class="nav-link"> About Me </a>
+          </li>
+          <li class="nav-item">
+            <a href="../work.html" class="nav-link"> My work </a>
+          </li>
+          <li class="nav-item">
+            <a href="../contact.html" class="nav-link"> How to reach me </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main id="product-page">
     <section class="product-hero">
       <div class="product-hero-content">
         <div class="product-kicker">
@@ -89,16 +110,7 @@
           tablet and desktop.
         </p>
       </div>
-    </section>
-    <section class="product-video-section">
-      <div class="product-section-heading">
-        <span class="section-number">
-          01
-        </span>
-        <h2>
-          See it in action
-        </h2>
-      </div>
+      <div class="product-video-section">
       <div class="product-video-frame">
         <video
           class="product-video"
@@ -113,12 +125,11 @@
           Your browser does not support the video element.
         </video>
       </div>
+    </div>
     </section>
+    
     <section class="responsive-showcase">
       <div class="responsive-heading">
-        <span class="section-number">
-          03
-        </span>
         <h2>
           Same site, every screen.
         </h2>
@@ -128,16 +139,34 @@
         </p>
       </div>
       <div class="ds-switch" role="tablist">
-        <button type="button" class="ds-switch-btn" data-device="mobile">
+        <div class="ds-switch-buttons">
+          <button type="button" class="ds-switch-btn" data-device="mobile">
           Mobile
-        </button>
-        <button type="button" class="ds-switch-btn" data-device="tablet">
-          Tablet
-        </button>
-        <button type="button" class="ds-switch-btn active" data-device="desktop">
-          Desktop
-        </button>
+          </button>
+          <button type="button" class="ds-switch-btn" data-device=  "tablet">
+            Tablet
+          </button>
+          <button type="button" class="ds-switch-btn active"  data-device="desktop">
+            Desktop
+          </button>
+        </div>
+        <span class="ds-counter" id="dsCounter">
+          DESKTOP — 1 / 7
+        </span>
       </div>
+      <div class="purchase-button-container ds-purchase">
+          <a
+            href="YOUR-GUMROAD-URL"
+            class="purchase-button"
+            target="_blank"
+            rel="noopener"
+          >
+            <span>
+              Buy on Gumroad
+            </span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
       <div class="ds-stage-col">
         <div class="ds-stage" id="dsStage">
           <div class="ds-peek ds-peek-mobile" data-device="mobile"></div>
@@ -162,9 +191,7 @@
           <button type="button" class="ds-arrow" id="dsPrev" aria-label="Previous screenshot">
             <i class="fas fa-chevron-left"></i>
           </button>
-          <span class="ds-counter" id="dsCounter">
-            DESKTOP — 1 / 7
-          </span>
+          
           <button type="button" class="ds-arrow" id="dsNext" aria-label="Next screenshot">
             <i class="fas fa-chevron-right"></i>
           </button>
@@ -174,9 +201,6 @@
     <section class="product-description-section">
       <div class="product-description-grid">
         <div class="product-description-heading">
-          <span class="section-number">
-            02
-          </span>
           <h2>
             The website
           </h2>
@@ -197,9 +221,6 @@
     </section>
     <section class="product-features-section">
       <div class="product-section-heading">
-        <span class="section-number">
-          04
-        </span>
         <h2>
           What you get
         </h2>
@@ -257,9 +278,6 @@
     </section>
     <section class="product-purchase-section">
       <div class="purchase-content">
-        <span class="section-number">
-          05
-        </span>
         <h2>
           Get this website
         </h2>
