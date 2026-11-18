@@ -2056,4 +2056,101 @@ main#contact #form-status {
   }
 }
 
+
+
+/* ---------- privacy notice modal ---------- */
+
+.privacy-notice-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(10, 30, 45, 0.78);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.privacy-notice-modal {
+  width: 100%;
+  max-width: 580px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  background: #fff;
+  color: #222;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.privacy-notice-content {
+  padding: 34px;
+}
+
+.privacy-notice-content h2 {
+  font-size: 1.65rem;
+  margin-bottom: 22px;
+  color: #222;
+}
+
+.privacy-notice-content p {
+  font-size: 0.96rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  color: #444;
+}
+
+.privacy-notice-content .privacy-notice-thanks {
+  font-weight: 600;
+  margin-top: 22px;
+}
+
+.privacy-notice-button {
+  display: block;
+  width: 100%;
+  margin-top: 24px;
+  padding: 13px 20px;
+  border: none;
+  border-radius: 5px;
+  background: #222;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.privacy-notice-button:hover {
+  background: #555;
+}
+
+.privacy-notice-button:focus-visible {
+  outline: 3px solid #777;
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .privacy-notice-overlay {
+    padding: 12px;
+  }
+
+  .privacy-notice-modal {
+    max-height: calc(100vh - 24px);
+  }
+
+  .privacy-notice-content {
+    padding: 24px 20px;
+  }
+
+  .privacy-notice-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .privacy-notice-content p {
+    font-size: 0.9rem;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */
