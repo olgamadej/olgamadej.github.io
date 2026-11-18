@@ -184,3 +184,88 @@ window.addEventListener('scroll', Appear);
     createConsentBanner();
   }
 })();
+
+
+// Privacy notice
+(function () {
+  const NOTICE_KEY = 'suenarte_privacy_notice_seen';
+
+  if (sessionStorage.getItem(NOTICE_KEY)) return;
+
+  const overlay = document.createElement('div');
+  overlay.id = 'privacy-notice-overlay';
+  overlay.className = 'privacy-notice-overlay';
+
+  overlay.innerHTML = `
+    <section
+      class="privacy-notice-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="privacy-notice-title"
+    >
+      <div class="privacy-notice-content">
+        <h2 id="privacy-notice-title">
+          Privacy & Data Protection Notice
+        </h2>
+
+        <p>
+          We are currently reviewing our website's data protection
+          and privacy arrangements to ensure compliance with
+          applicable European Union and national legislation,
+          including GDPR.
+        </p>
+
+        <p>
+          We are assessing the third-party services, cookies,
+          analytics and other technologies used by this website,
+          with the aim of minimising unnecessary data collection
+          and strengthening visitor privacy.
+        </p>
+
+        <p>
+          By continuing, you acknowledge that you have been
+          informed of this review.
+        </p>
+
+        <p>
+          This acknowledgement does not constitute consent to
+          non-essential cookies, tracking or other processing
+          requiring separate consent.
+        </p>
+
+        <p class="privacy-notice-thanks">
+          Thank you for your understanding.
+        </p>
+
+        <button
+          type="button"
+          class="privacy-notice-button"
+        >
+          I understand — Continue
+        </button>
+      </div>
+    </section>
+  `;
+
+  document.body.appendChild(overlay);
+
+  const button = overlay.querySelector('.privacy-notice-button');
+  const previousOverflow = document.body.style.overflow;
+
+  document.body.style.overflow = 'hidden';
+  button.focus();
+
+  // Keep keyboard focus inside the notice
+  overlay.addEventListener('keydown', function (event) {
+    if (event.key !== 'Tab') return;
+
+    event.preventDefault();
+    button.focus();
+  });
+
+  button.addEventListener('click', function () {
+    sessionStorage.setItem(NOTICE_KEY, 'true');
+    document.body.style.overflow = previousOverflow;
+    overlay.remove();
+  });
+})();
